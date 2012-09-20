@@ -11,6 +11,8 @@
 		900FC20E15F6B0CF00B091AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 900FC20D15F6B0CF00B091AD /* QuartzCore.framework */; };
 		9013F98E15FCC1D700BC8948 /* aescrawl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9013F98D15FCC0B600BC8948 /* aescrawl.ttf */; };
 		9013F9A515FDEF0400BC8948 /* Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9013F9A415FDEF0300BC8948 /* Animation.m */; };
+		9027265F160B8A1A004DB4B2 /* libShareKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90272656160B892E004DB4B2 /* libShareKit.a */; };
+		90272661160B8A33004DB4B2 /* ShareKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 90272658160B892E004DB4B2 /* ShareKit.bundle */; };
 		905EAC701601F99A000C8264 /* jeresyHeadOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 905EAC6F1601F99A000C8264 /* jeresyHeadOverlay.png */; };
 		905EAC721601FA7A000C8264 /* JerseyNoHeadOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 905EAC711601FA7A000C8264 /* JerseyNoHeadOverlay.png */; };
 		905EAC741601FA87000C8264 /* jerseyEnlarged.png in Resources */ = {isa = PBXBuildFile; fileRef = 905EAC731601FA87000C8264 /* jerseyEnlarged.png */; };
@@ -73,12 +75,58 @@
 		BE24843E15F0DC6900219F13 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE24843D15F0DC6900219F13 /* CoreImage.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		90272653160B892E004DB4B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 90272648160B892E004DB4B2 /* ShareKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
+			remoteInfo = "Demo App";
+		};
+		90272655160B892E004DB4B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 90272648160B892E004DB4B2 /* ShareKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7AB5342E1552AADD00171BCE;
+			remoteInfo = "Static Library";
+		};
+		90272657160B892E004DB4B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 90272648160B892E004DB4B2 /* ShareKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7AB5360F1552E26800171BCE;
+			remoteInfo = "Resource Bundle";
+		};
+		90272659160B892E004DB4B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 90272648160B892E004DB4B2 /* ShareKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A0F9246156BA2A0009CB40A;
+			remoteInfo = "Static Library No Submodules";
+		};
+		9027265B160B8A0C004DB4B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 90272648160B892E004DB4B2 /* ShareKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AB5342D1552AADD00171BCE;
+			remoteInfo = "Static Library";
+		};
+		9027265D160B8A0C004DB4B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 90272648160B892E004DB4B2 /* ShareKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AB5360E1552E26800171BCE;
+			remoteInfo = "Resource Bundle";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		9003849D15F90B9A005F1505 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		900FC20D15F6B0CF00B091AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9013F98D15FCC0B600BC8948 /* aescrawl.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = aescrawl.ttf; sourceTree = "<group>"; };
 		9013F9A315FDEF0200BC8948 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		9013F9A415FDEF0300BC8948 /* Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animation.m; sourceTree = "<group>"; };
+		90272648160B892E004DB4B2 /* ShareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShareKit.xcodeproj; path = Submodules/ShareKit/ShareKit.xcodeproj; sourceTree = "<group>"; };
 		905EAC6F1601F99A000C8264 /* jeresyHeadOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jeresyHeadOverlay.png; sourceTree = "<group>"; };
 		905EAC711601FA7A000C8264 /* JerseyNoHeadOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JerseyNoHeadOverlay.png; sourceTree = "<group>"; };
 		905EAC731601FA87000C8264 /* jerseyEnlarged.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jerseyEnlarged.png; sourceTree = "<group>"; };
@@ -172,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9027265F160B8A1A004DB4B2 /* libShareKit.a in Frameworks */,
 				90E46B8F16074630008514B5 /* StoreKit.framework in Frameworks */,
 				905EAC86160230AD000C8264 /* libz.dylib in Frameworks */,
 				9003849E15F90B9A005F1505 /* AudioToolbox.framework in Frameworks */,
@@ -221,6 +270,17 @@
 			name = Buttons;
 			sourceTree = "<group>";
 		};
+		90272649160B892E004DB4B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				90272654160B892E004DB4B2 /* ShareKitDemo.app */,
+				90272656160B892E004DB4B2 /* libShareKit.a */,
+				90272658160B892E004DB4B2 /* ShareKit.bundle */,
+				9027265A160B892E004DB4B2 /* libShareKitNoSubmodules.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		905EAC7D16022B47000C8264 /* TestFlightSDK1.0 */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +312,7 @@
 		BE24840B15F0DB9900219F13 = {
 			isa = PBXGroup;
 			children = (
+				90272648160B892E004DB4B2 /* ShareKit.xcodeproj */,
 				90B28A561609C06D00337E56 /* Default-568h@2x.png */,
 				90E46B8E16074630008514B5 /* StoreKit.framework */,
 				90E46B3016061CBF008514B5 /* iconBrad@2x.png */,
@@ -369,6 +430,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				9027265C160B8A0C004DB4B2 /* PBXTargetDependency */,
+				9027265E160B8A0C004DB4B2 /* PBXTargetDependency */,
 			);
 			name = Wiggers;
 			productName = Wiggers;
@@ -394,12 +457,49 @@
 			mainGroup = BE24840B15F0DB9900219F13;
 			productRefGroup = BE24841715F0DB9A00219F13 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 90272649160B892E004DB4B2 /* Products */;
+					ProjectRef = 90272648160B892E004DB4B2 /* ShareKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				BE24841515F0DB9A00219F13 /* Wiggers */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		90272654160B892E004DB4B2 /* ShareKitDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ShareKitDemo.app;
+			remoteRef = 90272653160B892E004DB4B2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		90272656160B892E004DB4B2 /* libShareKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libShareKit.a;
+			remoteRef = 90272655160B892E004DB4B2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		90272658160B892E004DB4B2 /* ShareKit.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ShareKit.bundle;
+			remoteRef = 90272657160B892E004DB4B2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9027265A160B892E004DB4B2 /* libShareKitNoSubmodules.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libShareKitNoSubmodules.a;
+			remoteRef = 90272659160B892E004DB4B2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BE24841415F0DB9A00219F13 /* Resources */ = {
@@ -440,6 +540,7 @@
 				90B28A571609C06D00337E56 /* Default-568h@2x.png in Resources */,
 				9082D70B160B627B00721257 /* README.txt in Resources */,
 				9082D70C160B627B00721257 /* release_notes.txt in Resources */,
+				90272661160B8A33004DB4B2 /* ShareKit.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +569,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9027265C160B8A0C004DB4B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Static Library";
+			targetProxy = 9027265B160B8A0C004DB4B2 /* PBXContainerItemProxy */;
+		};
+		9027265E160B8A0C004DB4B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Resource Bundle";
+			targetProxy = 9027265D160B8A0C004DB4B2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BE24842315F0DB9A00219F13 /* InfoPlist.strings */ = {
@@ -579,7 +693,7 @@
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "\"Submodules/ShareKit\"/**";
+				USER_HEADER_SEARCH_PATHS = "Submodules/**";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -610,7 +724,7 @@
 				PROVISIONING_PROFILE = "520C2BB9-4571-416F-9A7A-3DED5476028E";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "\"Submodules/ShareKit\"/**";
+				USER_HEADER_SEARCH_PATHS = "Submodules/**";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
