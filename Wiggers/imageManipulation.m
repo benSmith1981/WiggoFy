@@ -272,7 +272,7 @@
     }
     //SHARE
     else if (button.tag == 1){
-        SHKItem *item = [SHKItem image:self.activeImageView.image title:@"Wiggins"];
+        SHKItem *item = [SHKItem image:self.activeImageView.image title:@"WiggoFyed!"];
         SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
         [SHK setRootViewController:self];
         [actionSheet showFromToolbar:toolBar];

@@ -267,12 +267,12 @@
  return [[[NSBundle mainBundle] pathForResource:@"Vito" ofType:@"bundle"] stringByAppendingPathComponent:@"VKRSTestSharers.plist"]
  */
 - (NSString*)sharersPlistName {
-	return @"SHKSharers.plist";
+	return @"SHKCustomSharers.plist";
 }
 
 // SHKActionSheet settings
 - (NSNumber*)showActionSheetMoreButton {
-	return [NSNumber numberWithBool:true];// Setting this to true will show More... button in SHKActionSheet, setting to false will leave the button out.
+	return [NSNumber numberWithBool:FALSE];// Setting this to true will show More... button in SHKActionSheet, setting to false will leave the button out.
 }
 
 /*
@@ -295,7 +295,7 @@
 
 //by default, user can see last used sharer on top of the SHKActionSheet. You can switch this off here, so that user is always presented the same sharers for each SHKShareType.
 - (NSNumber*)autoOrderFavoriteSharers {
-    return [NSNumber numberWithBool:true];
+    return [NSNumber numberWithBool:FALSE];
 }
 
 /*

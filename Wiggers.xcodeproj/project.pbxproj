@@ -14,6 +14,7 @@
 		9027265F160B8A1A004DB4B2 /* libShareKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90272656160B892E004DB4B2 /* libShareKit.a */; };
 		90272661160B8A33004DB4B2 /* ShareKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 90272658160B892E004DB4B2 /* ShareKit.bundle */; };
 		90302B08160B99D300F8992C /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90302B07160B99D300F8992C /* libGoogleAdMobAds.a */; };
+		90302B0A160B9E7A00F8992C /* SHKCustomSharers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90302B09160B9E7A00F8992C /* SHKCustomSharers.plist */; };
 		905EAC701601F99A000C8264 /* jeresyHeadOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 905EAC6F1601F99A000C8264 /* jeresyHeadOverlay.png */; };
 		905EAC721601FA7A000C8264 /* JerseyNoHeadOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 905EAC711601FA7A000C8264 /* JerseyNoHeadOverlay.png */; };
 		905EAC741601FA87000C8264 /* jerseyEnlarged.png in Resources */ = {isa = PBXBuildFile; fileRef = 905EAC731601FA87000C8264 /* jerseyEnlarged.png */; };
@@ -137,6 +138,7 @@
 		90302B05160B99D300F8992C /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequest.h; sourceTree = "<group>"; };
 		90302B06160B99D300F8992C /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
 		90302B07160B99D300F8992C /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
+		90302B09160B9E7A00F8992C /* SHKCustomSharers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SHKCustomSharers.plist; sourceTree = SOURCE_ROOT; };
 		905EAC6F1601F99A000C8264 /* jeresyHeadOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jeresyHeadOverlay.png; sourceTree = "<group>"; };
 		905EAC711601FA7A000C8264 /* JerseyNoHeadOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JerseyNoHeadOverlay.png; sourceTree = "<group>"; };
 		905EAC731601FA87000C8264 /* jerseyEnlarged.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jerseyEnlarged.png; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 				BE24843215F0DB9A00219F13 /* ViewController_iPad.xib */,
 				9003840315F7A212005F1505 /* faceParts */,
 				BE24842215F0DB9A00219F13 /* Wiggers-Info.plist */,
+				90302B09160B9E7A00F8992C /* SHKCustomSharers.plist */,
 				BE24842315F0DB9A00219F13 /* InfoPlist.strings */,
 				BE24842615F0DB9A00219F13 /* main.m */,
 				BE24842815F0DB9A00219F13 /* Wiggers-Prefix.pch */,
@@ -541,6 +544,7 @@
 				90272661160B8A33004DB4B2 /* ShareKit.bundle in Resources */,
 				90F567AA160B8FB9003B1768 /* README.md in Resources */,
 				90F567AB160B8FB9003B1768 /* release_notes.md in Resources */,
+				90302B0A160B9E7A00F8992C /* SHKCustomSharers.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
