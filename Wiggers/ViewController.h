@@ -13,12 +13,12 @@
 #import "CameraVC.h"
 #import "SHKItem.h"
 #import "SHKActionSheet.h"
-#import "imageManipulation.h"
+#import "ImageManipulationVC.h"
 #import "SaveImage.h"
 #import "InfoVC.h"
 #import "Constants.h"
 #import "InAppPurchaseManager.h"
-#import "ImageProcessing.h"
+#import "FaceImageProcessing.h"
 
 
 
@@ -32,9 +32,9 @@
     RecentImagesTableView *recentImageTable;
     UIActionSheet *sheet;
     NSArray *imageFeatures;
-    imageManipulation *imageManip;
+    ImageManipulationVC *imageManip;
 }
-@property (nonatomic,strong) imageManipulation *imageManip;
+@property (nonatomic,strong) ImageManipulationVC *imageManip;
 @property (weak, nonatomic) IBOutlet UIButton *adFree;
 @property (nonatomic, strong) IBOutlet UIButton *infoButton;
 @property (nonatomic, strong) IBOutlet UILabel *mainTitle;

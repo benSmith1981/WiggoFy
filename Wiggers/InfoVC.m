@@ -22,10 +22,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        textView1.font = [UIFont fontWithName:@"AEnigmaScrawl4BRK" size:15];
-        textView2.font = [UIFont fontWithName:@"AEnigmaScrawl4BRK" size:15];
-        backButton.titleLabel.font = [UIFont fontWithName:@"AEnigmaScrawl4BRK" size:20];
-        backButton.titleLabel.text = @"BACK";
+
     }
     return self;
 }
@@ -33,7 +30,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    [textView1 setFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:15]];
+    textView2.font = [UIFont fontWithName:@"AEnigmaScrawl4BRK" size:15];
+    backButton.titleLabel.font = [UIFont fontWithName:@"AEnigmaScrawl4BRK" size:20];
+    backButton.titleLabel.text = @"BACK";
 	// Do any additional setup after loading the view.
 }
 

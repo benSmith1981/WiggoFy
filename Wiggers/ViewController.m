@@ -257,10 +257,10 @@
 - (void)didFinishWithCamera
 {
     [self dismissModalViewControllerAnimated:YES];
-    self.imageManip = [[imageManipulation alloc]initWithNibName:@"ImageManipulationView" bundle:nil];
+    self.imageManip = [[ImageManipulationVC alloc]initWithNibName:@"ImageManipulationView" bundle:nil];
     self.imageManip.delegate = self;
+    [FaceImageProcessing processFace:self.activeImageView.image];
     imageManip.activeImageView = self.activeImageView;
-    [ImageProcessing processFace:self.activeImageView.image];
     [self.navigationController pushViewController:imageManip animated:YES];
 
 }

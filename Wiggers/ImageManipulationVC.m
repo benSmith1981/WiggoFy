@@ -6,17 +6,15 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "imageManipulation.h"
-#import "SHK.h"
-#import "TestFlight.h"
-#import "Constants.h"
+#import "ImageManipulationVC.h"
 
-@interface imageManipulation ()
+
+@interface ImageManipulationVC ()
 
 @end
 //#define IMG_WIDTH 320.0f
 //#define IMG_HEIGHT 396.0f
-@implementation imageManipulation
+@implementation ImageManipulationVC
 @synthesize Info;
 @synthesize loadingView;
 @synthesize loadingText;
@@ -37,6 +35,7 @@
         //jumper = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"jerseyEnlarged.png"]];
         
         arrayOfFaceParts = [[NSArray alloc]initWithObjects:hair,rightSB,leftSB,nil];//],jumper, nil];
+        dictOfFaceParts = [[NSDictionary alloc]initWithObjects:arrayOfFaceParts forKeys:[[NSArray alloc]initWithObjects:kHairKey,krightSBKey,kleftSBKey, nil]];
         
         //intialise toolbar
         if ([[NSUserDefaults standardUserDefaults] boolForKey:productPurchase]) {
@@ -73,7 +72,8 @@
         
         [self.view addSubview:toolBar];
     
-        
+
+        //imageProcessing.imagesToAdd = dictOfFaceParts;
         //[Info setFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:15]];
 
     }
@@ -87,6 +87,8 @@
     toolBar.hidden = YES;
     [loadingWheel startAnimating];
     [self showLoadingText];
+    
+
     
    // NSLog(@"height %f width %f",bannerView_.frame.size.height,bannerView_.frame.size.width);
     if (![[NSUserDefaults standardUserDefaults] boolForKey:productPurchase]) {
@@ -109,7 +111,7 @@
 
     
     //set to false intially
-    doneEditing = FALSE;
+    //doneEditing = FALSE;
         
     if ([[NSUserDefaults standardUserDefaults] boolForKey:productPurchase]) {
         canvas = [[UIView alloc]initWithFrame:CGRectMake(0, 0, IMG_WIDTH_NO_ADS, IMG_HEIGHT_NO_ADS)];
@@ -138,7 +140,7 @@
     [tapProfileImageRecognizer setDelegate:self];
     [canvas addGestureRecognizer:tapProfileImageRecognizer];
     
-    activeFacePart = [arrayOfFaceParts objectAtIndex:0];
+    imageProcessing.activeFacePart = [arrayOfFaceParts objectAtIndex:0];
     if (!_marque) {
         _marque = [CAShapeLayer layer];
         _marque.fillColor = [[UIColor clearColor] CGColor];
@@ -146,10 +148,9 @@
         _marque.lineWidth = 1.0f;
         _marque.lineJoin = kCALineJoinRound;
         _marque.lineDashPattern = [NSArray arrayWithObjects:[NSNumber numberWithInt:10],[NSNumber numberWithInt:5], nil];
-        _marque.bounds = CGRectMake(activeFacePart.frame.origin.x, activeFacePart.frame.origin.y, 0, 0);
-        _marque.position = CGPointMake(activeFacePart.frame.origin.x + canvas.frame.origin.x, activeFacePart.frame.origin.y + canvas.frame.origin.y);
+        _marque.bounds = CGRectMake(imageProcessing.activeFacePart.frame.origin.x, imageProcessing.activeFacePart.frame.origin.y, 0, 0);
+        _marque.position = CGPointMake(imageProcessing.activeFacePart.frame.origin.x + canvas.frame.origin.x, imageProcessing.activeFacePart.frame.origin.y + canvas.frame.origin.y);
     }
- 
 
     [self.view sendSubviewToBack:canvas];
     
@@ -286,8 +287,14 @@
     }
     //OK
     else if (button.tag == 4){
-        [self setImage];
-        doneEditing = TRUE;
+        [imageProcessing setImage];//View:self.activeImageView withFeatures:featuresLocalInstance OnCanvas:canvas];
+        [canvas removeGestureRecognizer:pinchRecognizer];
+        [canvas removeGestureRecognizer:tapProfileImageRecognizer];
+        [canvas removeGestureRecognizer:panRecognizer];
+        [canvas removeGestureRecognizer:rotationRecognizer];
+        _marque.hidden = YES;
+        
+        imageProcessing.doneEditing = TRUE;
         [toolBar setItems:saveToolBarItems];
     }
     
@@ -327,12 +334,6 @@
             [alertView dismissWithClickedButtonIndex:1 animated:YES];
             [self.delegate noFeaturesDetected];
             [self.navigationController popViewControllerAnimated:YES];
-//            [self ImagePicker];
-//            UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-//            picker.delegate = self.viewController;
-//            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-//            picker.cameraOverlayView = [[UIImageView alloc] initWithImage:self.viewController.overlayImage.image];
-//            [self presentModalViewController:picker animated:YES];
         }
     }
 }
@@ -364,369 +365,62 @@
         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showLoadingText) object: nil];
         [loadingWheel stopAnimating];
         toolBar.hidden = NO;
-        [self drawImageAnnotatedWithFeatures];
-    }
-}
-
-#pragma mark - DrawImage    
-- (void)drawImageAnnotatedWithFeatures{    
-    
-    
-    UIImage *faceImage = activeImageView.image;
-    UIGraphicsBeginImageContextWithOptions(faceImage.size, YES, 0);
-    [faceImage drawInRect:self.activeImageView.bounds];
-    
-    // Get image context reference
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    // Flip Context
-    CGContextTranslateCTM(context, 0, self.activeImageView.bounds.size.height);
-    CGContextScaleCTM(context, 1.0f, -1.0f);
-    
-    CGFloat scale = [UIScreen mainScreen].scale;
-    
-    if (scale > 1.0) {
-        // Loaded 2x image, scale context to 50%
-        CGContextScaleCTM(context, 0.5, 0.5);
-    }
-    
-    self.activeImageView.image = UIGraphicsGetImageFromCurrentImageContext();
-    
-    [self.view addSubview:activeImageView];
-    
-    //add Face features ontop of the main image from camera
-    for (CIFaceFeature *feature in featuresLocalInstance) 
-    {
-        NSLog(@"feature.bounds.size.width %f",feature.bounds.size.width);
-        NSLog(@"feature.bounds.size.height %f",feature.bounds.size.height);
-        NSLog(@"feature.bounds.origin.x %f",feature.bounds.origin.x);
-        NSLog(@"feature.bounds.origin.y %f",feature.bounds.origin.y);
-        if (feature.hasLeftEyePosition) 
-        {
-            //hair.frame = CGRectMake(f.bounds.origin.x-25, f.bounds.origin.y-20, hair.image.size.width, hair.image.size.height);
-
-//            leftSB.frame = CGRectMake(feature.leftEyePosition.x, feature.leftEyePosition.y-(leftSB.image.size.height/2)-20, leftSB.image.size.width, leftSB.image.size.height);
-            //leftSB.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
-            
-            //NSLog(@"leftSB.image.size.width %f  leftSB.image.size.height %f",leftSB.image.size.width,leftSB.image.size.height);
+        
+        imageProcessing = [[FaceImageProcessing alloc]init];
+        [imageProcessing initialiseImages:dictOfFaceParts withArrayOfFaceParts:arrayOfFaceParts withCanvas:canvas withImageView:self.activeImageView];
+        imageProcessing.features = featuresLocalInstance;
+        imageProcessing.activeImageView = self.activeImageView;
+        self.activeImageView = [imageProcessing drawImageAnnotatedWithFeatures];
+        
+        [self.view addSubview:activeImageView];
+        [self.view addSubview:hair];
+        [self.view addSubview:rightSB];
+        [self.view addSubview:leftSB];
+        
+        //add scrolling marque to indicate selected image
+        [[self.view layer] addSublayer:_marque];
+        //add info over canvas
+        //[self.view bringSubviewToFront:Info];
+        if (![[NSUserDefaults standardUserDefaults] boolForKey:productPurchase]) {
+            [self.view bringSubviewToFront:bannerView_];
         }
-        
-        if (feature.hasRightEyePosition) 
-        {
-//            rightSB.frame = CGRectMake(feature.rightEyePosition.x+20, feature.rightEyePosition.y-(rightSB.image.size.height/2)-20, rightSB.image.size.width, rightSB.image.size.height);
-            
-            //NSLog(@"rightSB.image.size.width %f  rightSB.image.size.height %f",rightSB.image.size.width,rightSB.image.size.height);
-        }
-        
-        if (feature.hasMouthPosition) {
-            //[self drawFeature:3 InContext:context atPoint:feature.mouthPosition];
-        }
+        [self.view bringSubviewToFront:toolBar];
     }
-    
-    //Add hair
-    if(featuresLocalInstance.count >0){
-        CIFaceFeature *f = [featuresLocalInstance objectAtIndex:0];
-        //hair.frame = CGRectMake(f.bounds.origin.x-25, f.bounds.origin.y-20, hair.image.size.width, hair.image.size.height);
-        CGPoint faceCentre = CGPointMake(f.bounds.size.width/2 + f.bounds.origin.x, f.bounds.size.height/2 + f.bounds.origin.y);
-        [hair setCenter:faceCentre];
-        NSLog(@"f.bounds.size.width %f",f.bounds.size.width);
-        NSLog(@"f.bounds.size.height %f",f.bounds.size.height);
-        NSLog(@"f.bounds.origin.x %f",f.bounds.origin.x);
-        NSLog(@"f.bounds.origin.y %f",f.bounds.origin.y);
-        
-        CGPoint leftSBCentre = CGPointMake(f.bounds.origin.x+30, f.bounds.size.height/2 + f.bounds.origin.y+60);
-        [leftSB setCenter:leftSBCentre];
-        
-        
-        CGPoint rightSBCentre = CGPointMake(f.bounds.size.width+f.bounds.origin.x-30, f.bounds.size.height/2 + f.bounds.origin.y+60);
-        [rightSB setCenter:rightSBCentre];
-        
-    }
-    
-    
-    [self.view addSubview:hair];
-    [self.view addSubview:rightSB];
-    [self.view addSubview:leftSB];
-    //jumper.frame = CGRectMake(0, canvas.frame.size.height-93, 320, 93);
-    
-                
-
-
-//    jumper.frame = CGRectMake(0, IMG_HEIGHT-jumper.frame.size.height, self.activeImageView.image.size.width, jumper.frame.size.height);
-//    [self.view addSubview:jumper];
-    
-    //add scrolling marque to indicate selected image
-    [[self.view layer] addSublayer:_marque];
-    UIGraphicsEndImageContext();
-    
-    //add info over canvas
-    //[self.view bringSubviewToFront:Info];
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:productPurchase]) {
-        [self.view bringSubviewToFront:bannerView_];
-    }
-    [self.view bringSubviewToFront:toolBar];
 }
 
 
-//this is called when the save image button is pressed
--(void)setImage{
-    [canvas removeGestureRecognizer:pinchRecognizer];
-    [canvas removeGestureRecognizer:tapProfileImageRecognizer];
-    [canvas removeGestureRecognizer:panRecognizer];
-    [canvas removeGestureRecognizer:rotationRecognizer];
-    _marque.hidden = YES;
-    
-    
-    
-    UIImage *faceImage = activeImageView.image;
-    faceImage = [self drawText:@"#Wiggo'fyed!" inImage:faceImage atPoint:CGPointMake(-130,100)];
-    UIGraphicsBeginImageContextWithOptions(faceImage.size, YES, 0);
-    [faceImage drawInRect:self.activeImageView.bounds];
-    
-    // Get image context reference
-    CGContextRef context = UIGraphicsGetCurrentContext();
-
-    // Flip Context
-    CGContextTranslateCTM(context, 0, self.activeImageView.bounds.size.height);
-    CGContextScaleCTM(context, _lastScale, _lastScale);
-    
-    CGFloat scale = _lastScale;
-    
-    if (scale > 1.0) {
-        // Loaded 2x image, scale context to 50%
-        CGContextScaleCTM(context, 0.5, 0.5);
-    }
-    
-
-    //This is the important code to add the face parts to the image
-    for (UIImageView *facePart in arrayOfFaceParts) {
-        //[self.activeImageView addSubview:facePart];
-    }
-    
-    [self.activeImageView addSubview:hair];
-    [self.activeImageView addSubview:leftSB];
-    [self.activeImageView addSubview:rightSB];
-    //[self.activeImageView addSubview:jumper];
-
-    //render it into the activeImageView then we can post or whatever
-    [activeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
-    self.activeImageView.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    self.activeImageView.image = [self dumpOverlayViewToImage];
-    activeFacePart = nil;
-    
-    
-}
-
-- (void)drawFeature:(int)feature InContext:(CGContextRef)contextLocal atPoint:(CGPoint)featurePoint {
-    
-    switch (feature) {
-        case 1:
-            leftSB.frame = CGRectMake(featurePoint.x-50, featurePoint.y-(leftSB.image.size.height/2)-20, leftSB.image.size.width, leftSB.image.size.height);
-            [self.view addSubview:leftSB];
-            break;
-        case 2:
-            rightSB.frame = CGRectMake(featurePoint.x+20, featurePoint.y-(rightSB.image.size.height/2)-20, rightSB.image.size.width, rightSB.image.size.height);
-            [self.view addSubview:rightSB];
-            break;
-        case 3:
-
-            break;
-            
-        default:
-            break;
-    }
-    
-    //    CGFloat radius = 20.0f * [UIScreen mainScreen].scale;
-    //    CGContextAddArc(context, featurePoint.x, featurePoint.y, radius, 0, M_PI * 2, 1);
-    //    CGContextDrawPath(context, kCGPathFillStroke);
-}
-
-/*To add an overlay image to the camera image you must specify the overlay image here
- */
-- (UIImage*)dumpOverlayViewToImage {
-	CGSize imageSize = activeImageView.bounds.size;
-	//CGSize imageSize = CGSizeMake(IMG_WIDTH, IMG_HEIGHT);
-	UIGraphicsBeginImageContext(imageSize);
-	[activeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
-	UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
-	UIGraphicsEndImageContext();
-	
-	return viewImage;
-}
-
-/*Pass in the base image from the camera here
- */
-- (UIImage*)addOverlayToBaseImage:(UIImage*)baseImage {
-    UIImage* result;
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:productPurchase]) {
-        UIImage *overlayImageLocal = [self dumpOverlayViewToImage];	
-        CGPoint topCorner = CGPointMake(_firstX, _firstY);
-        
-        CGSize targetSize = CGSizeMake(IMG_WIDTH_NO_ADS, IMG_HEIGHT_NO_ADS);	
-        CGRect scaledRect = CGRectZero;
-        
-        CGFloat scaledX = IMG_HEIGHT_NO_ADS * baseImage.size.width / baseImage.size.height;
-        CGFloat offsetX = (scaledX - IMG_WIDTH_NO_ADS) / -2;
-        
-        scaledRect.origin = CGPointMake(offsetX, 0.0);
-        scaledRect.size.width  = scaledX;
-        scaledRect.size.height = IMG_HEIGHT_NO_ADS;
-        
-        UIGraphicsBeginImageContext(targetSize);	
-        [baseImage drawInRect:scaledRect];	
-        [overlayImageLocal drawAtPoint:topCorner];
-        result = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();	
-    }
-    else {
-        UIImage *overlayImageLocal = [self dumpOverlayViewToImage];	
-        CGPoint topCorner = CGPointMake(_firstX, _firstY);
-        
-        CGSize targetSize = CGSizeMake(IMG_WIDTH, IMG_HEIGHT);	
-        CGRect scaledRect = CGRectZero;
-        
-        CGFloat scaledX = IMG_HEIGHT * baseImage.size.width / baseImage.size.height;
-        CGFloat offsetX = (scaledX - IMG_WIDTH) / -2;
-        
-        scaledRect.origin = CGPointMake(offsetX, 0.0);
-        scaledRect.size.width  = scaledX;
-        scaledRect.size.height = IMG_HEIGHT;
-        
-        UIGraphicsBeginImageContext(targetSize);	
-        [baseImage drawInRect:scaledRect];	
-        [overlayImageLocal drawAtPoint:topCorner];
-        result = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-    }
-	
-	return result;	
-}
-
-- (UIImage*) drawText:(NSString*) text 
-             inImage:(UIImage*)  image 
-             atPoint:(CGPoint)   point 
-{
-    // Get image context reference
-   
-    
-    UIFont *font = [UIFont fontWithName:@"AEnigmaScrawl4BRK" size:40];
-    UIGraphicsBeginImageContext(image.size);
-    [image drawInRect:CGRectMake(0,0,image.size.width,image.size.height)];
-    CGRect rect = CGRectMake(point.x, point.y, image.size.width, image.size.height);
-    [[UIColor redColor] set];
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGAffineTransform rotateTransform = CGAffineTransformMakeRotation(M_PI/ -4);
-    CGContextSaveGState(context);
-    CGContextConcatCTM(context, rotateTransform);
-    [text drawAtPoint:point withFont:font];	
-    CGContextRestoreGState(context);
-    //[text drawInRect:CGRectIntegral(rect) withFont:font]; 
-    
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    //newImage = [newImage imageRotatedByDegrees:45.0f];
-    UIGraphicsEndImageContext();
-    
-
-    return newImage;
-}
 
 #pragma mark - Manipulate Image
 
 -(void)showOverlayWithFrame:(CGRect)frame {
-    
-    if (![_marque actionForKey:@"linePhase"]) {
-        CABasicAnimation *dashAnimation;
-        dashAnimation = [CABasicAnimation animationWithKeyPath:@"lineDashPhase"];
-        [dashAnimation setFromValue:[NSNumber numberWithFloat:0.0f]];
-        [dashAnimation setToValue:[NSNumber numberWithFloat:15.0f]];
-        [dashAnimation setDuration:0.5f];
-        [dashAnimation setRepeatCount:HUGE_VALF];
-        [_marque addAnimation:dashAnimation forKey:@"linePhase"];
-    }
-    self.xCoord.text = [NSString stringWithFormat:@"%f", _firstX];
-    self.yCoord.text = [NSString stringWithFormat:@"%f", _firstY];
-    
-    _marque.bounds = CGRectMake(frame.origin.x, frame.origin.y, 0, 0);
-    _marque.position = CGPointMake(frame.origin.x + canvas.frame.origin.x, frame.origin.y + canvas.frame.origin.y);
-    
-    CGMutablePathRef path = CGPathCreateMutable();
-    CGPathAddRect(path, NULL, frame);
-    [_marque setPath:path];
-    CGPathRelease(path);
-    
-    _marque.hidden = NO;
+    [imageProcessing showOverlayWithFrame:frame withMarque:_marque];
+
     
 }
 
 -(void)scale:(id)sender {
-    
-    if([(UIPinchGestureRecognizer*)sender state] == UIGestureRecognizerStateBegan) {
-        _lastScale = 1.0;
-    }
-    
-    CGFloat scale = 1.0 - (_lastScale - [(UIPinchGestureRecognizer*)sender scale]);
-    
-    CGAffineTransform currentTransform = activeFacePart.transform;
-    CGAffineTransform newTransform = CGAffineTransformScale(currentTransform, scale, scale);
-    
-    [activeFacePart setTransform:newTransform];
-    _lastScale = [(UIPinchGestureRecognizer*)sender scale];
-    self.height.text = [NSString stringWithFormat:@"%f", activeFacePart.frame.size.height];
-    self.width.text = [NSString stringWithFormat:@"%f", activeFacePart.frame.size.width];
-    
-    [self showOverlayWithFrame:activeFacePart.frame];
+ 
+    [imageProcessing scale:sender withView:self.view];
+
 }
 
 -(void)rotate:(id)sender {
     
-    if([(UIRotationGestureRecognizer*)sender state] == UIGestureRecognizerStateEnded) {
-        
-        _lastRotation = 0.0;
-        return;
-    }
-    
-    CGFloat rotation = 0.0 - (_lastRotation - [(UIRotationGestureRecognizer*)sender rotation]);
-    //NSLog(@"rotation %f",rotation);
-    self.rotationLabel.text = [NSString stringWithFormat:@"%f", rotation];
-    CGAffineTransform currentTransform = activeFacePart.transform;
-    CGAffineTransform newTransform = CGAffineTransformRotate(currentTransform,rotation);
-    
-    [activeFacePart setTransform:newTransform];
-    
-    _lastRotation = [(UIRotationGestureRecognizer*)sender rotation];
-    [self showOverlayWithFrame:activeFacePart.frame];
+    [imageProcessing rotate:sender withView:self.view];
+    [imageProcessing showOverlayWithFrame:imageProcessing.activeFacePart.frame withMarque:_marque];
 }
 
 
 -(void)move:(id)sender {
-    
-    CGPoint touchPoint = [(UIGestureRecognizer*)sender locationInView:self.view];
-    for (UIImageView *facePart in arrayOfFaceParts) {
-        if (CGRectContainsPoint(facePart.frame, touchPoint) && !objectMoving)
-        {
-            activeFacePart = facePart;
-        }
-    }
-    
-    CGPoint translatedPoint = [(UIPanGestureRecognizer*)sender translationInView:canvas];
-    
-    if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateBegan) {
-        _firstX = [activeFacePart center].x;
-        _firstY = [activeFacePart center].y;
-        
-    }
+    [imageProcessing move:sender withView:self.view];
+    [imageProcessing showOverlayWithFrame:imageProcessing.activeFacePart.frame withMarque:_marque];
 
-    translatedPoint = CGPointMake(_firstX+translatedPoint.x, _firstY+translatedPoint.y);
-    [activeFacePart setCenter:translatedPoint];
-    [self showOverlayWithFrame:activeFacePart.frame];
 }
 
 #pragma mark Gesture recognizer actions
 
 - (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event{
-    objectMoving = TRUE;
+    imageProcessing.objectMoving = TRUE;
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -736,18 +430,18 @@
 
 
 -(void)tapped:(id)sender {
-    if(!doneEditing)
+    if(!imageProcessing.doneEditing)
     {
         CGPoint touchPoint = [(UIGestureRecognizer*)sender locationInView:self.view];
         
         for (UIImageView *facePart in arrayOfFaceParts) {
             if (CGRectContainsPoint(facePart.frame, touchPoint))
             {
-                activeFacePart = facePart;
+                imageProcessing.activeFacePart = facePart;
             }
         }
-        [self showOverlayWithFrame:activeFacePart.frame];
-        [self.view bringSubviewToFront:activeFacePart];
+        [self showOverlayWithFrame:imageProcessing.activeFacePart.frame];
+        [self.view bringSubviewToFront:imageProcessing.activeFacePart];
     }
 }
 

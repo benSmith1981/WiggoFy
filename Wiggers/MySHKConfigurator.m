@@ -281,16 +281,16 @@
  These values are used to define the default favorite sharers appearing on ShareKit's action sheet.
  */
 - (NSArray*)defaultFavoriteURLSharers {
-    return [NSArray arrayWithObjects:@"SHKTwitter",@"SHKFacebook", @"SHKReadItLater", nil];
+    return [NSArray arrayWithObjects:@"SHKFacebook",@"SHKTwitter",@"SHKFacebook",@"SHKTextMessage", nil];
 }
 - (NSArray*)defaultFavoriteImageSharers {
-    return [NSArray arrayWithObjects:@"SHKMail",@"SHKFacebook", @"SHKCopy", nil];
+    return [NSArray arrayWithObjects:@"SHKFacebook",@"SHKTwitter",@"SHKFacebook",@"SHKTextMessage", nil];
 }
 - (NSArray*)defaultFavoriteTextSharers {
-    return [NSArray arrayWithObjects:@"SHKMail",@"SHKTwitter",@"SHKFacebook", nil];
+    return [NSArray arrayWithObjects:@"SHKFacebook",@"SHKTwitter",@"SHKFacebook",@"SHKTextMessage", nil];
 }
 - (NSArray*)defaultFavoriteFileSharers {
-    return [NSArray arrayWithObjects:@"SHKMail",@"SHKEvernote", nil];
+    return [NSArray arrayWithObjects:@"SHKFacebook",@"SHKTwitter",@"SHKFacebook",@"SHKTextMessage", nil];
 }
 
 //by default, user can see last used sharer on top of the SHKActionSheet. You can switch this off here, so that user is always presented the same sharers for each SHKShareType.

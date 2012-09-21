@@ -43,7 +43,7 @@
 		909F35A815FBD422005FB900 /* SaveImageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 909F35A615FBD422005FB900 /* SaveImageVC.xib */; };
 		90B28A571609C06D00337E56 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B28A561609C06D00337E56 /* Default-568h@2x.png */; };
 		90C9E6E4160A35BF00B0BB13 /* CameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 90C9E6E3160A35BF00B0BB13 /* CameraVC.m */; };
-		90C9E6E7160A487E00B0BB13 /* ImageProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 90C9E6E6160A487E00B0BB13 /* ImageProcessing.m */; };
+		90C9E6E7160A487E00B0BB13 /* FaceImageProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 90C9E6E6160A487E00B0BB13 /* FaceImageProcessing.m */; };
 		90C9E6EA160A90DD00B0BB13 /* UIImage+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 90C9E6E9160A90DC00B0BB13 /* UIImage+Extensions.m */; };
 		90E46B1D1605F1F5008514B5 /* backgroundWiggins3.png in Resources */ = {isa = PBXBuildFile; fileRef = 90E46B1C1605F1F5008514B5 /* backgroundWiggins3.png */; };
 		90E46B2516060269008514B5 /* cameraButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 90E46B2416060269008514B5 /* cameraButton.png */; };
@@ -59,7 +59,7 @@
 		90E46B3C16069591008514B5 /* InfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 90E46B3B16069590008514B5 /* InfoVC.m */; };
 		90E46B8F16074630008514B5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E46B8E16074630008514B5 /* StoreKit.framework */; };
 		90E46B9416077CC8008514B5 /* InAppPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 90E46B8C160730C8008514B5 /* InAppPurchaseManager.m */; };
-		90E6B83A15F6795000A7ED78 /* imageManipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 90E6B83915F6795000A7ED78 /* imageManipulation.m */; };
+		90E6B83A15F6795000A7ED78 /* ImageManipulationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 90E6B83915F6795000A7ED78 /* ImageManipulationVC.m */; };
 		90E6B84315F6822300A7ED78 /* ImageManipulationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E6B84215F6822300A7ED78 /* ImageManipulationView.xib */; };
 		90F567A9160B8FB9003B1768 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F567A5160B8FB9003B1768 /* libTestFlight.a */; };
 		90F567AA160B8FB9003B1768 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 90F567A6160B8FB9003B1768 /* README.md */; };
@@ -172,8 +172,8 @@
 		90B28A561609C06D00337E56 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		90C9E6E2160A35BF00B0BB13 /* CameraVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraVC.h; sourceTree = "<group>"; };
 		90C9E6E3160A35BF00B0BB13 /* CameraVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraVC.m; sourceTree = "<group>"; };
-		90C9E6E5160A487E00B0BB13 /* ImageProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageProcessing.h; sourceTree = "<group>"; };
-		90C9E6E6160A487E00B0BB13 /* ImageProcessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageProcessing.m; sourceTree = "<group>"; };
+		90C9E6E5160A487E00B0BB13 /* FaceImageProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceImageProcessing.h; sourceTree = "<group>"; };
+		90C9E6E6160A487E00B0BB13 /* FaceImageProcessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceImageProcessing.m; sourceTree = "<group>"; };
 		90C9E6E8160A90DC00B0BB13 /* UIImage+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extensions.h"; sourceTree = "<group>"; };
 		90C9E6E9160A90DC00B0BB13 /* UIImage+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extensions.m"; sourceTree = "<group>"; };
 		90E46B1C1605F1F5008514B5 /* backgroundWiggins3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundWiggins3.png; path = "Graphics/Non Retina/Background/backgroundWiggins3.png"; sourceTree = SOURCE_ROOT; };
@@ -193,8 +193,8 @@
 		90E46B8C160730C8008514B5 /* InAppPurchaseManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InAppPurchaseManager.m; sourceTree = "<group>"; };
 		90E46B8D1607347C008514B5 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		90E46B8E16074630008514B5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		90E6B83815F6795000A7ED78 /* imageManipulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageManipulation.h; sourceTree = "<group>"; };
-		90E6B83915F6795000A7ED78 /* imageManipulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imageManipulation.m; sourceTree = "<group>"; };
+		90E6B83815F6795000A7ED78 /* ImageManipulationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManipulationVC.h; sourceTree = "<group>"; };
+		90E6B83915F6795000A7ED78 /* ImageManipulationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManipulationVC.m; sourceTree = "<group>"; };
 		90E6B84215F6822300A7ED78 /* ImageManipulationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageManipulationView.xib; sourceTree = "<group>"; };
 		90F567A5160B8FB9003B1768 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		90F567A6160B8FB9003B1768 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -365,10 +365,10 @@
 				BE24842D15F0DB9A00219F13 /* ViewController.m */,
 				90C9E6E2160A35BF00B0BB13 /* CameraVC.h */,
 				90C9E6E3160A35BF00B0BB13 /* CameraVC.m */,
-				90C9E6E5160A487E00B0BB13 /* ImageProcessing.h */,
-				90C9E6E6160A487E00B0BB13 /* ImageProcessing.m */,
-				90E6B83815F6795000A7ED78 /* imageManipulation.h */,
-				90E6B83915F6795000A7ED78 /* imageManipulation.m */,
+				90C9E6E5160A487E00B0BB13 /* FaceImageProcessing.h */,
+				90C9E6E6160A487E00B0BB13 /* FaceImageProcessing.m */,
+				90E6B83815F6795000A7ED78 /* ImageManipulationVC.h */,
+				90E6B83915F6795000A7ED78 /* ImageManipulationVC.m */,
 				90C9E6E8160A90DC00B0BB13 /* UIImage+Extensions.h */,
 				90C9E6E9160A90DC00B0BB13 /* UIImage+Extensions.m */,
 				90E46B3A1606958E008514B5 /* InfoVC.h */,
@@ -559,7 +559,7 @@
 				BE24842B15F0DB9A00219F13 /* AppDelegate.m in Sources */,
 				BE24842E15F0DB9A00219F13 /* ViewController.m in Sources */,
 				9080952915F611B3002AE4B5 /* MySHKConfigurator.m in Sources */,
-				90E6B83A15F6795000A7ED78 /* imageManipulation.m in Sources */,
+				90E6B83A15F6795000A7ED78 /* ImageManipulationVC.m in Sources */,
 				909F354F15FA04BC005FB900 /* RecentImagesTableView.m in Sources */,
 				909F355415FA0504005FB900 /* SaveImage.m in Sources */,
 				909F35A715FBD422005FB900 /* SaveImageVC.m in Sources */,
@@ -567,7 +567,7 @@
 				90E46B3C16069591008514B5 /* InfoVC.m in Sources */,
 				90E46B9416077CC8008514B5 /* InAppPurchaseManager.m in Sources */,
 				90C9E6E4160A35BF00B0BB13 /* CameraVC.m in Sources */,
-				90C9E6E7160A487E00B0BB13 /* ImageProcessing.m in Sources */,
+				90C9E6E7160A487E00B0BB13 /* FaceImageProcessing.m in Sources */,
 				90C9E6EA160A90DD00B0BB13 /* UIImage+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

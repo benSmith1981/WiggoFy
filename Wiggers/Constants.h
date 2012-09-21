@@ -35,3 +35,7 @@
 
 #define productPurchase @"proUpgradeTransactionReceipt"
 #define kInAppPurchaseProUpgradeProductId @"com.BenSmithInc.Wiggers"
+
+#define kHairKey @"hair"
+#define krightSBKey @"rightSB"
+#define kleftSBKey @"leftSB"

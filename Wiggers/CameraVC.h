@@ -22,7 +22,8 @@
 @property (nonatomic, strong) UIImageView *cameraImageView;
 
 - (void)setupImagePicker:(UIImagePickerControllerSourceType)sourceType;
-
+- (UIImage*)addOverlayToBaseImage:(UIImage*)baseImage;
+- (UIImage*)dumpOverlayViewToImage ;
 @end
 
 
