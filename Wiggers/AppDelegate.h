@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "TestFlight.h"
 
-@class ViewController;
+@class MainScreenVC;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) MainScreenVC *viewController;
 
 @property (strong, nonatomic) UINavigationController *navigationController;
 @end

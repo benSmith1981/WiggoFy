@@ -7,6 +7,7 @@
 #import <Foundation/Foundation.h>
 
 @interface UIImage (Extensions)
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 - (UIImage *)imageAtRect:(CGRect)rect;
 - (UIImage *)imageByScalingProportionallyToMinimumSize:(CGSize)targetSize;
 - (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize;

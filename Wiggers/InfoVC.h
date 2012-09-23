@@ -7,13 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface InfoVC : UIViewController
+#import "GADBannerView.h"
+#import "Constants.h"
+@interface InfoVC : UIViewController{
+    GADBannerView *bannerView_;
+}
 
 @property (nonatomic,strong) UIView *secondaryView;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UITextView *textView1;
 @property (weak, nonatomic) IBOutlet UITextView *textView2;
+@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UILabel *text1;
+@property (weak, nonatomic) IBOutlet UILabel *text2;
 
 - (IBAction)buttonPressed:(id)sender;
 @end

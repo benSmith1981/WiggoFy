@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Constants.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import "UIImage+Extensions.h"
 @interface FaceImageProcessing :NSObject {
     NSArray *features;
     NSArray *arrayOfImagesToAdd;

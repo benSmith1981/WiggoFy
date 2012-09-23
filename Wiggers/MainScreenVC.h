@@ -22,7 +22,7 @@
 
 
 
-@interface ViewController : UIViewController <UIImagePickerControllerDelegate, UIActionSheetDelegate,OverlayViewControllerDelegate, failedToDetectFeature>{
+@interface MainScreenVC : UIViewController <UIImagePickerControllerDelegate, UIActionSheetDelegate,OverlayViewControllerDelegate, failedToDetectFeature>{
 //    UIImageView *rightSB;
 //    UIImageView *leftSB;
 //    UIImageView *nose;

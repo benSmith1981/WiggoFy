@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "MainScreenVC.h"
 #import "DefaultSHKConfigurator.h"
 #import "MySHKConfigurator.h"
 #import "SHKConfiguration.h"
@@ -36,10 +36,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+        self.viewController = [[MainScreenVC alloc] initWithNibName:@"MainScreenVC_iPhone" bundle:nil];
         self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     } else {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
+        self.viewController = [[MainScreenVC alloc] initWithNibName:@"MainScreenVC_iPad" bundle:nil];
     }
     //[self logInstalledFonts];
     self.window.rootViewController = self.navigationController;

@@ -6,14 +6,14 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainScreenVC.h"
 
 
-@interface ViewController ()
+@interface MainScreenVC ()
 
 @end
 
-@implementation ViewController
+@implementation MainScreenVC
 
 //view for the image taken from camera
 @synthesize adFree;
@@ -47,16 +47,18 @@
     
 
     
-    [recentImagesTitle1 setFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:33]]; 
-    [recentImagesTitle2 setFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:33]]; 
-    [takePicTitle1 setFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:20]]; 
-    [takePicTitle2 setFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:20]]; 
+    [recentImagesTitle1 setFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:17]];
+    recentImagesTitle1.text = @"Recent Images";
     
-    takePicture.titleLabel.font = [UIFont fontWithName:@"AEnigmaScrawl4BRK" size:10];
-    takePicture.titleLabel.text = @"Get Wigg'd";
+//    [recentImagesTitle2 setFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:33]]; 
+//    [takePicTitle1 setFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:20]];
+    [takePicTitle1 setFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:17]];
+    takePicTitle1.text = @"Get Wigg'd";
+    //takePicture.titleLabel.font = [UIFont fontWithName:@"AEnigmaScrawl4BRK" size:15];
     
-    recentImages.titleLabel.font = [UIFont fontWithName:@"AEnigmaScrawl4BRK" size:10];
-    recentImages.titleLabel.text = @"Recent Images";
+    
+    //recentImages.titleLabel.font = [UIFont fontWithName:@"AEnigmaScrawl4BRK" size:15];
+    
     
     //Get constraint size
     CGSize constraintSize;
@@ -251,17 +253,23 @@
     //    [self.view addSubview:compositeView];
     
     self.activeImageView.image = picture;
+    
+    self.imageManip = [[ImageManipulationVC alloc]initWithNibName:@"ImageManipulationView" bundle:nil];
+    self.imageManip.delegate = self;
+    //
+    //    FaceImageProcessing *imageProcessing = [[FaceImageProcessing alloc]init];
+    //    imageProcessing.activeImageView = self.activeImageView;
+    //self.activeImageView = [imageProcessing drawImageAnnotatedWithFeatures];
+    imageManip.activeImageView = self.activeImageView;
+    [FaceImageProcessing processFace:self.activeImageView.image];
+    [self.navigationController pushViewController:imageManip animated:YES];
 }
 
 // as a delegate we are told to finished with the camera
 - (void)didFinishWithCamera
 {
     [self dismissModalViewControllerAnimated:YES];
-    self.imageManip = [[ImageManipulationVC alloc]initWithNibName:@"ImageManipulationView" bundle:nil];
-    self.imageManip.delegate = self;
-    [FaceImageProcessing processFace:self.activeImageView.image];
-    imageManip.activeImageView = self.activeImageView;
-    [self.navigationController pushViewController:imageManip animated:YES];
+
 
 }
 @end

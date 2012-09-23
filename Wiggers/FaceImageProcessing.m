@@ -59,22 +59,23 @@
     
     // Flip Context
     CGContextTranslateCTM(context, 0, activeImageView.bounds.size.height);
+//    CGCGContextTranslateCTM(context, 0, [features objectAtIndex:0].frame.size.height)
     CGContextScaleCTM(context, 1.0f, -1.0f);
     
     CGFloat scale = [UIScreen mainScreen].scale;
     
-    
-    
+
     if (scale > 1.0) {
         // Loaded 2x image, scale context to 50%
         CGContextScaleCTM(context, 0.5, 0.5);
     }
     
-    activeImageView.image = UIGraphicsGetImageFromCurrentImageContext();
+
     
     //add Face features ontop of the main image from camera
     for (CIFaceFeature *feature in features)
     {
+
         NSLog(@"feature.bounds.size.width %f",feature.bounds.size.width);
         NSLog(@"feature.bounds.size.height %f",feature.bounds.size.height);
         NSLog(@"feature.bounds.origin.x %f",feature.bounds.origin.x);
@@ -102,33 +103,50 @@
     }
     
     //Add hair
-    if(features.count >0){
-        CIFaceFeature *f = [features objectAtIndex:0];
+    for (CIFaceFeature *feature in features){
+        CIFaceFeature *f = feature;
+        CGContextSetRGBFillColor(context, 0.0f, 0.0f, 0.0f, 0.5f);
+        CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
+        CGContextSetLineWidth(context, 2.0f * scale);
+        CGContextAddRect(context, f.bounds);
+        CGContextDrawPath(context, kCGPathFillStroke);
+
         //hair.frame = CGRectMake(f.bounds.origin.x-25, f.bounds.origin.y-20, hair.image.size.width, hair.image.size.height);
+
+        UIImageView *hair = [imagesToAdd objectForKey:kHairKey];
+        //scales image up so it is 1/6th larger than face area
+        hair.image = [hair.image imageByScalingProportionallyToSize: CGSizeMake(f.bounds.size.width + f.bounds.size.width/6, f.bounds.size.height + f.bounds.size.height/6)];
         
-        //draw face rect
-        CGContextSetRGBFillColor(context,1.0, 1.0, 1.0, 1.0);
-        CGContextFillRect(context, CGRectMake(0.0, 0.0, f.bounds.size.width, f.bounds.size.height));
-        
-        
-        CGPoint faceCentre = CGPointMake(f.bounds.size.width/2 + f.bounds.origin.x, f.bounds.size.height/2 + f.bounds.origin.y);
-        [[imagesToAdd objectForKey:kHairKey] setCenter:faceCentre];
+        hair.frame = CGRectMake(f.bounds.origin.x-f.bounds.size.width/8.5, f.bounds.origin.y-f.bounds.size.height/4, hair.image.size.width,hair.image.size.height);
+                                
+                                //+f.bounds.size.width/6, hair.image.size.height+f.bounds.size.height/6);
+//        hair.image = [hair.image imageRotatedByDegrees:45.0f];
+        //CGPoint faceCentre = CGPointMake(f.bounds.size.width, f.bounds.size.height);
+        //[hair setCenter:faceCentre];
 //        NSLog(@"f.bounds.size.width %f",f.bounds.size.width);
 //        NSLog(@"f.bounds.size.height %f",f.bounds.size.height);
 //        NSLog(@"f.bounds.origin.x %f",f.bounds.origin.x);
 //        NSLog(@"f.bounds.origin.y %f",f.bounds.origin.y);
         
-        CGPoint leftSBCentre = CGPointMake(f.bounds.origin.x+30, f.bounds.size.height/2 + f.bounds.origin.y+60);
-        [[imagesToAdd objectForKey:kleftSBKey] setCenter:leftSBCentre];
+        UIImageView *leftSB = [imagesToAdd objectForKey:kleftSBKey];
+        leftSB.image = [leftSB.image imageByScalingProportionallyToSize:CGSizeMake(f.bounds.size.width/10, f.bounds.size.height/3)];
+        leftSB.frame = CGRectMake(leftSB.frame.size.width, leftSB.frame.size.height, leftSB.image.size.width+f.bounds.size.width/10, leftSB.image.size.height+f.bounds.size.height/4);
+        //CGPoint leftSBCentre = CGPointMake(f.bounds.origin.x+30, f.bounds.size.height/2 + f.bounds.origin.y+60);
+        //[leftSB setCenter:leftSBCentre];
         
-        
-        CGPoint rightSBCentre = CGPointMake(f.bounds.size.width+f.bounds.origin.x-30, f.bounds.size.height/2 + f.bounds.origin.y+60);
-        [[imagesToAdd objectForKey:krightSBKey]  setCenter:rightSBCentre];
+        UIImageView *rightSB = [imagesToAdd objectForKey:krightSBKey];
+        rightSB.image = [rightSB.image imageByScalingProportionallyToSize:CGSizeMake(f.bounds.size.width/3, f.bounds.size.height/2)];
+        rightSB.frame = CGRectMake( f.bounds.origin.x+f.bounds.size.width - rightSB.frame.size.width,  f.bounds.origin.y+f.bounds.size.height - rightSB.frame.size.height,  f.bounds.size.width/3, f.bounds.size.height/2);
+        //CGRectMake(rightSB.frame.size.width, rightSB.frame.size.height, f.bounds.size.width-rightSB.image.size.width, f.bounds.size.height-rightSB.image.size.height);
+        //CGPoint rightSBCentre = CGPointMake(f.bounds.size.width+f.bounds.origin.x-30, f.bounds.size.height/2 + f.bounds.origin.y+60);
+        //[rightSB setCenter:rightSBCentre];
         
     }
+    activeImageView.image = UIGraphicsGetImageFromCurrentImageContext();
     //jumper.frame = CGRectMake(0, canvas.frame.size.height-93, 320, 93);
     //    jumper.frame = CGRectMake(0, IMG_HEIGHT-jumper.frame.size.height, self.activeImageView.image.size.width, jumper.frame.size.height);
     //    [self.view addSubview:jumper];
+//    self.activeImageView.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     return activeImageView;
@@ -138,7 +156,12 @@
 //this is called when the save image button is pressed
 -(void)setImage{ //View:(UIImageView*)activeImageView withFeatures:(NSArray*)features OnCanvas:(UIView*)canvas{
     UIImage *faceImage = activeImageView.image;
-    faceImage = [self drawText:@"#Wiggo'fyed!" inImage:faceImage atPoint:CGPointMake(-130,100)];
+    
+    NSString *wiggoText = @"#Wiggo'fyed!";
+    CGSize theSize = [wiggoText sizeWithFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:40] constrainedToSize:activeImageView.frame.size lineBreakMode:UILineBreakModeMiddleTruncation];
+    faceImage = [self drawText:wiggoText inImage:faceImage atPoint:CGPointMake((activeImageView.frame.size.width-theSize.width)/2,activeImageView.image.size.height-theSize.height)];
+
+    
     UIGraphicsBeginImageContextWithOptions(faceImage.size, YES, 0);
     [faceImage drawInRect:activeImageView.bounds];
     
@@ -277,13 +300,13 @@
     //CGRect rect = CGRectMake(point.x, point.y, image.size.width, image.size.height);
     [[UIColor redColor] set];
     
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGAffineTransform rotateTransform = CGAffineTransformMakeRotation(M_PI/ -4);
-    CGContextSaveGState(context);
-    CGContextConcatCTM(context, rotateTransform);
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    CGAffineTransform rotateTransform = CGAffineTransformMakeRotation(M_PI/ -4);
+//    CGContextSaveGState(context);
+//    CGContextConcatCTM(context, rotateTransform);
     [text drawAtPoint:point withFont:font];	
-    CGContextRestoreGState(context);
-    //[text drawInRect:CGRectIntegral(rect) withFont:font]; 
+//    CGContextRestoreGState(context);
+    //[text drawInRect:CGRectIntegral(rect) withFont:font];
     
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     //newImage = [newImage imageRotatedByDegrees:45.0f];

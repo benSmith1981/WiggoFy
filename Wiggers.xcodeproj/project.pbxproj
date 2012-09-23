@@ -15,12 +15,12 @@
 		90272661160B8A33004DB4B2 /* ShareKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 90272658160B892E004DB4B2 /* ShareKit.bundle */; };
 		90302B08160B99D300F8992C /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90302B07160B99D300F8992C /* libGoogleAdMobAds.a */; };
 		90302B0A160B9E7A00F8992C /* SHKCustomSharers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90302B09160B9E7A00F8992C /* SHKCustomSharers.plist */; };
+		90302B38160E12FD00F8992C /* betterHairScaled.png in Resources */ = {isa = PBXBuildFile; fileRef = 90302B35160E12FC00F8992C /* betterHairScaled.png */; };
+		90302B39160E12FD00F8992C /* leftlargesideburnScaled.png in Resources */ = {isa = PBXBuildFile; fileRef = 90302B36160E12FD00F8992C /* leftlargesideburnScaled.png */; };
+		90302B3A160E12FD00F8992C /* rightlargesideburnScaled.png in Resources */ = {isa = PBXBuildFile; fileRef = 90302B37160E12FD00F8992C /* rightlargesideburnScaled.png */; };
 		905EAC701601F99A000C8264 /* jeresyHeadOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 905EAC6F1601F99A000C8264 /* jeresyHeadOverlay.png */; };
 		905EAC721601FA7A000C8264 /* JerseyNoHeadOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 905EAC711601FA7A000C8264 /* JerseyNoHeadOverlay.png */; };
 		905EAC741601FA87000C8264 /* jerseyEnlarged.png in Resources */ = {isa = PBXBuildFile; fileRef = 905EAC731601FA87000C8264 /* jerseyEnlarged.png */; };
-		905EAC7A16020553000C8264 /* betterHairScaled.png in Resources */ = {isa = PBXBuildFile; fileRef = 905EAC7716020553000C8264 /* betterHairScaled.png */; };
-		905EAC7B16020553000C8264 /* leftlargesideburnScaled.png in Resources */ = {isa = PBXBuildFile; fileRef = 905EAC7816020553000C8264 /* leftlargesideburnScaled.png */; };
-		905EAC7C16020553000C8264 /* rightlargesideburnScaled.png in Resources */ = {isa = PBXBuildFile; fileRef = 905EAC7916020553000C8264 /* rightlargesideburnScaled.png */; };
 		905EAC86160230AD000C8264 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 905EAC85160230AD000C8264 /* libz.dylib */; };
 		907F3FC5160134E8004F78DA /* bigHairBrad.png in Resources */ = {isa = PBXBuildFile; fileRef = 907F3FC4160134E8004F78DA /* bigHairBrad.png */; };
 		907F4A6C15FFE52600C4872F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 907F4A6815FFE52500C4872F /* Default.png */; };
@@ -70,9 +70,9 @@
 		BE24842515F0DB9A00219F13 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE24842315F0DB9A00219F13 /* InfoPlist.strings */; };
 		BE24842715F0DB9A00219F13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE24842615F0DB9A00219F13 /* main.m */; };
 		BE24842B15F0DB9A00219F13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE24842A15F0DB9A00219F13 /* AppDelegate.m */; };
-		BE24842E15F0DB9A00219F13 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE24842D15F0DB9A00219F13 /* ViewController.m */; };
-		BE24843115F0DB9A00219F13 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE24842F15F0DB9A00219F13 /* ViewController_iPhone.xib */; };
-		BE24843415F0DB9A00219F13 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE24843215F0DB9A00219F13 /* ViewController_iPad.xib */; };
+		BE24842E15F0DB9A00219F13 /* MainScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BE24842D15F0DB9A00219F13 /* MainScreenVC.m */; };
+		BE24843115F0DB9A00219F13 /* MainScreenVC_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE24842F15F0DB9A00219F13 /* MainScreenVC_iPhone.xib */; };
+		BE24843415F0DB9A00219F13 /* MainScreenVC_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE24843215F0DB9A00219F13 /* MainScreenVC_iPad.xib */; };
 		BE24843E15F0DC6900219F13 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE24843D15F0DC6900219F13 /* CoreImage.framework */; };
 /* End PBXBuildFile section */
 
@@ -139,12 +139,12 @@
 		90302B06160B99D300F8992C /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
 		90302B07160B99D300F8992C /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
 		90302B09160B9E7A00F8992C /* SHKCustomSharers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SHKCustomSharers.plist; sourceTree = SOURCE_ROOT; };
+		90302B35160E12FC00F8992C /* betterHairScaled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = betterHairScaled.png; path = "Graphics/Non Retina/Face Parts/betterHairScaled.png"; sourceTree = SOURCE_ROOT; };
+		90302B36160E12FD00F8992C /* leftlargesideburnScaled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leftlargesideburnScaled.png; path = "Graphics/Non Retina/Face Parts/leftlargesideburnScaled.png"; sourceTree = SOURCE_ROOT; };
+		90302B37160E12FD00F8992C /* rightlargesideburnScaled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rightlargesideburnScaled.png; path = "Graphics/Non Retina/Face Parts/rightlargesideburnScaled.png"; sourceTree = SOURCE_ROOT; };
 		905EAC6F1601F99A000C8264 /* jeresyHeadOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jeresyHeadOverlay.png; sourceTree = "<group>"; };
 		905EAC711601FA7A000C8264 /* JerseyNoHeadOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JerseyNoHeadOverlay.png; sourceTree = "<group>"; };
 		905EAC731601FA87000C8264 /* jerseyEnlarged.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jerseyEnlarged.png; sourceTree = "<group>"; };
-		905EAC7716020553000C8264 /* betterHairScaled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = betterHairScaled.png; sourceTree = "<group>"; };
-		905EAC7816020553000C8264 /* leftlargesideburnScaled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftlargesideburnScaled.png; sourceTree = "<group>"; };
-		905EAC7916020553000C8264 /* rightlargesideburnScaled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightlargesideburnScaled.png; sourceTree = "<group>"; };
 		905EAC85160230AD000C8264 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		907F3FC4160134E8004F78DA /* bigHairBrad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigHairBrad.png; sourceTree = "<group>"; };
 		907F4A6815FFE52500C4872F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = "Graphics/Non Retina/Background/Default.png"; sourceTree = SOURCE_ROOT; };
@@ -210,10 +210,10 @@
 		BE24842815F0DB9A00219F13 /* Wiggers-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wiggers-Prefix.pch"; sourceTree = "<group>"; };
 		BE24842915F0DB9A00219F13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BE24842A15F0DB9A00219F13 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BE24842C15F0DB9A00219F13 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BE24842D15F0DB9A00219F13 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		BE24843015F0DB9A00219F13 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
-		BE24843315F0DB9A00219F13 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		BE24842C15F0DB9A00219F13 /* MainScreenVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainScreenVC.h; sourceTree = "<group>"; };
+		BE24842D15F0DB9A00219F13 /* MainScreenVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainScreenVC.m; sourceTree = "<group>"; };
+		BE24843015F0DB9A00219F13 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainScreenVC_iPhone.xib; sourceTree = "<group>"; };
+		BE24843315F0DB9A00219F13 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainScreenVC_iPad.xib; sourceTree = "<group>"; };
 		BE24843D15F0DC6900219F13 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -248,9 +248,9 @@
 		9003840315F7A212005F1505 /* faceParts */ = {
 			isa = PBXGroup;
 			children = (
-				905EAC7716020553000C8264 /* betterHairScaled.png */,
-				905EAC7816020553000C8264 /* leftlargesideburnScaled.png */,
-				905EAC7916020553000C8264 /* rightlargesideburnScaled.png */,
+				90302B35160E12FC00F8992C /* betterHairScaled.png */,
+				90302B36160E12FD00F8992C /* leftlargesideburnScaled.png */,
+				90302B37160E12FD00F8992C /* rightlargesideburnScaled.png */,
 				907F3FC4160134E8004F78DA /* bigHairBrad.png */,
 				907F4A7815FFE54800C4872F /* hair.png */,
 				907F4A7B15FFE54C00C4872F /* yellowJumper.png */,
@@ -361,8 +361,8 @@
 				90E46B8D1607347C008514B5 /* Constants.h */,
 				BE24842915F0DB9A00219F13 /* AppDelegate.h */,
 				BE24842A15F0DB9A00219F13 /* AppDelegate.m */,
-				BE24842C15F0DB9A00219F13 /* ViewController.h */,
-				BE24842D15F0DB9A00219F13 /* ViewController.m */,
+				BE24842C15F0DB9A00219F13 /* MainScreenVC.h */,
+				BE24842D15F0DB9A00219F13 /* MainScreenVC.m */,
 				90C9E6E2160A35BF00B0BB13 /* CameraVC.h */,
 				90C9E6E3160A35BF00B0BB13 /* CameraVC.m */,
 				90C9E6E5160A487E00B0BB13 /* FaceImageProcessing.h */,
@@ -406,9 +406,9 @@
 				9013F97C15FC862D00BC8948 /* Buttons */,
 				909F35A615FBD422005FB900 /* SaveImageVC.xib */,
 				90E6B84215F6822300A7ED78 /* ImageManipulationView.xib */,
-				BE24842F15F0DB9A00219F13 /* ViewController_iPhone.xib */,
+				BE24842F15F0DB9A00219F13 /* MainScreenVC_iPhone.xib */,
 				90E46B3216069252008514B5 /* InfoView.xib */,
-				BE24843215F0DB9A00219F13 /* ViewController_iPad.xib */,
+				BE24843215F0DB9A00219F13 /* MainScreenVC_iPad.xib */,
 				9003840315F7A212005F1505 /* faceParts */,
 				BE24842215F0DB9A00219F13 /* Wiggers-Info.plist */,
 				90302B09160B9E7A00F8992C /* SHKCustomSharers.plist */,
@@ -510,8 +510,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE24842515F0DB9A00219F13 /* InfoPlist.strings in Resources */,
-				BE24843115F0DB9A00219F13 /* ViewController_iPhone.xib in Resources */,
-				BE24843415F0DB9A00219F13 /* ViewController_iPad.xib in Resources */,
+				BE24843115F0DB9A00219F13 /* MainScreenVC_iPhone.xib in Resources */,
+				BE24843415F0DB9A00219F13 /* MainScreenVC_iPad.xib in Resources */,
 				90E6B84315F6822300A7ED78 /* ImageManipulationView.xib in Resources */,
 				909F35A815FBD422005FB900 /* SaveImageVC.xib in Resources */,
 				9013F98E15FCC1D700BC8948 /* aescrawl.ttf in Resources */,
@@ -526,9 +526,6 @@
 				905EAC701601F99A000C8264 /* jeresyHeadOverlay.png in Resources */,
 				905EAC721601FA7A000C8264 /* JerseyNoHeadOverlay.png in Resources */,
 				905EAC741601FA87000C8264 /* jerseyEnlarged.png in Resources */,
-				905EAC7A16020553000C8264 /* betterHairScaled.png in Resources */,
-				905EAC7B16020553000C8264 /* leftlargesideburnScaled.png in Resources */,
-				905EAC7C16020553000C8264 /* rightlargesideburnScaled.png in Resources */,
 				90E46B1D1605F1F5008514B5 /* backgroundWiggins3.png in Resources */,
 				90E46B2516060269008514B5 /* cameraButton.png in Resources */,
 				90E46B27160610D1008514B5 /* photoAlbumButton.png in Resources */,
@@ -545,6 +542,9 @@
 				90F567AA160B8FB9003B1768 /* README.md in Resources */,
 				90F567AB160B8FB9003B1768 /* release_notes.md in Resources */,
 				90302B0A160B9E7A00F8992C /* SHKCustomSharers.plist in Resources */,
+				90302B38160E12FD00F8992C /* betterHairScaled.png in Resources */,
+				90302B39160E12FD00F8992C /* leftlargesideburnScaled.png in Resources */,
+				90302B3A160E12FD00F8992C /* rightlargesideburnScaled.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,7 +557,7 @@
 			files = (
 				BE24842715F0DB9A00219F13 /* main.m in Sources */,
 				BE24842B15F0DB9A00219F13 /* AppDelegate.m in Sources */,
-				BE24842E15F0DB9A00219F13 /* ViewController.m in Sources */,
+				BE24842E15F0DB9A00219F13 /* MainScreenVC.m in Sources */,
 				9080952915F611B3002AE4B5 /* MySHKConfigurator.m in Sources */,
 				90E6B83A15F6795000A7ED78 /* ImageManipulationVC.m in Sources */,
 				909F354F15FA04BC005FB900 /* RecentImagesTableView.m in Sources */,
@@ -596,20 +596,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		BE24842F15F0DB9A00219F13 /* ViewController_iPhone.xib */ = {
+		BE24842F15F0DB9A00219F13 /* MainScreenVC_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BE24843015F0DB9A00219F13 /* en */,
 			);
-			name = ViewController_iPhone.xib;
+			name = MainScreenVC_iPhone.xib;
 			sourceTree = "<group>";
 		};
-		BE24843215F0DB9A00219F13 /* ViewController_iPad.xib */ = {
+		BE24843215F0DB9A00219F13 /* MainScreenVC_iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BE24843315F0DB9A00219F13 /* en */,
 			);
-			name = ViewController_iPad.xib;
+			name = MainScreenVC_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
