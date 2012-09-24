@@ -115,9 +115,10 @@
 
         UIImageView *hair = [imagesToAdd objectForKey:kHairKey];
         //scales image up so it is 1/6th larger than face area
-        hair.image = [hair.image imageByScalingProportionallyToSize: CGSizeMake(f.bounds.size.width + f.bounds.size.width/6, f.bounds.size.height + f.bounds.size.height/6)];
+        hair.image = [hair.image imageByScalingProportionallyToSize: CGSizeMake(f.bounds.size.width + f.bounds.size.width/4, f.bounds.size.height + f.bounds.size.height/6)];
         
-        hair.frame = CGRectMake(f.bounds.origin.x-f.bounds.size.width/8.5, f.bounds.origin.y-f.bounds.size.height/4, hair.image.size.width,hair.image.size.height);
+        hair.frame = CGRectMake(f.bounds.origin.x-f.bounds.size.width/8.5, IMG_HEIGHT - (f.bounds.origin.y + f.bounds.size.height + f.bounds.size.height/2 ), hair.image.size.width,hair.image.size.height);
+        // hair.frame = CGRectMake(f.bounds.origin.x, IMG_HEIGHT - (f.bounds.origin.y + hair.image.size.height), hair.image.size.width,hair.image.size.height);
                                 
                                 //+f.bounds.size.width/6, hair.image.size.height+f.bounds.size.height/6);
 //        hair.image = [hair.image imageRotatedByDegrees:45.0f];
@@ -129,17 +130,27 @@
 //        NSLog(@"f.bounds.origin.y %f",f.bounds.origin.y);
         
         UIImageView *leftSB = [imagesToAdd objectForKey:kleftSBKey];
-        leftSB.image = [leftSB.image imageByScalingProportionallyToSize:CGSizeMake(f.bounds.size.width/10, f.bounds.size.height/3)];
-        leftSB.frame = CGRectMake(leftSB.frame.size.width, leftSB.frame.size.height, leftSB.image.size.width+f.bounds.size.width/10, leftSB.image.size.height+f.bounds.size.height/4);
+        CGFloat leftSBScaleWidth = (f.bounds.size.width/leftSB.bounds.size.width)*1/3;
+        CGFloat leftSBScaleHeight = (f.bounds.size.height/leftSB.bounds.size.height)*1/1.8;
+        
+        leftSB.image = [leftSB.image imageByScalingProportionallyToSize:CGSizeMake(leftSB.bounds.size.width*leftSBScaleWidth,leftSB.bounds.size.height*leftSBScaleHeight)];
+        leftSB.frame = CGRectMake(f.bounds.origin.x, IMG_HEIGHT - (f.bounds.origin.y + leftSB.frame.size.height), leftSB.image.size.width, leftSB.image.size.height);
         //CGPoint leftSBCentre = CGPointMake(f.bounds.origin.x+30, f.bounds.size.height/2 + f.bounds.origin.y+60);
         //[leftSB setCenter:leftSBCentre];
         
         UIImageView *rightSB = [imagesToAdd objectForKey:krightSBKey];
-        rightSB.image = [rightSB.image imageByScalingProportionallyToSize:CGSizeMake(f.bounds.size.width/3, f.bounds.size.height/2)];
-        rightSB.frame = CGRectMake( f.bounds.origin.x+f.bounds.size.width - rightSB.frame.size.width,  f.bounds.origin.y+f.bounds.size.height - rightSB.frame.size.height,  f.bounds.size.width/3, f.bounds.size.height/2);
+        CGFloat rightSBScaleWidth = (f.bounds.size.width/rightSB.bounds.size.width)*1/4;
+        CGFloat rightSBScaleHeight = (f.bounds.size.height/rightSB.bounds.size.height)*1/1.8;
+        
+        
+        rightSB.image = [rightSB.image imageByScalingProportionallyToSize:CGSizeMake(rightSB.bounds.size.width*rightSBScaleWidth, rightSB.bounds.size.height*rightSBScaleHeight)];
+        
+        rightSB.frame = CGRectMake(f.bounds.origin.x+f.bounds.size.width - rightSB.frame.size.width, IMG_HEIGHT - (f.bounds.origin.y + rightSB.frame.size.height),  rightSB.frame.size.width, rightSB.frame.size.height );
+        // + f.bounds.size.height/3
+        
         //CGRectMake(rightSB.frame.size.width, rightSB.frame.size.height, f.bounds.size.width-rightSB.image.size.width, f.bounds.size.height-rightSB.image.size.height);
-        //CGPoint rightSBCentre = CGPointMake(f.bounds.size.width+f.bounds.origin.x-30, f.bounds.size.height/2 + f.bounds.origin.y+60);
-        //[rightSB setCenter:rightSBCentre];
+//        CGPoint rightSBCentre = CGPointMake(f.bounds.size.width+f.bounds.origin.x-30, f.bounds.size.height/2 + f.bounds.origin.y+60);
+//        [rightSB setCenter:rightSBCentre];
         
     }
     activeImageView.image = UIGraphicsGetImageFromCurrentImageContext();
