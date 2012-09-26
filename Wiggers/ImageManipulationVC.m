@@ -24,18 +24,19 @@
 @synthesize xCoord,yCoord,width,height;
 @synthesize featuresLocalInstance,cameraVC;
 @synthesize delegate;
+@synthesize hairScrollView,hairScrollViewContainer;
 //@synthesize share, saveImage, takeNewImage,ok;
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        hair = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"betterHairScaled.png"]];
-        rightSB = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"rightlargesideburnScaled.png"]];
-        leftSB = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"leftlargesideburnScaled.png"]];
-        //jumper = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"jerseyEnlarged.png"]];
+//        hair = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"betterHairScaled.png"]];
+//        rightSB = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"rightlargesideburnScaled.png"]];
+//        leftSB = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"leftlargesideburnScaled.png"]];
+//        jumper = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"jerseyEnlarged.png"]];
         
-        arrayOfFaceParts = [[NSArray alloc]initWithObjects:hair,rightSB,leftSB,nil];//],jumper, nil];
-        dictOfFaceParts = [[NSDictionary alloc]initWithObjects:arrayOfFaceParts forKeys:[[NSArray alloc]initWithObjects:kHairKey,krightSBKey,kleftSBKey, nil]];
+        arrayOfFaceParts = [[NSArray alloc]initWithArray: FACE_PARTS];//],jumper, nil];
+        //dictOfFaceParts = [[NSDictionary alloc]initWithObjects:FACE_PARTS forKeys:[[NSArray alloc]initWithObjects:kHairKey,krightSBKey,kleftSBKey, nil]];
         
         //intialise toolbar
         if ([[NSUserDefaults standardUserDefaults] boolForKey:productPurchase]) {
@@ -58,6 +59,7 @@
         saveImage =  [self customAddButtonItem:@"SAVE" WithTarget:self action:@selector(buttonPressed:) andTag:2 andTextSize:25];
         takeNewImage =  [self customAddButtonItem:@"MAIN MENU" WithTarget:self action:@selector(buttonPressed:) andTag:3 andTextSize:15];
         ok =  [self customAddButtonItem:@"OK" WithTarget:self action:@selector(buttonPressed:) andTag:4 andTextSize:25];
+        wigs =  [self customAddButtonItem:@"WiGs" WithTarget:self action:@selector(buttonPressed:) andTag:5 andTextSize:25];
 
         
         UIBarButtonItem *flexItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
@@ -66,13 +68,27 @@
         
         //create toolbar arrays
         saveToolBarItems = [NSArray arrayWithObjects:saveImage,flexItem, share,flexItem, takeNewImage, nil];
-        okToolBarItems = [NSArray arrayWithObjects:flexItem,ok,flexItem, nil];
+        okToolBarItems = [NSArray arrayWithObjects:ok,flexItem,wigs, nil];
         //setup first toolbar
         [toolBar setItems:okToolBarItems animated:NO];
         
         [self.view addSubview:toolBar];
     
-
+        hairScrollViewContainer.hidden = YES;
+        hairScrollViewContainer.frame = CGRectMake(0.0f,toolBar.frame.origin.y, toolBar.frame.size.width, 44);
+        [hairScrollViewContainer setAlpha:0.8];
+        showHairContainer = FALSE;
+        
+        faceImageViews = [[NSMutableArray alloc]init];
+        editedImageViews = [[NSMutableArray alloc]init];
+        
+        for (UIImage *faceParts in FACE_PARTS) {
+            [faceImageViews addObject:[[UIImageView alloc]initWithImage:faceParts]];
+        }
+        
+//        for (UIImage *hair in HAIR_IMAGES) {
+//            [hairImageViews addObject:[[UIImageView alloc]initWithImage:hair]];
+//        }
         //imageProcessing.imagesToAdd = dictOfFaceParts;
         //[Info setFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:15]];
 
@@ -140,7 +156,7 @@
     [tapProfileImageRecognizer setDelegate:self];
     [canvas addGestureRecognizer:tapProfileImageRecognizer];
     
-    imageProcessing.activeFacePart = [arrayOfFaceParts objectAtIndex:0];
+    imageProcessing.activeFacePart = [FACE_PARTS objectAtIndex:0];
     if (!_marque) {
         _marque = [CAShapeLayer layer];
         _marque.fillColor = [[UIColor clearColor] CGColor];
@@ -161,6 +177,7 @@
 - (void)viewDidAppear:(BOOL)animated{ 
     //animate in toolbar when view appears
     [super viewDidAppear:animated];
+    [self loadScrollView];
 //    [UIView beginAnimations:@"hideView" context:nil];
 //    [UIView setAnimationDuration:0.7];
 //    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
@@ -287,7 +304,7 @@
     }
     //OK
     else if (button.tag == 4){
-        [imageProcessing setImage];//View:self.activeImageView withFeatures:featuresLocalInstance OnCanvas:canvas];
+        [imageProcessing setImageWithImageViews:editedImageViews];//View:self.activeImageView withFeatures:featuresLocalInstance OnCanvas:canvas];
         [canvas removeGestureRecognizer:pinchRecognizer];
         [canvas removeGestureRecognizer:tapProfileImageRecognizer];
         [canvas removeGestureRecognizer:panRecognizer];
@@ -296,6 +313,35 @@
         
         imageProcessing.doneEditing = TRUE;
         [toolBar setItems:saveToolBarItems];
+    }
+    //Wig ScrollView
+    else if (button.tag == 5){
+        if (!showHairContainer) {
+            showHairContainer = TRUE;
+            [self.view bringSubviewToFront:hairScrollViewContainer];
+            [self.view bringSubviewToFront:toolBar];
+            hairScrollViewContainer.hidden = NO;
+            [UIView beginAnimations:@"showView" context:nil];
+            [UIView setAnimationDuration:0.7];
+            [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:hairScrollViewContainer cache:YES];
+            hairScrollViewContainer.frame = CGRectMake(0.0f,toolBar.frame.origin.y-hairScrollViewContainer.frame.size.height, hairScrollViewContainer.frame.size.width, hairScrollViewContainer.frame.size.height);
+            
+            [UIView commitAnimations];
+        }
+        else
+        {
+            showHairContainer = FALSE;
+            
+            [UIView beginAnimations:@"showView" context:nil];
+            [UIView setAnimationDuration:0.7];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:hairScrollViewContainer cache:YES];
+            hairScrollViewContainer.frame = CGRectMake(0.0f,toolBar.frame.origin.y, hairScrollViewContainer.frame.size.width, hairScrollViewContainer.frame.size.height);
+            //[self.view bringSubviewToFront:hairScrollViewContainer];
+            //hairScrollViewContainer.hidden = YES;
+            [UIView commitAnimations];
+            
+        }
     }
     
 }
@@ -367,15 +413,27 @@
         toolBar.hidden = NO;
         
         imageProcessing = [[FaceImageProcessing alloc]init];
-        [imageProcessing initialiseImages:dictOfFaceParts withArrayOfFaceParts:arrayOfFaceParts withCanvas:canvas withImageView:self.activeImageView];
+        
+        //create a dictionary of the face parts and pass that into the imageProcessing class so it is easier to see what we have added
+        //dictOfFaceParts = [[NSDictionary alloc]initWithObjects:FACE_PARTS forKeys:FACE_KEYS];
+        [imageProcessing initialiseImages:nil withArrayOfFaceParts:nil withCanvas:canvas withImageView:self.activeImageView];
         imageProcessing.features = featuresLocalInstance;
         imageProcessing.activeImageView = self.activeImageView;
-        self.activeImageView = [imageProcessing drawImageAnnotatedWithFeatures];
+        
+        //pass in the images we want to draw on the face
+        editedImageViews = [imageProcessing drawFeaturesAnnotatedWithImageViews:faceImageViews];
+        self.activeImageView = imageProcessing.activeImageView;
         
         [self.view addSubview:activeImageView];
-        [self.view addSubview:hair];
-        [self.view addSubview:rightSB];
-        [self.view addSubview:leftSB];
+        
+        for (UIImageView *faceParts in editedImageViews) {
+            [self.view addSubview:faceParts]; 
+
+        }
+    
+//        [self.view addSubview:[editedImageViews objectAtIndex:0]]; //Hair
+//        [self.view addSubview:[editedImageViews objectAtIndex:1]];
+//        [self.view addSubview:[editedImageViews objectAtIndex:2]];
         
         //add scrolling marque to indicate selected image
         [[self.view layer] addSublayer:_marque];
@@ -388,8 +446,83 @@
     }
 }
 
+-(void)loadScrollView{
+    
+    //Make the buttons on the Scrollview match up to the images in our face parts array
+    int tag = 0;
+    buttons = [[NSMutableArray alloc]init];
+    for (UIImage *facePart in FACE_PARTS) {
+        UIButton *aButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [aButton setBackgroundImage:facePart forState:UIControlStateNormal];
+        [aButton addTarget:self action:@selector(hairButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
+        aButton.tag = tag;
+        tag++;
+        [buttons addObject:aButton];
+    }
 
+    [self.hairScrollView setShowsHorizontalScrollIndicator:NO];
+    
+    // Set up the content size of the scroll view
+    CGSize pagesScrollViewSize = self.hairScrollView.frame.size;
+//    self.hairScrollView.frame = CGSizeMake((buttonHeight + 10) * self.buttons.count, pagesScrollViewSize.height);
+    
+    int buttonHeight = pagesScrollViewSize.height;
+    int buttonWidth = pagesScrollViewSize.height;
 
+    self.hairScrollView.contentSize = CGSizeMake((buttonHeight + 10) * buttons.count, pagesScrollViewSize.height);
+
+    //create scrollview with face parts on
+    for (int page = 0; page < [buttons count]; page++){
+        CGRect frame = CGRectMake(0, 0, buttonWidth, buttonHeight);
+        frame.origin.x = (buttonWidth + 10) * page ;
+        frame.origin.y = 0.0f;
+        //frame = CGRectInset(frame, 10.0f, 0.0f);
+        
+        UIButton *currentButton = [buttons objectAtIndex:page];
+        currentButton.frame = frame;
+        [self.hairScrollView addSubview:currentButton];
+    }
+}
+
+#pragma mark - Hair BUtton Action method
+- (IBAction)hairButtonSelected:(id)sender{
+    
+    //[buttons objectAtIndex:[sender tag]];
+    // Get image context reference
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    for (CIFaceFeature *features in featuresLocalInstance) {
+        if ([sender tag] == 0) {
+            UIButton *button = (UIButton *)sender;
+            if([button backgroundImageForState:UIControlStateNormal] == [UIImage imageNamed:@"CherylSideburns.png"]){
+                [button setBackgroundImage:[FACE_PARTS objectAtIndex:[sender tag]] forState:UIControlStateNormal];
+            }
+            else{
+                [button setBackgroundImage:[UIImage imageNamed:@"CherylSideburns.png"] forState:UIControlStateNormal];
+                UIImageView *facePart = [imageProcessing drawFeature:features ofType:hairType withImage:[faceImageViews objectAtIndex:[sender tag]] InContext:context atPoint:features.bounds.origin];
+                [self.view addSubview:facePart];
+                [editedImageViews addObject:facePart];
+                                         
+            }
+            
+
+        }
+        else if([sender tag] == 1)
+        {
+            [imageProcessing drawFeature:features ofType:leftSBType withImage:[faceImageViews objectAtIndex:[sender tag]] InContext:context atPoint:features.bounds.origin];
+        }
+        else if([sender tag] == 2){
+            [imageProcessing drawFeature:features ofType:rightSBType withImage:[faceImageViews objectAtIndex:[sender tag]] InContext:context atPoint:features.bounds.origin];
+        }
+        else if([sender tag] == 3){
+            [imageProcessing drawFeature:features ofType:jumperType withImage:[faceImageViews objectAtIndex:[sender tag]] InContext:context atPoint:features.bounds.origin];
+        }
+        else if([sender tag] == 4){
+            UIImageView *facePart = [imageProcessing drawFeature:features ofType:hairType withImage:[faceImageViews objectAtIndex:[sender tag]] InContext:context atPoint:features.bounds.origin];
+            [self.view addSubview:facePart];
+            [editedImageViews addObject:facePart];
+        }
+    }
+}
 #pragma mark - Manipulate Image
 
 -(void)showOverlayWithFrame:(CGRect)frame {
@@ -412,7 +545,7 @@
 
 
 -(void)move:(id)sender {
-    [imageProcessing move:sender withView:self.view];
+    [imageProcessing move:sender withView:self.view withEditedImageViews:editedImageViews];
     [imageProcessing showOverlayWithFrame:imageProcessing.activeFacePart.frame withMarque:_marque];
 
 }
@@ -434,7 +567,7 @@
     {
         CGPoint touchPoint = [(UIGestureRecognizer*)sender locationInView:self.view];
         
-        for (UIImageView *facePart in arrayOfFaceParts) {
+        for (UIImageView *facePart in editedImageViews) {
             if (CGRectContainsPoint(facePart.frame, touchPoint))
             {
                 imageProcessing.activeFacePart = facePart;

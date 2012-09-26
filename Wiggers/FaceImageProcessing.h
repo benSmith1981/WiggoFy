@@ -10,6 +10,9 @@
 #import "Constants.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIImage+Extensions.h"
+
+
+
 @interface FaceImageProcessing :NSObject {
     NSArray *features;
     NSArray *arrayOfImagesToAdd;
@@ -30,6 +33,7 @@
     
     //Has editing been done
     BOOL doneEditing;
+    
 
 }
 @property(nonatomic,strong)UIImageView *activeImageView;
@@ -41,18 +45,18 @@
 //@property(nonatomic,strong)NSDictionary *imagesToAdd;
 +(void)processFace:(UIImage*)faceImage;
 -(void)initialiseImages:(NSDictionary*)images withArrayOfFaceParts:(NSArray*)arrayOfFaceParts withCanvas:(UIView*)canvasParam withImageView:(UIImageView*)imageView;
--(UIImageView*)drawImageAnnotatedWithFeatures;
+-(NSMutableArray*)drawFeaturesAnnotatedWithImageViews:(NSMutableArray *)imageViews;
 - (UIImage*) drawText:(NSString*)text inImage:(UIImage*)image atPoint:(CGPoint)point;
 - (UIImage*)addOverlayToBaseImage:(UIImage*)baseImage;
 - (UIImage*)dumpOverlayViewToImage;//:(UIImageView*)activeImage;
-- (void)drawFeature:(int)feature InContext:(CGContextRef)contextLocal atPoint:(CGPoint)featurePoint;
-
+//- (void)drawFeature:(int)feature InContext:(CGContextRef)contextLocal atPoint:(CGPoint)featurePoint;
+- (UIImageView*)drawFeature:(CIFaceFeature*)f ofType:(faceFeatureType)featureType withImage:(UIImageView*)imageView InContext:(CGContextRef)contextLocal atPoint:(CGPoint)featurePoint;
 //this is called when the save image button is pressed
--(void)setImage;//View:(UIImageView*)activeImageView withFeatures:(NSArray*)features OnCanvas:(UIView*)canvas;
+-(void)setImageWithImageViews:(NSMutableArray*)imageViews;//View:(UIImageView*)activeImageView withFeatures:(NSArray*)features OnCanvas:(UIView*)canvas;
 //- (UIImageView*)drawImage:(UIImageView*)image AnnotatedWithFeatures:(NSArray*)features;
 
 -(void)showOverlayWithFrame:(CGRect)frame withMarque:(CAShapeLayer*)_marque;
 -(void)scale:(id)sender withView:(UIView*)view;
 -(void)rotate:(id)sender withView:(UIView*)view;
--(void)move:(id)sender withView:(UIView*)view;
+-(void)move:(id)sender withView:(UIView*)view withEditedImageViews:(NSMutableArray*)editedImageViewsParam;
 @end

@@ -18,6 +18,7 @@
 		90302B38160E12FD00F8992C /* betterHairScaled.png in Resources */ = {isa = PBXBuildFile; fileRef = 90302B35160E12FC00F8992C /* betterHairScaled.png */; };
 		90302B39160E12FD00F8992C /* leftlargesideburnScaled.png in Resources */ = {isa = PBXBuildFile; fileRef = 90302B36160E12FD00F8992C /* leftlargesideburnScaled.png */; };
 		90302B3A160E12FD00F8992C /* rightlargesideburnScaled.png in Resources */ = {isa = PBXBuildFile; fileRef = 90302B37160E12FD00F8992C /* rightlargesideburnScaled.png */; };
+		90302BA91610D18600F8992C /* HairScrollViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 90302BA71610D16C00F8992C /* HairScrollViewContainer.m */; };
 		905EAC701601F99A000C8264 /* jeresyHeadOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 905EAC6F1601F99A000C8264 /* jeresyHeadOverlay.png */; };
 		905EAC721601FA7A000C8264 /* JerseyNoHeadOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 905EAC711601FA7A000C8264 /* JerseyNoHeadOverlay.png */; };
 		905EAC741601FA87000C8264 /* jerseyEnlarged.png in Resources */ = {isa = PBXBuildFile; fileRef = 905EAC731601FA87000C8264 /* jerseyEnlarged.png */; };
@@ -142,6 +143,8 @@
 		90302B35160E12FC00F8992C /* betterHairScaled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = betterHairScaled.png; path = "Graphics/Non Retina/Face Parts/betterHairScaled.png"; sourceTree = SOURCE_ROOT; };
 		90302B36160E12FD00F8992C /* leftlargesideburnScaled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leftlargesideburnScaled.png; path = "Graphics/Non Retina/Face Parts/leftlargesideburnScaled.png"; sourceTree = SOURCE_ROOT; };
 		90302B37160E12FD00F8992C /* rightlargesideburnScaled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rightlargesideburnScaled.png; path = "Graphics/Non Retina/Face Parts/rightlargesideburnScaled.png"; sourceTree = SOURCE_ROOT; };
+		90302BA61610D16C00F8992C /* HairScrollViewContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HairScrollViewContainer.h; sourceTree = "<group>"; };
+		90302BA71610D16C00F8992C /* HairScrollViewContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HairScrollViewContainer.m; sourceTree = "<group>"; };
 		905EAC6F1601F99A000C8264 /* jeresyHeadOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jeresyHeadOverlay.png; sourceTree = "<group>"; };
 		905EAC711601FA7A000C8264 /* JerseyNoHeadOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JerseyNoHeadOverlay.png; sourceTree = "<group>"; };
 		905EAC731601FA87000C8264 /* jerseyEnlarged.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jerseyEnlarged.png; sourceTree = "<group>"; };
@@ -369,6 +372,8 @@
 				90C9E6E6160A487E00B0BB13 /* FaceImageProcessing.m */,
 				90E6B83815F6795000A7ED78 /* ImageManipulationVC.h */,
 				90E6B83915F6795000A7ED78 /* ImageManipulationVC.m */,
+				90302BA61610D16C00F8992C /* HairScrollViewContainer.h */,
+				90302BA71610D16C00F8992C /* HairScrollViewContainer.m */,
 				90C9E6E8160A90DC00B0BB13 /* UIImage+Extensions.h */,
 				90C9E6E9160A90DC00B0BB13 /* UIImage+Extensions.m */,
 				90E46B3A1606958E008514B5 /* InfoVC.h */,
@@ -569,6 +574,7 @@
 				90C9E6E4160A35BF00B0BB13 /* CameraVC.m in Sources */,
 				90C9E6E7160A487E00B0BB13 /* FaceImageProcessing.m in Sources */,
 				90C9E6EA160A90DD00B0BB13 /* UIImage+Extensions.m in Sources */,
+				90302BA91610D18600F8992C /* HairScrollViewContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,10 +29,10 @@
     //Image Views for body parts
     NSArray *arrayOfFaceParts;
     NSDictionary *dictOfFaceParts;
-    UIImageView *rightSB;
-    UIImageView *leftSB;
-    UIImageView *jumper;
-    UIImageView *hair;
+//    UIImageView *rightSB;
+//    UIImageView *leftSB;
+//    UIImageView *jumper;
+//    UIImageView *hair;
     UIToolbar *imageControls;
     
     //Scale manipulate image
@@ -45,6 +45,7 @@
     UIBarButtonItem *saveImage;
     UIBarButtonItem *takeNewImage;
     UIBarButtonItem *ok;
+    UIBarButtonItem *wigs;
     NSArray *saveToolBarItems;
     NSArray *okToolBarItems;
     
@@ -70,7 +71,19 @@
     //Marque round selected image part
     CAShapeLayer *_marque;
     
+    //buttons on scroll view containing face parts
+    NSMutableArray *buttons;
+    
+    BOOL showHairContainer;
+    //NSMutableArray *editedImages;
+    NSMutableArray *editedImageViews;
+    NSMutableArray *faceImageViews;
+    NSMutableArray *sideBurnImageViews;
+    NSMutableArray *jerseyImageViews;
+    
 }
+@property (nonatomic, strong) IBOutlet UIView *hairScrollViewContainer;
+@property (nonatomic, strong) IBOutlet UIScrollView *hairScrollView;
 @property (weak) id <failedToDetectFeature> delegate;
 @property (nonatomic,strong) NSArray *featuresLocalInstance;
 @property (weak, nonatomic) IBOutlet UITextView *Info;
@@ -95,7 +108,7 @@
 //@property (nonatomic, strong) UIBarButtonItem *saveImage;
 //@property (nonatomic, strong) UIBarButtonItem *takeNewImage;
 //@property (nonatomic, strong) UIBarButtonItem *ok;
-
+-(void)loadScrollView;
 -(void)alertSaveBox;
 - (void)showLoadingText;
 - (UIBarButtonItem *)customAddButtonItem:(NSString*)title WithTarget:(id)target action:(SEL)action andTag:(int)tag andTextSize:(int)textSize;

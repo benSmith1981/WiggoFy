@@ -36,6 +36,25 @@
 #define productPurchase @"proUpgradeTransactionReceipt"
 #define kInAppPurchaseProUpgradeProductId @"com.BenSmithInc.Wiggers"
 
-#define kHairKey @"hair"
-#define krightSBKey @"rightSB"
-#define kleftSBKey @"leftSB"
+#define kHairKey 1
+#define krightSBKey 2
+#define kleftSBKey 3
+
+
+#define IMG(name) [UIImage imageNamed:name]
+#define FACE_PARTS [NSArray arrayWithObjects:IMG(@"betterHairScaled.png"), IMG(@"leftlargesideburnScaled.png"), IMG(@"rightlargesideburnScaled.png"), IMG(@"yellowJumper.png"), IMG(@"hair.png"), nil]
+
+#define HAIR_IMAGES [NSArray arrayWithObjects:IMG(@"betterHairScaled.png"), IMG(@"hair.png"), nil]
+
+#define FACE_KEYS [NSArray arrayWithObjects:@"hair",@"leftSB",@"rightSB",@"yellowJumper",@"hair", nil]
+
+typedef enum {
+    leftEyeType = 1,
+    rightEyeType = 2,
+    mouthType = 3,
+    hairType = 4,
+    leftSBType = 5,
+    rightSBType = 6,
+    jumperType = 7
+    
+} faceFeatureType;
