@@ -53,6 +53,10 @@
 
 - (IBAction)buttonPressed:(id)sender;
 - (IBAction)AdFreePurchase:(id)sender;
+- (void)ImagePicker;
+- (void)showImagePicker:(UIImagePickerControllerSourceType)sourceType;
+
+
 
 @end
 

@@ -10,8 +10,7 @@
 #import "Constants.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIImage+Extensions.h"
-
-
+#import "faceFeature.h"
 
 @interface FaceImageProcessing :NSObject {
     NSArray *features;
@@ -50,13 +49,13 @@
 - (UIImage*)addOverlayToBaseImage:(UIImage*)baseImage;
 - (UIImage*)dumpOverlayViewToImage;//:(UIImageView*)activeImage;
 //- (void)drawFeature:(int)feature InContext:(CGContextRef)contextLocal atPoint:(CGPoint)featurePoint;
-- (UIImageView*)drawFeature:(CIFaceFeature*)f ofType:(faceFeatureType)featureType withImage:(UIImageView*)imageView InContext:(CGContextRef)contextLocal atPoint:(CGPoint)featurePoint;
+- (faceFeature*)drawFeature:(CIFaceFeature*)f ofType:(faceFeatureType)featureType withImage:(UIImageView*)imageView atPoint:(CGPoint)featurePoint;
 //this is called when the save image button is pressed
--(void)setImageWithImageViews:(NSMutableArray*)imageViews;//View:(UIImageView*)activeImageView withFeatures:(NSArray*)features OnCanvas:(UIView*)canvas;
+-(void)setImageWithImageViews:(NSMutableArray*)faceFeatures;//View:(UIImageView*)activeImageView withFeatures:(NSArray*)features OnCanvas:(UIView*)canvas;
 //- (UIImageView*)drawImage:(UIImageView*)image AnnotatedWithFeatures:(NSArray*)features;
 
 -(void)showOverlayWithFrame:(CGRect)frame withMarque:(CAShapeLayer*)_marque;
 -(void)scale:(id)sender withView:(UIView*)view;
 -(void)rotate:(id)sender withView:(UIView*)view;
--(void)move:(id)sender withView:(UIView*)view withEditedImageViews:(NSMutableArray*)editedImageViewsParam;
+-(void)move:(id)sender withView:(UIView*)view withEditedFaceFeatures:(NSMutableArray*)editedFaceFeatureParam;
 @end

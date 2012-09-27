@@ -33,5 +33,6 @@
 @property (nonatomic,strong)UIImageView *savedImageView;
 @property (nonatomic,strong)UIToolbar *toolBar;
 
+- (UIBarButtonItem *)customAddButtonItem:(NSString*)title WithTarget:(id)target action:(SEL)action andTag:(int)tag andTextSize:(int)textSize;
 @end
 

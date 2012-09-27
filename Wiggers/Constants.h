@@ -42,7 +42,9 @@
 
 
 #define IMG(name) [UIImage imageNamed:name]
-#define FACE_PARTS [NSArray arrayWithObjects:IMG(@"betterHairScaled.png"), IMG(@"leftlargesideburnScaled.png"), IMG(@"rightlargesideburnScaled.png"), IMG(@"yellowJumper.png"), IMG(@"hair.png"), nil]
+#define FACE_IMAGE_NAMES [NSArray arrayWithObjects:@"betterHairScaled.png",  @"rightlargesideburnScaled.png",@"leftlargesideburnScaled.png", @"yellowJumper.png", @"hair.png", nil]
+
+#define FACE_PARTS [NSArray arrayWithObjects:IMG(@"betterHairScaled.png"),  IMG(@"rightlargesideburnScaled.png"),IMG(@"leftlargesideburnScaled.png"), IMG(@"yellowJumper.png"), IMG(@"hair.png"), nil]
 
 #define HAIR_IMAGES [NSArray arrayWithObjects:IMG(@"betterHairScaled.png"), IMG(@"hair.png"), nil]
 

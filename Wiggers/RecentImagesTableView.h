@@ -33,4 +33,5 @@
 
 @property(nonatomic,strong) NSArray *arrayOfImagePaths;
 @property(nonatomic,strong) UITableView* table;
+- (UIBarButtonItem *)customAddButtonItem:(NSString*)title WithTarget:(id)target action:(SEL)action andTag:(int)tag andTextSize:(int)textSize  isEnabled:(BOOL)enabled;
 @end

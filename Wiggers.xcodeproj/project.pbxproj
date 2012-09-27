@@ -13,6 +13,11 @@
 		9013F9A515FDEF0400BC8948 /* Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9013F9A415FDEF0300BC8948 /* Animation.m */; };
 		9027265F160B8A1A004DB4B2 /* libShareKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90272656160B892E004DB4B2 /* libShareKit.a */; };
 		90272661160B8A33004DB4B2 /* ShareKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 90272658160B892E004DB4B2 /* ShareKit.bundle */; };
+		902B582416145AF800061CED /* cameraIconLarge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 902B582216145AF800061CED /* cameraIconLarge@2x.png */; };
+		902B582516145AF800061CED /* photoAlbumButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 902B582316145AF800061CED /* photoAlbumButton@2x.png */; };
+		902B582816145B9C00061CED /* cameraIconLargePressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 902B582616145B9C00061CED /* cameraIconLargePressed@2x.png */; };
+		902B582916145B9C00061CED /* photoAlbumButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 902B582716145B9C00061CED /* photoAlbumButtonPressed@2x.png */; };
+		902B58441614EA0700061CED /* faceFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = 902B58431614EA0700061CED /* faceFeature.m */; };
 		90302B08160B99D300F8992C /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90302B07160B99D300F8992C /* libGoogleAdMobAds.a */; };
 		90302B0A160B9E7A00F8992C /* SHKCustomSharers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90302B09160B9E7A00F8992C /* SHKCustomSharers.plist */; };
 		90302B38160E12FD00F8992C /* betterHairScaled.png in Resources */ = {isa = PBXBuildFile; fileRef = 90302B35160E12FC00F8992C /* betterHairScaled.png */; };
@@ -129,6 +134,12 @@
 		9013F9A315FDEF0200BC8948 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		9013F9A415FDEF0300BC8948 /* Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animation.m; sourceTree = "<group>"; };
 		90272648160B892E004DB4B2 /* ShareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShareKit.xcodeproj; path = Submodules/ShareKit/ShareKit.xcodeproj; sourceTree = "<group>"; };
+		902B582216145AF800061CED /* cameraIconLarge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cameraIconLarge@2x.png"; path = "Graphics/Retina/Buttons/cameraIconLarge@2x.png"; sourceTree = SOURCE_ROOT; };
+		902B582316145AF800061CED /* photoAlbumButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "photoAlbumButton@2x.png"; path = "Graphics/Retina/Buttons/photoAlbumButton@2x.png"; sourceTree = SOURCE_ROOT; };
+		902B582616145B9C00061CED /* cameraIconLargePressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cameraIconLargePressed@2x.png"; path = "Graphics/Retina/Buttons/cameraIconLargePressed@2x.png"; sourceTree = SOURCE_ROOT; };
+		902B582716145B9C00061CED /* photoAlbumButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "photoAlbumButtonPressed@2x.png"; path = "Graphics/Retina/Buttons/photoAlbumButtonPressed@2x.png"; sourceTree = SOURCE_ROOT; };
+		902B58421614EA0700061CED /* faceFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = faceFeature.h; sourceTree = "<group>"; };
+		902B58431614EA0700061CED /* faceFeature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = faceFeature.m; sourceTree = "<group>"; };
 		90302AFE160B99D300F8992C /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdMobExtras.h; sourceTree = "<group>"; };
 		90302AFF160B99D300F8992C /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdNetworkExtras.h; sourceTree = "<group>"; };
 		90302B00160B99D300F8992C /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdSize.h; sourceTree = "<group>"; };
@@ -264,6 +275,10 @@
 		9013F97C15FC862D00BC8948 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				902B582616145B9C00061CED /* cameraIconLargePressed@2x.png */,
+				902B582716145B9C00061CED /* photoAlbumButtonPressed@2x.png */,
+				902B582216145AF800061CED /* cameraIconLarge@2x.png */,
+				902B582316145AF800061CED /* photoAlbumButton@2x.png */,
 				90E46B2A1606161E008514B5 /* cameraButtonPressed.png */,
 				90E46B2B1606161E008514B5 /* photoAlbumButtonPressed.png */,
 				90E46B26160610D1008514B5 /* photoAlbumButton.png */,
@@ -372,6 +387,8 @@
 				90C9E6E6160A487E00B0BB13 /* FaceImageProcessing.m */,
 				90E6B83815F6795000A7ED78 /* ImageManipulationVC.h */,
 				90E6B83915F6795000A7ED78 /* ImageManipulationVC.m */,
+				902B58421614EA0700061CED /* faceFeature.h */,
+				902B58431614EA0700061CED /* faceFeature.m */,
 				90302BA61610D16C00F8992C /* HairScrollViewContainer.h */,
 				90302BA71610D16C00F8992C /* HairScrollViewContainer.m */,
 				90C9E6E8160A90DC00B0BB13 /* UIImage+Extensions.h */,
@@ -550,6 +567,10 @@
 				90302B38160E12FD00F8992C /* betterHairScaled.png in Resources */,
 				90302B39160E12FD00F8992C /* leftlargesideburnScaled.png in Resources */,
 				90302B3A160E12FD00F8992C /* rightlargesideburnScaled.png in Resources */,
+				902B582416145AF800061CED /* cameraIconLarge@2x.png in Resources */,
+				902B582516145AF800061CED /* photoAlbumButton@2x.png in Resources */,
+				902B582816145B9C00061CED /* cameraIconLargePressed@2x.png in Resources */,
+				902B582916145B9C00061CED /* photoAlbumButtonPressed@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +596,7 @@
 				90C9E6E7160A487E00B0BB13 /* FaceImageProcessing.m in Sources */,
 				90C9E6EA160A90DD00B0BB13 /* UIImage+Extensions.m in Sources */,
 				90302BA91610D18600F8992C /* HairScrollViewContainer.m in Sources */,
+				902B58441614EA0700061CED /* faceFeature.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

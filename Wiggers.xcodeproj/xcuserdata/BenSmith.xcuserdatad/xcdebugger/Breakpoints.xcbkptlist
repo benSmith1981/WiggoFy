@@ -185,5 +185,18 @@
          landmarkName = "@synthesize delegate,imagePickerController,cameraImageView;"
          landmarkType = "19">
       </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Wiggers/ImageManipulationVC.m"
+         timestampString = "370476366.733426"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "668"
+         endingLineNumber = "668"
+         landmarkName = "-tapped:"
+         landmarkType = "5">
+      </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

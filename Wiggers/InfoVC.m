@@ -15,7 +15,7 @@
 @implementation InfoVC
 @synthesize backButton;
 @synthesize text1;
-@synthesize text2,secondaryView,label;
+@synthesize text2,secondaryView,label,textView1,textView2;
 
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 //{

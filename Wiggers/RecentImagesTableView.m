@@ -87,7 +87,7 @@
                                                                               action:nil];
     
     //create toolbar arrays
-    recentImagesToolbar = [NSArray arrayWithObjects:back,flexItem, share,flexItem, view, nil];
+    recentImagesToolbar = [NSArray arrayWithObjects:flexItem, back,flexItem, nil];
     [toolBar setItems:recentImagesToolbar animated:NO];
     [self.view addSubview:toolBar];
 }
@@ -279,7 +279,12 @@
 {
     selectedFile = [arrayOfImagePaths objectAtIndex:indexPath.row];
     loadedImageView = [[UIImageView alloc]initWithImage:[SaveImage loadImage:selectedFile]];
-    share.enabled = TRUE;
+    //share.enabled = TRUE;
+    savedImageVC = [[SaveImageVC alloc]initWithNibName:@"SaveImageVC" bundle:nil];
+    savedImageVC.delegate = self;
+    savedImageVC.filename = selectedFile;
+    savedImageVC.savedImage = loadedImageView.image;
+    [self.navigationController pushViewController:savedImageVC animated:YES];
 
     //[self presentModalViewController:savedImageVC animated:YES];
 }

@@ -7,7 +7,7 @@
 //
 
 #import "FaceImageProcessing.h"
-
+ 
 @implementation FaceImageProcessing
 @synthesize activeFacePart,features,doneEditing,objectMoving,activeImageView;
 
@@ -50,7 +50,7 @@
 #pragma mark - DrawImage    
 -(NSMutableArray*)drawFeaturesAnnotatedWithImageViews:(NSMutableArray *)imageViews{
     
-    NSMutableArray *faceImageViews = [[NSMutableArray alloc]init];
+    NSMutableArray *faceFeatures = [[NSMutableArray alloc]init];
     UIImage *faceImage = activeImageView.image;
     UIGraphicsBeginImageContextWithOptions(faceImage.size, YES, 0);
     [faceImage drawInRect: activeImageView.bounds];
@@ -109,9 +109,14 @@
 //        hair.image = [hair.image imageByScalingProportionallyToSize: CGSizeMake(f.bounds.size.width + f.bounds.size.width/4, f.bounds.size.height + f.bounds.size.height/6)];
 //        hair.frame = CGRectMake(f.bounds.origin.x-f.bounds.size.width/8.5, IMG_HEIGHT - (f.bounds.origin.y + f.bounds.size.height + f.bounds.size.height/2 ), hair.image.size.width,hair.image.size.height);
 //        [faceImageViews addObject:hair];
-        [faceImageViews addObject:[self drawFeature:f ofType:hairType withImage:[imageViews objectAtIndex:0] InContext:context atPoint:f.bounds.origin]];
-        [faceImageViews addObject:[self drawFeature:f ofType:leftSBType withImage:[imageViews objectAtIndex:1] InContext:context atPoint:f.bounds.origin]];
-        [faceImageViews addObject:[self drawFeature:f ofType:rightSBType withImage:[imageViews objectAtIndex:2] InContext:context atPoint:f.bounds.origin]];
+        UIImageView *hair = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[FACE_IMAGE_NAMES objectAtIndex:0]]];
+        [faceFeatures addObject:[self drawFeature:f ofType:hairType withImage:hair atPoint:f.bounds.origin]];
+        
+        UIImageView *leftSB = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[FACE_IMAGE_NAMES objectAtIndex:1]]];
+        [faceFeatures addObject:[self drawFeature:f ofType:leftSBType withImage:leftSB atPoint:f.bounds.origin]];
+        
+        UIImageView *rightSB = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[FACE_IMAGE_NAMES objectAtIndex:2]]];
+        [faceFeatures addObject:[self drawFeature:f ofType:rightSBType withImage:rightSB atPoint:f.bounds.origin]];
         
 //        UIImageView *leftSB = [imageViews objectAtIndex:1];
 //        CGFloat leftSBScaleWidth = f.bounds.size.width*1/3;
@@ -131,12 +136,12 @@
     activeImageView.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    return faceImageViews;
+    return faceFeatures;
 }
 
 
 //this is called when the save image button is pressed
--(void)setImageWithImageViews:(NSMutableArray*)imageViews{ //View:(UIImageView*)activeImageView withFeatures:(NSArray*)features OnCanvas:(UIView*)canvas{
+-(void)setImageWithImageViews:(NSMutableArray*)faceFeatures{ //View:(UIImageView*)activeImageView withFeatures:(NSArray*)features OnCanvas:(UIView*)canvas{
     UIImage *faceImage = activeImageView.image;
     
     NSString *wiggoText = @"#WiggoFied!";
@@ -162,13 +167,9 @@
     }
     
     
-    //This is the important code to add the face parts to the image
-    for (UIImageView *facePart in features) {
-        //[self.activeImageView addSubview:facePart];
-    }
     
-    for (UIImageView *faceparts in imageViews) {
-        [activeImageView addSubview:faceparts];
+    for (faceFeature *faceparts in faceFeatures) {
+        [activeImageView addSubview:faceparts.featureImageView];
     }
 //    [activeImageView addSubview:[imageViews objectAtIndex:0]];
 //    [activeImageView addSubview:[imageViews objectAtIndex:1]];
@@ -186,12 +187,14 @@
 }
 
 
-- (UIImageView*)drawFeature:(CIFaceFeature*)f ofType:(faceFeatureType)featureType withImage:(UIImageView*)imageView InContext:(CGContextRef)contextLocal atPoint:(CGPoint)featurePoint {
+- (faceFeature*)drawFeature:(CIFaceFeature*)f ofType:(faceFeatureType)featureType withImage:(UIImageView*)imageView atPoint:(CGPoint)featurePoint {
 
     CGFloat leftSBScaleWidth = f.bounds.size.width*1/3;
     CGFloat leftSBScaleHeight = f.bounds.size.height*1/1.8;
     CGFloat rightSBScaleWidth = f.bounds.size.width*1/4;
     CGFloat rightSBScaleHeight = f.bounds.size.height*1/1.8;
+    
+    faceFeature *newFaceFeature = [[faceFeature alloc]init];
     switch (featureType) {
         case 1:// left eye
 
@@ -204,20 +207,27 @@
             break;
         case 4://hair
             imageView.image = [imageView.image imageByScalingProportionallyToSize: CGSizeMake(f.bounds.size.width + f.bounds.size.width/4, f.bounds.size.height + f.bounds.size.height/6)];
-            imageView.frame = CGRectMake(f.bounds.origin.x-f.bounds.size.width/8.5, IMG_HEIGHT - (f.bounds.origin.y + f.bounds.size.height + f.bounds.size.height/2 ), imageView.image.size.width,imageView.image.size.height);            
+            imageView.frame = CGRectMake(f.bounds.origin.x-f.bounds.size.width/8.5, IMG_HEIGHT - (f.bounds.origin.y + f.bounds.size.height + f.bounds.size.height/2 ), imageView.image.size.width,imageView.image.size.height);
+            [newFaceFeature setType:featureType];
+            newFaceFeature.featureImageView = imageView;
+            //[imageView setType:featureType];
             break;
         case 5:// right sideburn
             imageView.image = [imageView.image imageByScalingProportionallyToSize:CGSizeMake(rightSBScaleWidth, rightSBScaleHeight)];
             imageView.frame = CGRectMake(f.bounds.origin.x + f.bounds.size.width - imageView.frame.size.width, IMG_HEIGHT - (f.bounds.origin.y + imageView.frame.size.height),  imageView.image.size.width, imageView.image.size.height );
+            [newFaceFeature setType:featureType];
+            newFaceFeature.featureImageView = imageView;
             break;
         case 6:// left sideburn
             imageView.image = [imageView.image imageByScalingProportionallyToSize:CGSizeMake(leftSBScaleWidth,leftSBScaleHeight)];
             imageView.frame = CGRectMake(f.bounds.origin.x, IMG_HEIGHT - (f.bounds.origin.y + imageView.frame.size.height), imageView.image.size.width, imageView.image.size.height);
+            [newFaceFeature setType:featureType];
+            newFaceFeature.featureImageView = imageView;
             break;
         default:
             break;
     }
-    return imageView;
+    return newFaceFeature;
 }
 
 /*To add an overlay image to the camera image you must specify the overlay image here
@@ -377,13 +387,13 @@
 }
 
 
--(void)move:(id)sender withView:(UIView*)view withEditedImageViews:(NSMutableArray*)editedImageViewsParam{
+-(void)move:(id)sender withView:(UIView*)view withEditedFaceFeatures:(NSMutableArray*)editedFaceFeatureParam{
     
     CGPoint touchPoint = [(UIGestureRecognizer*)sender locationInView:view];
-    for (UIImageView *facePart in editedImageViewsParam) {
-        if (CGRectContainsPoint(facePart.frame, touchPoint) && !objectMoving)
+    for (faceFeature *facePart in editedFaceFeatureParam) {
+        if (CGRectContainsPoint(facePart.featureImageView.frame, touchPoint) && !objectMoving)
         {
-            activeFacePart = facePart;
+            activeFacePart = facePart.featureImageView;
         }
     }
     

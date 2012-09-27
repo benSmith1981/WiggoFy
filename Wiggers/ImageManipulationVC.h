@@ -76,7 +76,7 @@
     
     BOOL showHairContainer;
     //NSMutableArray *editedImages;
-    NSMutableArray *editedImageViews;
+    NSMutableArray *editedFaceFeatures;
     NSMutableArray *faceImageViews;
     NSMutableArray *sideBurnImageViews;
     NSMutableArray *jerseyImageViews;
