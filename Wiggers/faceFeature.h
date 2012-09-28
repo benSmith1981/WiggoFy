@@ -10,9 +10,11 @@
 #import "Constants.h"
 @interface faceFeature : NSObject{
     faceFeatureType featureType;
+    
 }
-
+@property (nonatomic, strong)CIFaceFeature *featureBelongsToo;
 @property (nonatomic, strong)UIImageView *featureImageView;
+@property (nonatomic, strong)UIButton *featureButton;
 
 -(faceFeatureType)isOfType;
 -(void)setType:(faceFeatureType)type;

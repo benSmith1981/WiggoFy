@@ -210,6 +210,7 @@
             imageView.frame = CGRectMake(f.bounds.origin.x-f.bounds.size.width/8.5, IMG_HEIGHT - (f.bounds.origin.y + f.bounds.size.height + f.bounds.size.height/2 ), imageView.image.size.width,imageView.image.size.height);
             [newFaceFeature setType:featureType];
             newFaceFeature.featureImageView = imageView;
+            newFaceFeature.featureBelongsToo = f;
             //[imageView setType:featureType];
             break;
         case 5:// right sideburn
@@ -217,12 +218,14 @@
             imageView.frame = CGRectMake(f.bounds.origin.x + f.bounds.size.width - imageView.frame.size.width, IMG_HEIGHT - (f.bounds.origin.y + imageView.frame.size.height),  imageView.image.size.width, imageView.image.size.height );
             [newFaceFeature setType:featureType];
             newFaceFeature.featureImageView = imageView;
+            newFaceFeature.featureBelongsToo = f;
             break;
         case 6:// left sideburn
             imageView.image = [imageView.image imageByScalingProportionallyToSize:CGSizeMake(leftSBScaleWidth,leftSBScaleHeight)];
             imageView.frame = CGRectMake(f.bounds.origin.x, IMG_HEIGHT - (f.bounds.origin.y + imageView.frame.size.height), imageView.image.size.width, imageView.image.size.height);
             [newFaceFeature setType:featureType];
             newFaceFeature.featureImageView = imageView;
+            newFaceFeature.featureBelongsToo = f;
             break;
         default:
             break;

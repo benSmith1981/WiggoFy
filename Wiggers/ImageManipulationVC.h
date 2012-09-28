@@ -20,6 +20,7 @@
 #import "TestFlight.h"
 #import "Constants.h"
 #import "FaceImageProcessing.h"
+#import "faceFeature.h"
 
 @protocol failedToDetectFeature
 - (void)noFeaturesDetected;

@@ -30,14 +30,7 @@
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-//        hair = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"betterHairScaled.png"]];
-//        rightSB = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"rightlargesideburnScaled.png"]];
-//        leftSB = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"leftlargesideburnScaled.png"]];
-//        jumper = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"jerseyEnlarged.png"]];
-        
-        arrayOfFaceParts = [[NSArray alloc]initWithArray: FACE_PARTS];//],jumper, nil];
-        //dictOfFaceParts = [[NSDictionary alloc]initWithObjects:FACE_PARTS forKeys:[[NSArray alloc]initWithObjects:kHairKey,krightSBKey,kleftSBKey, nil]];
-        
+
         //intialise toolbar
         if ([[NSUserDefaults standardUserDefaults] boolForKey:productPurchase]) {
             toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(TOOLBAR_X_POSITION_NO_ADS, TOOLBAR_Y_POSITION_NO_ADS, TOOLBAR_WIDTH, TOOLBAR_HEIGHT)];
@@ -82,8 +75,8 @@
         faceImageViews = [[NSMutableArray alloc]init];
         editedFaceFeatures = [[NSMutableArray alloc]init];
         
-        for (UIImage *faceParts in FACE_PARTS) {
-            [faceImageViews addObject:[[UIImageView alloc]initWithImage:faceParts]];
+        for (NSString *faceParts in FACE_IMAGE_NAMES) {
+            [faceImageViews addObject:[[UIImageView alloc]initWithImage:[UIImage imageNamed:faceParts]]];
         }
         
 //        for (UIImage *hair in HAIR_IMAGES) {
@@ -469,13 +462,10 @@
         }
         [buttons addObject:aButton];
     }
-
     [self.hairScrollView setShowsHorizontalScrollIndicator:NO];
     
     // Set up the content size of the scroll view
-    CGSize pagesScrollViewSize = self.hairScrollView.frame.size;
-//    self.hairScrollView.frame = CGSizeMake((buttonHeight + 10) * self.buttons.count, pagesScrollViewSize.height);
-    
+    CGSize pagesScrollViewSize = self.hairScrollView.frame.size;    
     int buttonHeight = pagesScrollViewSize.height;
     int buttonWidth = pagesScrollViewSize.height;
 
@@ -497,132 +487,95 @@
 #pragma mark - Hair BUtton Action method
 - (IBAction)hairButtonSelected:(id)sender{
     
-    //[buttons objectAtIndex:[sender tag]];
-    // Get image context reference
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
     //reset buttons to normal state
     for (int i = 0;i<[buttons count];i++)
     {
         [[buttons objectAtIndex:i] setBackgroundImage:[FACE_PARTS objectAtIndex:i] forState:UIControlStateNormal];
-//        [[buttons objectAtIndex:i] setSelected:NO];
     }
-    NSMutableArray *newEditedImageViews = [[NSMutableArray alloc]init];;
+    
     UIButton *button = (UIButton *)sender;
+    NSMutableArray *newEditedImageViews = [[NSMutableArray alloc]init];
 
-    for (CIFaceFeature *features in featuresLocalInstance) {
-        
+    //for (CIFaceFeature *feature in featuresLocalInstance) {
+    for (faceFeature *feature in editedFaceFeatures) {
         // draw betterHairScaled.png on view
         if ([sender tag] == 0) {
-            //UIButton *button = (UIButton *)sender;
-            //if not selected
-            //if([button backgroundImageForState:UIControlStateNormal] == [UIImage imageNamed:@"CherylSideburns.png"])
-            //if(![button isSelected])
-//            {
-//                [button setSelected:YES];
-//                faceFeature *facePart = [imageProcessing drawFeature:features ofType:hairType withImage:[[UIImageView alloc]initWithImage:[UIImage imageNamed:[FACE_IMAGE_NAMES objectAtIndex:[sender tag]]]] atPoint:features.bounds.origin];
-//                
-//
-//                for (faceFeature *feature in editedFaceFeatures) {
-//                    if([feature isOfType] == hairType)
-//                    {
-//                        [feature.featureImageView removeFromSuperview];
-//                        [newEditedImageViews addObject:facePart];
-//                        [self.view addSubview:facePart.featureImageView];
-//                    }
-//                }
-                //[newEditedImageViews addObject:[self updateFeature:features withFaceFeatureType:hairType atIndex:[sender tag]]];
-                //editedFaceFeatures = nil;
-                editedFaceFeatures = [[NSMutableArray alloc]initWithArray:[self updateFeature:features withFaceFeatureType:hairType atIndex:[sender tag]]];
-                //hair = nil;
-                                         
-//            }
-        }
-        // draw hair.png
-        else if([sender tag] == 4){
-            //if selected
-            //if([button backgroundImageForState:UIControlStateNormal] == [UIImage imageNamed:@"CherylSideburns.png"]){
-            //if(![button isSelected])
-//            {
-//                [button setSelected:YES];
-//                faceFeature *facePart = [imageProcessing drawFeature:features ofType:hairType withImage:[[UIImageView alloc]initWithImage:[UIImage imageNamed:[FACE_IMAGE_NAMES objectAtIndex:[sender tag]]]] atPoint:features.bounds.origin];
-//                
-//                for (faceFeature *feature in editedFaceFeatures) {
-//                    if([feature isOfType] == hairType)
-//                    {
-//                        [feature.featureImageView removeFromSuperview];
-//                        [newEditedImageViews addObject:facePart];
-//                        [self.view addSubview:facePart.featureImageView];
-//                    }
-//                    
-//                }
-                
-                //hair = nil;
-                //[newEditedImageViews addObject:];
-                //editedFaceFeatures = nil;
-                editedFaceFeatures = [[NSMutableArray alloc]initWithArray:[self updateFeature:features withFaceFeatureType:hairType atIndex:[sender tag]]];
+            if ([feature isOfType]==hairType) {
+                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType atIndex:[sender tag]]];
+            }
+            else{
+                [newEditedImageViews addObject:feature];
+            }
 
-//            }
-            
-            
-        }
-        
+            //editedFaceFeatures = ];
+
+        }        
         //draw leftSB
         else if([sender tag] == 1)
         {
-
+            if ([feature isOfType]==leftSBType) {
+                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:leftSBType atIndex:[sender tag]]];
+            }
+            else{
+                [newEditedImageViews addObject:feature];
+            }
         }
         //draw rightSB
         else if([sender tag] == 2){
-//            [imageProcessing drawFeature:features ofType:rightSBType withImage:[faceImageViews objectAtIndex:[sender tag]] InContext:context atPoint:features.bounds.origin];
+            if ([feature isOfType]==rightSBType) {
+                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:rightSBType atIndex:[sender tag]]];
+            }
+            else{
+                [newEditedImageViews addObject:feature];
+            }
         }
         //draw yellowJumper.png
         else if([sender tag] == 3){
-            //[newEditedImageViews addObject:[self updateFeature:features withFaceFeatureType:jumperType atIndex:[sender tag]]];
-            //editedFaceFeatures = nil;
-            editedFaceFeatures = [[NSMutableArray alloc]initWithArray:[self updateFeature:features withFaceFeatureType:hairType atIndex:[sender tag]]];
-            //if([button backgroundImageForState:UIControlStateNormal] != [UIImage imageNamed:@"CherylSideburns.png"])
-//            {
-//                faceFeature *facePart = [imageProcessing drawFeature:features ofType:jumperType withImage:[[UIImageView alloc]initWithImage:[UIImage imageNamed:[FACE_IMAGE_NAMES objectAtIndex:[sender tag]]]] atPoint:features.bounds.origin];
-//                for (faceFeature *feature in editedFaceFeatures) {
-//                    if([feature isOfType] == jumperType)
-//                    {
-//                        [feature.featureImageView removeFromSuperview];
-//                        [newEditedImageViews addObject:facePart];
-//                        [self.view addSubview:facePart.featureImageView];
-//                    }
-//                    
-//                }
-//
-//            }
+            if ([feature isOfType]==jumperType) {
+                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:jumperType atIndex:[sender tag]]];
+            }
+            else{
+                [newEditedImageViews addObject:feature];
+            }
+            
+            //editedFaceFeatures = [[NSMutableArray alloc]initWithArray:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType atIndex:[sender tag]]];
         }
-
+        // draw hair.png
+        else if([sender tag] == 4){
+            if ([feature isOfType]==hairType) {
+                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType atIndex:[sender tag]]];
+            }
+            else{
+                [newEditedImageViews addObject:feature];
+            }
+            //editedFaceFeatures = [[NSMutableArray alloc]initWithArray:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType atIndex:[sender tag]]];
+        }
     }
+    //}
+    editedFaceFeatures = [[NSMutableArray alloc]initWithArray:newEditedImageViews];
     [button setBackgroundImage:[UIImage imageNamed:@"CherylSideburns.png"] forState:UIControlStateNormal];
 
 
 }
 
--(NSMutableArray*)updateFeature:(CIFaceFeature*)feature withFaceFeatureType:(faceFeatureType)featureType atIndex:(int)index{
+-(faceFeature*)updateFaceFeature:(faceFeature*)faceFeatureParam withCIFaceFeature:(CIFaceFeature*)feature withFaceFeatureType:(faceFeatureType)featureType atIndex:(int)index{
     
-    NSMutableArray *newEditedImageViews = [[NSMutableArray alloc]init];
     faceFeature *facePart = [imageProcessing drawFeature:feature ofType:featureType withImage:[[UIImageView alloc]initWithImage:[UIImage imageNamed:[FACE_IMAGE_NAMES objectAtIndex:index]]] atPoint:feature.bounds.origin];
-
-    for (faceFeature *feature in editedFaceFeatures) {
-        if([feature isOfType] == featureType)
+  
+    //for (faceFeature *feature in editedFaceFeatures) {
+        //if([faceFeatureParam isOfType] == featureType)
         {
-            [feature.featureImageView removeFromSuperview];
-            [newEditedImageViews addObject:facePart];
+            [faceFeatureParam.featureImageView removeFromSuperview];
             [self.view addSubview:facePart.featureImageView];
         }
-        else
-            [newEditedImageViews addObject:facePart];
-        
-    }
-    return newEditedImageViews;
+//        else
+//            [newEditedImageViews addObject:facePart];
+    
+    //}
+    return facePart;
 }
-#pragma mark - Manipulate Image
 
+#pragma mark - Manipulate Image
 -(void)showOverlayWithFrame:(CGRect)frame {
     [imageProcessing showOverlayWithFrame:frame withMarque:_marque];
 
