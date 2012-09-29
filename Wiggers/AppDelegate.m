@@ -34,6 +34,7 @@
     [SHKConfiguration sharedInstanceWithConfigurator:configurator];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[MainScreenVC alloc] initWithNibName:@"MainScreenVC_iPhone" bundle:nil];
@@ -96,6 +97,13 @@
      See also applicationDidEnterBackground:.
      */
 }
+
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    return (UIInterfaceOrientationMaskPortrait);
+}
+
+
+
 
 #pragma mark - Single Sign on with Facebook
 - (BOOL)handleOpenURL:(NSURL*)url

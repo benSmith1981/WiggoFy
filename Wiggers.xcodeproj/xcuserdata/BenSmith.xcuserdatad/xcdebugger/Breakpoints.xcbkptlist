@@ -190,11 +190,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Wiggers/ImageManipulationVC.m"
-         timestampString = "370556857.502222"
+         timestampString = "370646868.321198"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "571"
-         endingLineNumber = "571"
+         startingLineNumber = "633"
+         endingLineNumber = "633"
          landmarkName = "-updateFaceFeature:withCIFaceFeature:withFaceFeatureType:atIndex:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -202,51 +202,12 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Wiggers/FaceImageProcessing.m"
-         timestampString = "370540947.127119"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "209"
-         endingLineNumber = "209"
-         landmarkName = "-drawFeature:ofType:withImage:atPoint:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/FaceImageProcessing.m"
-         timestampString = "370540949.429804"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "217"
-         endingLineNumber = "217"
-         landmarkName = "-drawFeature:ofType:withImage:atPoint:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/FaceImageProcessing.m"
-         timestampString = "370540950.335132"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "224"
-         endingLineNumber = "224"
-         landmarkName = "-drawFeature:ofType:withImage:atPoint:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "Wiggers/ImageManipulationVC.m"
-         timestampString = "370556780.546578"
+         timestampString = "370646868.321198"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "511"
-         endingLineNumber = "511"
+         startingLineNumber = "613"
+         endingLineNumber = "613"
          landmarkName = "-hairButtonSelected:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -254,13 +215,13 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Wiggers/ImageManipulationVC.m"
-         timestampString = "370556785.942387"
+         filePath = "Wiggers/FaceImageProcessing.m"
+         timestampString = "370645788.001756"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "514"
-         endingLineNumber = "514"
-         landmarkName = "-hairButtonSelected:"
+         startingLineNumber = "244"
+         endingLineNumber = "244"
+         landmarkName = "-drawFeature:ofType:withImage:atPoint:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

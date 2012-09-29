@@ -79,11 +79,6 @@
             [faceImageViews addObject:[[UIImageView alloc]initWithImage:[UIImage imageNamed:faceParts]]];
         }
         
-//        for (UIImage *hair in HAIR_IMAGES) {
-//            [hairImageViews addObject:[[UIImageView alloc]initWithImage:hair]];
-//        }
-        //imageProcessing.imagesToAdd = dictOfFaceParts;
-        //[Info setFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:15]];
 
     }
     return self;
@@ -180,7 +175,11 @@
     count = 0;
 }
 
-
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait) ||
+    (interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown);
+}
 
 #pragma mark - Image features Notification  
 - (void) receiveImagefeatures:(NSNotification *) notification
@@ -297,6 +296,16 @@
     }
     //OK
     else if (button.tag == 4){
+        showHairContainer = FALSE;
+        [UIView beginAnimations:@"showView" context:nil];
+        [UIView setAnimationDuration:0.7];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:hairScrollViewContainer cache:YES];
+        hairScrollViewContainer.frame = CGRectMake(0.0f,toolBar.frame.origin.y, hairScrollViewContainer.frame.size.width, hairScrollViewContainer.frame.size.height);
+        //[self.view bringSubviewToFront:hairScrollViewContainer];
+        //hairScrollViewContainer.hidden = YES;
+        [UIView commitAnimations];
+        
         [imageProcessing setImageWithImageViews:editedFaceFeatures];//View:self.activeImageView withFeatures:featuresLocalInstance OnCanvas:canvas];
         [canvas removeGestureRecognizer:pinchRecognizer];
         [canvas removeGestureRecognizer:tapProfileImageRecognizer];
@@ -408,7 +417,6 @@
         imageProcessing = [[FaceImageProcessing alloc]init];
         
         //create a dictionary of the face parts and pass that into the imageProcessing class so it is easier to see what we have added
-        //dictOfFaceParts = [[NSDictionary alloc]initWithObjects:FACE_PARTS forKeys:FACE_KEYS];
         [imageProcessing initialiseImages:nil withArrayOfFaceParts:nil withCanvas:canvas withImageView:self.activeImageView];
         imageProcessing.features = featuresLocalInstance;
         imageProcessing.activeImageView = self.activeImageView;
@@ -449,17 +457,18 @@
         [aButton addTarget:self action:@selector(hairButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
         aButton.tag = tag;
         tag++;
+        [aButton setBackgroundImage:facePart forState:UIControlStateNormal];
         //If the button is the one that is already drawn then set it to selected image
-        if(facePart == [UIImage imageNamed:@"betterHairScaled.png"])
-        {
-            [aButton setBackgroundImage:[UIImage imageNamed:@"CherylSideburns.png"] forState:UIControlStateNormal];
-            [aButton setSelected:YES];
-        }
-        else
-        {
-            [aButton setSelected:NO];
-            [aButton setBackgroundImage:facePart forState:UIControlStateNormal];
-        }
+//        if(facePart == [UIImage imageNamed:@"betterHairScaled.png"])
+//        {
+//            [aButton setBackgroundImage:[UIImage imageNamed:@"CherylSideburns.png"] forState:UIControlStateNormal];
+//            [aButton setSelected:YES];
+//        }
+//        else
+//        {
+//            [aButton setSelected:NO];
+//            [aButton setBackgroundImage:facePart forState:UIControlStateNormal];
+//        }
         [buttons addObject:aButton];
     }
     [self.hairScrollView setShowsHorizontalScrollIndicator:NO];
@@ -498,7 +507,7 @@
 
     //for (CIFaceFeature *feature in featuresLocalInstance) {
     for (faceFeature *feature in editedFaceFeatures) {
-        // draw betterHairScaled.png on view
+        // draw hair.png on view
         if ([sender tag] == 0) {
             if ([feature isOfType]==hairType) {
                 [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType atIndex:[sender tag]]];
@@ -509,9 +518,49 @@
 
             //editedFaceFeatures = ];
 
-        }        
+        }
+        // draw hair.png
+        else if([sender tag] == 1){
+            if ([feature isOfType]==hairType) {
+                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType atIndex:[sender tag]]];
+            }
+            else{
+                [newEditedImageViews addObject:feature];
+            }
+            //editedFaceFeatures = [[NSMutableArray alloc]initWithArray:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType atIndex:[sender tag]]];
+        }
+        // draw hair.png
+        else if([sender tag] == 2){
+            if ([feature isOfType]==hairType) {
+                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType atIndex:[sender tag]]];
+            }
+            else{
+                [newEditedImageViews addObject:feature];
+            }
+            //editedFaceFeatures = [[NSMutableArray alloc]initWithArray:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType atIndex:[sender tag]]];
+        }
+        // draw hair.png
+        else if([sender tag] == 3){
+            if ([feature isOfType]==hairType) {
+                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType atIndex:[sender tag]]];
+            }
+            else{
+                [newEditedImageViews addObject:feature];
+            }
+            //editedFaceFeatures = [[NSMutableArray alloc]initWithArray:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType atIndex:[sender tag]]];
+        }
         //draw leftSB
-        else if([sender tag] == 1)
+        else if([sender tag] == 4)
+        {
+            if ([feature isOfType]==leftSBType) {
+                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:leftSBType atIndex:[sender tag]]];
+            }
+            else{
+                [newEditedImageViews addObject:feature];
+            }
+        }
+        //draw leftSB
+        else if([sender tag] == 5)
         {
             if ([feature isOfType]==leftSBType) {
                 [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:leftSBType atIndex:[sender tag]]];
@@ -521,7 +570,16 @@
             }
         }
         //draw rightSB
-        else if([sender tag] == 2){
+        else if([sender tag] == 6){
+            if ([feature isOfType]==rightSBType) {
+                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:rightSBType atIndex:[sender tag]]];
+            }
+            else{
+                [newEditedImageViews addObject:feature];
+            }
+        }
+        //draw rightSB
+        else if([sender tag] == 7){
             if ([feature isOfType]==rightSBType) {
                 [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:rightSBType atIndex:[sender tag]]];
             }
@@ -530,26 +588,37 @@
             }
         }
         //draw yellowJumper.png
-        else if([sender tag] == 3){
+        else if([sender tag] == 8){
             if ([feature isOfType]==jumperType) {
                 [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:jumperType atIndex:[sender tag]]];
             }
             else{
                 [newEditedImageViews addObject:feature];
             }
-            
-            //editedFaceFeatures = [[NSMutableArray alloc]initWithArray:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType atIndex:[sender tag]]];
+
         }
-        // draw hair.png
-        else if([sender tag] == 4){
-            if ([feature isOfType]==hairType) {
-                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType atIndex:[sender tag]]];
+        //draw yellowJumper.png
+        else if([sender tag] == 9){
+            if ([feature isOfType]==jumperType) {
+                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:jumperType atIndex:[sender tag]]];
             }
             else{
                 [newEditedImageViews addObject:feature];
             }
-            //editedFaceFeatures = [[NSMutableArray alloc]initWithArray:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType atIndex:[sender tag]]];
+
         }
+        //draw medal
+        else if([sender tag] == 10){
+            if ([feature isOfType]==medalType) {
+                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:medalType atIndex:[sender tag]]];
+            }
+            else{
+                [newEditedImageViews addObject:feature];
+            }
+            
+        }
+
+
     }
     //}
     editedFaceFeatures = [[NSMutableArray alloc]initWithArray:newEditedImageViews];

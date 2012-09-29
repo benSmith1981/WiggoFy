@@ -90,6 +90,12 @@
     // Release any retained subviews of the main view.
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait) ||
+    (interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown);
+}
+
 #pragma mark - failedToDetectFeature delegate
 - (void)noFeaturesDetected{
     self.activeImageView = nil;

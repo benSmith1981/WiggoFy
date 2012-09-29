@@ -42,16 +42,18 @@
 
 
 #define IMG(name) [UIImage imageNamed:name]
-#define FACE_IMAGE_NAMES [NSArray arrayWithObjects:@"hair1.png",  @"hair2.png",@"hair3.png", @"hair4.png", @"sideburnLeft1.png",@"sideburnLeft2.png",@"sideburnRight1.png",@"sideburnRight2.png",@"yellowJumper1.png",@"yellowJumper2.png", nil]
+#define FACE_IMAGE_NAMES [NSArray arrayWithObjects:@"hair1.png",  @"hair2.png",@"hair3.png", @"hair4.png", @"sideburnLeft1.png",@"sideburnLeft2.png",@"sideburnRight1.png",@"sideburnRight2.png",nil]
+//@"yellowJumper1.png",@"yellowJumper2.png",@"medal.png", nil]
 
-#define FACE_PARTS [NSArray arrayWithObjects:IMG(@"hair1.png"),  IMG(@"hair2.png"),IMG(@"hair3.png"), IMG(@"hair4.png"), IMG(@"sideburnLeft1.png"),IMG(@"sideburnLeft2.png"),IMG(@"sideburnRight1.png"),IMG(@"sideburnRight2.png"),IMG(@"yellowJumper1.png"),IMG(@"yellowJumper2.png"), nil]
+#define FACE_PARTS [NSArray arrayWithObjects:IMG(@"hair1.png"),  IMG(@"hair2.png"),IMG(@"hair3.png"), IMG(@"hair4.png"), IMG(@"sideburnLeft1.png"),IMG(@"sideburnLeft2.png"),IMG(@"sideburnRight1.png"),IMG(@"sideburnRight2.png"),nil]
+//,IMG(@"yellowJumper1.png"),IMG(@"yellowJumper2.png"),IMG(@"medal.png"), nil]
 
 
 //[NSArray arrayWithObjects:IMG(@"betterHairScaled.png"),  IMG(@"rightlargesideburnScaled.png"),IMG(@"leftlargesideburnScaled.png"), IMG(@"yellowJumper.png"), IMG(@"hair.png"), nil]
-
-#define HAIR_IMAGES [NSArray arrayWithObjects:IMG(@"betterHairScaled.png"), IMG(@"hair.png"), nil]
-
-#define FACE_KEYS [NSArray arrayWithObjects:@"hair",@"leftSB",@"rightSB",@"yellowJumper",@"hair", nil]
+//
+//#define HAIR_IMAGES [NSArray arrayWithObjects:IMG(@"betterHairScaled.png"), IMG(@"hair.png"), nil]
+//
+//#define FACE_KEYS [NSArray arrayWithObjects:@"hair",@"leftSB",@"rightSB",@"yellowJumper",@"hair", nil]
 
 typedef enum {
     leftEyeType = 1,
@@ -60,6 +62,7 @@ typedef enum {
     hairType = 4,
     leftSBType = 5,
     rightSBType = 6,
-    jumperType = 7
+    jumperType = 7,
+    medalType= 8
     
 } faceFeatureType;
