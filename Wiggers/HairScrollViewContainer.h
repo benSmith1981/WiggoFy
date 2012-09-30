@@ -11,5 +11,6 @@
 @interface HairScrollViewContainer : UIView
 
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) UILabel *selectedLabel;
 
 @end

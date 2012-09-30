@@ -10,6 +10,7 @@
 
 @implementation HairScrollViewContainer
 
+@synthesize selectedLabel;
 @synthesize scrollView = _scrollView;
 
 #pragma mark -

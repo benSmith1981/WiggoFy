@@ -73,7 +73,10 @@
     CAShapeLayer *_marque;
     
     //buttons on scroll view containing face parts
-    NSMutableArray *buttons;
+    NSMutableArray *hairButtons;
+    NSMutableArray *leftSideburnButtons;
+    NSMutableArray *rightSideburnButtons;
+     NSMutableArray *buttons;
     
     BOOL showHairContainer;
     //NSMutableArray *editedImages;

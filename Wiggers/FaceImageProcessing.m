@@ -109,34 +109,32 @@
 
         //Setup the hair and sideburns that are intially drawn onto the image
         UIImageView *hair = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[FACE_IMAGE_NAMES objectAtIndex:0]]];
-        [faceFeatures addObject:[self drawFeature:f ofType:hairType withImage:hair atPoint:f.bounds.origin]];
+        faceFeature *tempFaceFeature = [self drawFeature:f ofType:hairType withImage:hair atPoint:f.bounds.origin];
+        tempFaceFeature.isShown = YES;
+        [faceFeatures addObject:tempFaceFeature];
         
         UIImageView *leftSB = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[FACE_IMAGE_NAMES objectAtIndex:4]]];
-        [faceFeatures addObject:[self drawFeature:f ofType:leftSBType withImage:leftSB atPoint:f.bounds.origin]];
+        tempFaceFeature = [self drawFeature:f ofType:leftSBType withImage:leftSB atPoint:f.bounds.origin];
+        tempFaceFeature.isShown = YES;
+        [faceFeatures addObject:tempFaceFeature];
         
-        UIImageView *rightSB = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[FACE_IMAGE_NAMES objectAtIndex:6]]];
-        [faceFeatures addObject:[self drawFeature:f ofType:rightSBType withImage:rightSB atPoint:f.bounds.origin]];
+        UIImageView *rightSB = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[FACE_IMAGE_NAMES objectAtIndex:5]]];
+        tempFaceFeature = [self drawFeature:f ofType:rightSBType withImage:rightSB atPoint:f.bounds.origin];
+        tempFaceFeature.isShown = YES;
+        [faceFeatures addObject:tempFaceFeature];
 
-//[self drawFeature:f ofType:jumperType withImage:jumper atPoint:f.bounds.origin]];
-
-//        faceFeature *fe = [[faceFeature alloc]init];
-//        [fe setType:jumperType];
-//        [faceFeatures addObject:fe];
-//
-//        faceFeature *fe2 = [[faceFeature alloc]init];
-//        [fe2 setType:medalType];
-//        [faceFeatures addObject:fe2];
 
         
     }
     
-    faceFeature *placeHolder1 = [[faceFeature alloc]init];
-    [placeHolder1 setType:jumperType];
-    [faceFeatures addObject:placeHolder1];
-    
-    faceFeature *placeHolder2 = [[faceFeature alloc]init];
-    [placeHolder2 setType:medalType];
-    [faceFeatures addObject:placeHolder2];
+    //place holder faceFeature instances for objects not drawn that we want to show later
+//    faceFeature *placeHolder1 = [[faceFeature alloc]init];
+//    [placeHolder1 setType:jumperType];
+//    [faceFeatures addObject:placeHolder1];
+//    
+//    faceFeature *placeHolder2 = [[faceFeature alloc]init];
+//    [placeHolder2 setType:medalType];
+//    [faceFeatures addObject:placeHolder2];
     
     activeImageView.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -220,18 +218,22 @@
             break;
         case 5:// right sideburn
             imageView.image = [imageView.image imageByScalingProportionallyToSize:CGSizeMake(leftSBScaleWidth,leftSBScaleHeight)];
-            imageView.frame = CGRectMake(f.bounds.origin.x, IMG_HEIGHT - (f.bounds.origin.y + imageView.frame.size.height), imageView.image.size.width, imageView.image.size.height);
+//            imageView.frame = CGRectMake(f.bounds.origin.x, IMG_HEIGHT - (f.bounds.origin.y + imageView.frame.size.height), imageView.image.size.width, imageView.image.size.height);
+            imageView.frame = CGRectMake(f.bounds.origin.x, IMG_HEIGHT - (f.bounds.origin.y + imageView.image.size.height + f.bounds.size.height/4), imageView.image.size.width, imageView.image.size.height);
             [newFaceFeature setType:featureType];
             newFaceFeature.featureImageView = imageView;
             newFaceFeature.featureBelongsToo = f;
 
+            
             break;
         case 6:// left sideburn
             imageView.image = [imageView.image imageByScalingProportionallyToSize:CGSizeMake(rightSBScaleWidth, rightSBScaleHeight)];
-            imageView.frame = CGRectMake(f.bounds.origin.x + f.bounds.size.width - imageView.frame.size.width, IMG_HEIGHT - (f.bounds.origin.y + imageView.frame.size.height),  imageView.image.size.width, imageView.image.size.height );
+//            imageView.frame = CGRectMake(f.bounds.origin.x + f.bounds.size.width - imageView.frame.size.width, IMG_HEIGHT - (f.bounds.origin.y + imageView.frame.size.height),  imageView.image.size.width, imageView.image.size.height );
+            imageView.frame = CGRectMake(f.bounds.origin.x + f.bounds.size.width - imageView.image.size.width, IMG_HEIGHT - (f.bounds.origin.y + imageView.image.size.height + f.bounds.size.height/4),  imageView.image.size.width, imageView.image.size.height );
             [newFaceFeature setType:featureType];
             newFaceFeature.featureImageView = imageView;
             newFaceFeature.featureBelongsToo = f;
+
             break;
         case 7:// yellowJumper
             imageView.image = [imageView.image imageByScalingProportionallyToSize:CGSizeMake(canvas.bounds.size.width,imageView.frame.size.height)];
@@ -246,6 +248,7 @@
             [newFaceFeature setType:featureType];
             newFaceFeature.featureImageView = imageView;
             newFaceFeature.featureBelongsToo = f;
+
             break;
         default:
             break;
