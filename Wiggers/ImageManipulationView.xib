@@ -4450,7 +4450,7 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 							<object class="IBUIScrollView" id="669913547">
 								<reference key="NSNextResponder" ref="908386292"/>
 								<int key="NSvFlags">274</int>
-								<string key="NSFrame">{{3, 3}, {314, 38}}</string>
+								<string key="NSFrame">{{3, 3}, {314, 54}}</string>
 								<reference key="NSSuperview" ref="908386292"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView"/>
@@ -4460,7 +4460,7 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 						</array>
-						<string key="NSFrame">{{0, 205}, {320, 44}}</string>
+						<string key="NSFrame">{{0, 205}, {320, 60}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="669913547"/>
@@ -4730,6 +4730,25 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 				<object class="IBPartialClassDescription">
 					<string key="className">ImageManipulationVC</string>
 					<string key="superclassName">UIViewController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="LSBButtonSelected:">id</string>
+						<string key="RSBButtonSelected:">id</string>
+						<string key="hairButtonSelected:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="LSBButtonSelected:">
+							<string key="name">LSBButtonSelected:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="RSBButtonSelected:">
+							<string key="name">RSBButtonSelected:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="hairButtonSelected:">
+							<string key="name">hairButtonSelected:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="Info">UITextView</string>
 						<string key="hairScrollView">UIScrollView</string>

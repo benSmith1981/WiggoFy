@@ -51,8 +51,8 @@
         share =  [self customAddButtonItem:@"SHARE" WithTarget:self action:@selector(buttonPressed:) andTag:1 andTextSize:25];
         saveImage =  [self customAddButtonItem:@"SAVE" WithTarget:self action:@selector(buttonPressed:) andTag:2 andTextSize:25];
         takeNewImage =  [self customAddButtonItem:@"MAIN MENU" WithTarget:self action:@selector(buttonPressed:) andTag:3 andTextSize:15];
-        ok =  [self customAddButtonItem:@"OK" WithTarget:self action:@selector(buttonPressed:) andTag:4 andTextSize:25];
-        wigs =  [self customAddButtonItem:@"WiGs" WithTarget:self action:@selector(buttonPressed:) andTag:5 andTextSize:25];
+        ok =  [self customAddButtonItem:@"DONE" WithTarget:self action:@selector(buttonPressed:) andTag:4 andTextSize:25];
+        wigs =  [self customAddButtonItem:@"CHANGE HAIR" WithTarget:self action:@selector(buttonPressed:) andTag:5 andTextSize:15];
 
         
         UIBarButtonItem *flexItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
@@ -228,7 +228,7 @@
 - (UIBarButtonItem *)customAddButtonItem:(NSString*)title WithTarget:(id)target action:(SEL)action andTag:(int)tag andTextSize:(int)textSize{
     UIButton *customButtonView = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    customButtonView.frame = CGRectMake(0.0f, 0.0f, 79.0f, 38.0f);
+    customButtonView.frame = CGRectMake(0.0f, 0.0f, 90.0f, 38.0f);
     customButtonView.tag = tag;
     
     //Get constraint size
@@ -282,7 +282,7 @@
     }
     //SHARE
     else if (button.tag == 1){
-        SHKItem *item = [SHKItem image:self.activeImageView.image title:@"WiggoFyed!"];
+        SHKItem *item = [SHKItem image:self.activeImageView.image title:@"WiggoFy!"];
         SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
         [SHK setRootViewController:self];
         [actionSheet showFromToolbar:toolBar];
@@ -352,7 +352,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{ 
     //NSLog(@"Entered: %@",[alertTextField text]);
     
-    if ([alertView.title isEqualToString:@"Wiggo'fy!"]) {
+    if ([alertView.title isEqualToString:@"Wiggofy!"]) {
 
         if([[alertTextField text] isEqualToString:@""] && buttonIndex == 1) //invalid name and OK
         {
@@ -388,7 +388,7 @@
 
 -(void)alertSaveBox{
 
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wiggo'fy!" message:@"Please enter name to save:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Save",nil];
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wiggofy!" message:@"Please enter name to save:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Save",nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     alertTextField = [alert textFieldAtIndex:0];
     alertTextField.keyboardType = UIKeyboardTypeDefault;
@@ -406,7 +406,7 @@
         [alert show];
     }
     else {
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"To Edit Image..." message:@"Pinch, Flick, Tap and Rotate the images, so as to fit to your face to complete Wiggification!!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"To Edit Image..." message:@"1)Tap on hair or sideburns 2)Pinch, Flick and Rotate the hair and sideburns, to fit to your face to complete Wiggification!!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         alert.alertViewStyle = UIAlertViewStyleDefault;
         [alert show];
         
@@ -455,6 +455,16 @@
     rightSideburnButtons = [[NSMutableArray alloc]init];
     leftSideburnButtons = [[NSMutableArray alloc]init];
     UIButton *aButton;
+    
+    // Set up the content size of the scroll view
+    CGSize pagesScrollViewSize = self.hairScrollView.frame.size;
+    int buttonHeight = pagesScrollViewSize.height;
+    int buttonWidth = pagesScrollViewSize.height;
+    
+    //create scrollview with face parts on
+    CGRect frame;
+    int page = 0;
+    
     for (NSString *hair in HAIR_PARTS) {
         aButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [aButton addTarget:self action:@selector(hairButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
@@ -462,13 +472,24 @@
         tag++;
         if ([hair isEqualToString:@"hair1.png"])
         {
-            [aButton setBackgroundImage:[UIImage imageNamed:@"CherylSideburns.png"] forState:UIControlStateNormal];
+            [aButton setBackgroundImage:SELECTED_IMAGE forState:UIControlStateNormal];
             aButton.selected = TRUE;
         }
         else
         {
-            [aButton setBackgroundImage:[UIImage imageNamed:hair] forState:UIControlStateNormal];
+            [aButton setBackgroundImage:nil forState:UIControlStateNormal];
         }
+        
+        
+        frame = CGRectMake(0, 0, buttonWidth, buttonHeight);
+        frame.origin.x = (buttonWidth + 10) * page ;
+        frame.origin.y = 0.0f;
+        aButton.frame = frame;
+        UIImageView *buttonImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:hair]];
+        buttonImageView.frame = frame;
+        [self.hairScrollView addSubview:buttonImageView];
+        [self.hairScrollView addSubview:aButton];
+        page++;
         [hairButtons addObject:aButton];
     }
     
@@ -480,13 +501,22 @@
         tag++;
         if ([hair isEqualToString:@"sideburnLeft1.png"])
         {
-            [aButton setBackgroundImage:[UIImage imageNamed:@"CherylSideburns.png"] forState:UIControlStateNormal];
+            [aButton setBackgroundImage:SELECTED_IMAGE forState:UIControlStateNormal];
             aButton.selected = TRUE;
         }
         else
         {
-            [aButton setBackgroundImage:[UIImage imageNamed:hair] forState:UIControlStateNormal];
+            [aButton setBackgroundImage:nil forState:UIControlStateNormal];
         }
+        
+        frame.origin.x = (buttonWidth + 10) * page ;
+        frame.origin.y = 0.0f;
+        aButton.frame = frame;
+        UIImageView *buttonImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:hair]];
+        buttonImageView.frame = frame;
+        [self.hairScrollView addSubview:buttonImageView];
+        [self.hairScrollView addSubview:aButton];
+        page ++;
         [leftSideburnButtons addObject:aButton];
     }
     
@@ -498,73 +528,26 @@
         tag++;
         if ([hair isEqualToString:@"sideburnRight1.png"])
         {
-            [aButton setBackgroundImage:[UIImage imageNamed:@"CherylSideburns.png"] forState:UIControlStateNormal];
+            [aButton setBackgroundImage:SELECTED_IMAGE forState:UIControlStateNormal];
             aButton.selected = TRUE;
         }
         else
         {
-            [aButton setBackgroundImage:[UIImage imageNamed:hair] forState:UIControlStateNormal];
+            [aButton setBackgroundImage:[UIImage imageNamed:nil] forState:UIControlStateNormal];
         }
+        
+        frame.origin.x = (buttonWidth + 10) * page ;
+        frame.origin.y = 0.0f;
+        aButton.frame = frame;
+        UIImageView *buttonImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:hair]];
+        buttonImageView.frame = frame;
+        [self.hairScrollView addSubview:buttonImageView];
+        [self.hairScrollView addSubview:aButton];
+        page ++;
         [rightSideburnButtons addObject:aButton];
     }
-    
-    
-//    for (UIImage *facePart in FACE_PARTS) {
-//        UIButton *aButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//        [aButton addTarget:self action:@selector(hairButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
-//        aButton.tag = tag;
-//        tag++;
-//    
-//        if (facePart == [UIImage imageNamed:@"hair1.png"] || facePart == [UIImage imageNamed:@"sideburnLeft1.png"] || facePart == [UIImage imageNamed:@"sideburnRight1.png"])
-//        {
-//            [aButton setBackgroundImage:[UIImage imageNamed:@"CherylSideburns.png"] forState:UIControlStateNormal];
-//            aButton.selected = TRUE;
-//        }
-//        else
-//        {
-//            [aButton setBackgroundImage:facePart forState:UIControlStateNormal];
-//        }
-//
-//        [buttons addObject:aButton];
-//    }
-    
-    
-    // Set up the content size of the scroll view
-    CGSize pagesScrollViewSize = self.hairScrollView.frame.size;    
-    int buttonHeight = pagesScrollViewSize.height;
-    int buttonWidth = pagesScrollViewSize.height;
-
     int numberOfButtons = [rightSideburnButtons count]+[leftSideburnButtons count] + [hairButtons count];
     self.hairScrollView.contentSize = CGSizeMake((buttonHeight + 10) * numberOfButtons, pagesScrollViewSize.height);
-
-    //create scrollview with face parts on
-    CGRect frame;
-    int page = 0;
-
-    for (UIButton *hairButton in hairButtons) {
-        frame = CGRectMake(0, 0, buttonWidth, buttonHeight);
-        frame.origin.x = (buttonWidth + 10) * page ;
-        frame.origin.y = 0.0f;
-        hairButton.frame = frame;
-        [self.hairScrollView addSubview:hairButton];
-        page++;
-    }
-    for (UIButton *lsbButton in leftSideburnButtons) {
-        
-        frame.origin.x = (buttonWidth + 10) * page ;
-        frame.origin.y = 0.0f;
-        lsbButton.frame = frame;
-        [self.hairScrollView addSubview:lsbButton];
-        page ++;
-    }
-    for (UIButton *rsbButton in rightSideburnButtons) {
-        
-        frame.origin.x = (buttonWidth + 10) * page ;
-        frame.origin.y = 0.0f;
-        rsbButton.frame = frame;
-        [self.hairScrollView addSubview:rsbButton];
-        page ++;
-    }
     
     [self.hairScrollView setShowsHorizontalScrollIndicator:NO];
 }
@@ -575,20 +558,36 @@
     //reset buttons to normal state
     for (int i = 0;i<[hairButtons count];i++)
     {
-        [[hairButtons objectAtIndex:i] setBackgroundImage:[UIImage imageNamed:[HAIR_PARTS objectAtIndex:i]] forState:UIControlStateNormal];
+        UIButton *testB = [hairButtons objectAtIndex:i];
+        //Make sure previous button that was selected is now set to not selected
+        if([sender tag] != i)
+            testB.selected = FALSE;
+//        
+//        if (testB.selected) {
+//            NSLog(@"Button %i is SELECTED",i);
+//            
+//        }
+//        else
+//            NSLog(@"Button %i is NOT SELECTED",i);
+        
+//        [testB setBackgroundImage:[UIImage imageNamed:[HAIR_PARTS objectAtIndex:i]] forState:UIControlStateNormal];
+        [testB setBackgroundImage:nil forState:UIControlStateNormal];
     }
     
     UIButton *button = (UIButton *)sender;
     
     if(button.selected)
     {
+        //[[hairButtons objectAtIndex:[sender tag]] setBackgroundImage:[UIImage imageNamed:[HAIR_PARTS objectAtIndex:[sender tag]]] forState:UIControlStateNormal];
+        [[hairButtons objectAtIndex:[sender tag]] setBackgroundImage:nil forState:UIControlStateNormal];
         button.selected = FALSE;
-        [[hairButtons objectAtIndex:[sender tag]] setBackgroundImage:[UIImage imageNamed:[HAIR_PARTS objectAtIndex:[sender tag]]] forState:UIControlStateNormal];
+
     
     }
     else
     {
-        [sender setBackgroundImage:[UIImage imageNamed:@"CherylSideburns.png"] forState:UIControlStateNormal];
+        [sender setBackgroundImage:SELECTED_IMAGE forState:UIControlStateNormal];
+        //button.selected = FALSE;
         button.selected = TRUE;
 
     }
@@ -601,22 +600,29 @@
     //reset buttons to normal state
     for (int i = 0;i<[leftSideburnButtons count];i++)
     {
-        [[leftSideburnButtons objectAtIndex:i] setBackgroundImage:[UIImage imageNamed:[LSB_PARTS objectAtIndex:i]] forState:UIControlStateNormal];
+        UIButton *testB = [leftSideburnButtons objectAtIndex:i];
+        //Make sure previous button that was selected is now set to not selected
+        if([sender tag] != i)
+            testB.selected = FALSE;
+        
+        [testB setBackgroundImage:[UIImage imageNamed:[LSB_PARTS objectAtIndex:i]] forState:UIControlStateNormal];
     }
     
     
     
     UIButton *button = (UIButton *)sender;
     
-    if(!button.selected)
+    if(button.selected)
     {
+        
+        [[leftSideburnButtons objectAtIndex:[sender tag]] setBackgroundImage:nil forState:UIControlStateNormal];
         button.selected = FALSE;
-        [[leftSideburnButtons objectAtIndex:[sender tag]] setBackgroundImage:[UIImage imageNamed:[LSB_PARTS objectAtIndex:[sender tag]]] forState:UIControlStateNormal];
     }
     else
     {
+        
+        [sender setBackgroundImage:SELECTED_IMAGE forState:UIControlStateNormal];
         button.selected = TRUE;
-        [sender setBackgroundImage:[UIImage imageNamed:@"CherylSideburns.png"] forState:UIControlStateNormal];
     }
     [self createNewLeftSBParts:sender];
     
@@ -628,20 +634,27 @@
     //reset buttons to normal state
     for (int i = 0;i<[rightSideburnButtons count];i++)
     {
-        [[rightSideburnButtons objectAtIndex:i] setBackgroundImage:[UIImage imageNamed:[RSB_PARTS objectAtIndex:i]] forState:UIControlStateNormal];
+        UIButton *testB = [rightSideburnButtons objectAtIndex:i];
+        //Make sure previous button that was selected is now set to not selected
+        if([sender tag] != i)
+            testB.selected = FALSE;
+        
+        [testB setBackgroundImage:[UIImage imageNamed:[RSB_PARTS objectAtIndex:i]] forState:UIControlStateNormal];
     }
     
     UIButton *button = (UIButton *)sender;
     
-    if(!button.selected)
+    if(button.selected)
     {
+        [[rightSideburnButtons objectAtIndex:[sender tag]] setBackgroundImage:nil forState:UIControlStateNormal];
         button.selected = FALSE;
-        [[rightSideburnButtons objectAtIndex:[sender tag]] setBackgroundImage:[UIImage imageNamed:[RSB_PARTS objectAtIndex:[sender tag]]] forState:UIControlStateNormal];
+
     }
     else
     {
+        [sender setBackgroundImage:SELECTED_IMAGE forState:UIControlStateNormal];
         button.selected = TRUE;
-        [sender setBackgroundImage:[UIImage imageNamed:@"CherylSideburns.png"] forState:UIControlStateNormal];
+
     }
     [self createNewRightSBParts:sender];
     

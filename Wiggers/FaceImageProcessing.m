@@ -147,10 +147,18 @@
 -(void)setImageWithImageViews:(NSMutableArray*)faceFeatures{ //View:(UIImageView*)activeImageView withFeatures:(NSArray*)features OnCanvas:(UIView*)canvas{
     UIImage *faceImage = activeImageView.image;
     
-    NSString *wiggoText = @"#WiggoFied!";
-    CGSize theSize = [wiggoText sizeWithFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:40] constrainedToSize:activeImageView.frame.size lineBreakMode:UILineBreakModeMiddleTruncation];
-    faceImage = [self drawText:wiggoText inImage:faceImage atPoint:CGPointMake((activeImageView.frame.size.width-theSize.width)/2,activeImageView.image.size.height-theSize.height)];
-
+    NSString *wiggoText = @"@Wiggofy";
+    CGSize theSize = [wiggoText sizeWithFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:25] constrainedToSize:activeImageView.frame.size lineBreakMode:UILineBreakModeMiddleTruncation];
+    faceImage = [self drawText:wiggoText inImage:faceImage atPoint:CGPointMake(0,0) ofSize:25 colour:[UIColor redColor] ofFontType:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:25]];
+    
+    NSString *wiggoSupport = @"VOTE Bradley Wiggins";
+    theSize = [wiggoSupport sizeWithFont:[UIFont fontWithName:@"Arial-BoldMT" size:20] constrainedToSize:activeImageView.frame.size lineBreakMode:UILineBreakModeMiddleTruncation];
+    faceImage = [self drawText:wiggoSupport inImage:faceImage atPoint:CGPointMake((activeImageView.frame.size.width-theSize.width)/2,activeImageView.image.size.height-theSize.height*2) ofSize:20  colour:[UIColor yellowColor] ofFontType:[UIFont fontWithName:@"Arial-BoldMT" size:20]];
+    
+    
+    NSString *wiggoSupport2 = @"for SPOTY 2012";
+    theSize = [wiggoSupport2 sizeWithFont:[UIFont fontWithName:@"Arial-BoldMT" size:20] constrainedToSize:activeImageView.frame.size lineBreakMode:UILineBreakModeMiddleTruncation];
+    faceImage = [self drawText:wiggoSupport2 inImage:faceImage atPoint:CGPointMake((activeImageView.frame.size.width-theSize.width)/2,activeImageView.image.size.height-theSize.height) ofSize:20  colour:[UIColor yellowColor] ofFontType:[UIFont fontWithName:@"Arial-BoldMT" size:20]];
     
     UIGraphicsBeginImageContextWithOptions(faceImage.size, YES, 0);
     [faceImage drawInRect:activeImageView.bounds];
@@ -319,16 +327,19 @@
 
 - (UIImage*) drawText:(NSString*) text 
               inImage:(UIImage*)  image 
-              atPoint:(CGPoint)   point 
+              atPoint:(CGPoint)   point
+                ofSize:(int)textSize
+               colour:(UIColor*)colour
+            ofFontType:(UIFont*)fontParam
 {
     // Get image context reference
     
     
-    UIFont *font = [UIFont fontWithName:@"AEnigmaScrawl4BRK" size:40];
+    UIFont *font = fontParam;//[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:textSize];
     UIGraphicsBeginImageContext(image.size);
     [image drawInRect:CGRectMake(0,0,image.size.width,image.size.height)];
     //CGRect rect = CGRectMake(point.x, point.y, image.size.width, image.size.height);
-    [[UIColor redColor] set];
+    [colour set];
     
 //    CGContextRef context = UIGraphicsGetCurrentContext();
 //    CGAffineTransform rotateTransform = CGAffineTransformMakeRotation(M_PI/ -4);

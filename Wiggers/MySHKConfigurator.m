@@ -123,11 +123,11 @@
 }
 
 - (NSString*)twitterConsumerKey {
-	return @"iQz4YfP66m6gVrg1maJ0A";
+	return @"gnEbB6b4QyBaGDZuk873g";
 }
 
 - (NSString*)twitterSecret {
-	return @"mhTqu4L84Eiwbx6P6pi9IG4cQma1SxeM98oMYLKJq0";
+	return @"5Pszkse14d6WX7TTsu5IV1iboRizdNBPQmU62QkZTGA";
 }
 // You need to set this if using OAuth, see note above (xAuth users can skip it)
 - (NSString*)twitterCallbackUrl {
@@ -139,7 +139,7 @@
 }
 // Enter your app's twitter account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
 - (NSString*)twitterUsername {
-	return @"benSmithy1981";
+	return @"Wiggofy";
 }
 // Evernote - http://www.evernote.com/about/developer/api/
 /*	You need to set to sandbox until you get approved by evernote. If you use sandbox, you can use it with special sandbox user account only. You can create it here: https://sandbox.evernote.com/Registration.action

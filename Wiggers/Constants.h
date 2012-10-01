@@ -40,6 +40,7 @@
 #define krightSBKey 2
 #define kleftSBKey 3
 
+#define TAG_GRAYVIEW 5671263 // for overlay on selected buttons
 
 #define IMG(name) [UIImage imageNamed:name]
 #define FACE_IMAGE_NAMES [NSArray arrayWithObjects:@"hair1.png",  @"hair2.png",@"hair3.png", @"hair4.png", @"sideburnLeft1.png",@"sideburnRight1.png",@"sideburnLeft2.png",@"sideburnRight2.png",nil]
@@ -51,6 +52,7 @@
 
 //[NSArray arrayWithObjects:IMG(@"betterHairScaled.png"),  IMG(@"rightlargesideburnScaled.png"),IMG(@"leftlargesideburnScaled.png"), IMG(@"yellowJumper.png"), IMG(@"hair.png"), nil]
 //
+#define SELECTED_IMAGE IMG(@"Green_tick.png")
 #define HAIR_PARTS [NSArray arrayWithObjects:@"hair1.png",  @"hair2.png",@"hair3.png", @"hair4.png", nil]
 #define LSB_PARTS [NSArray arrayWithObjects:@"sideburnLeft1.png",@"sideburnLeft2.png", nil]
 #define RSB_PARTS [NSArray arrayWithObjects:@"sideburnRight1.png", @"sideburnRight2.png", nil]

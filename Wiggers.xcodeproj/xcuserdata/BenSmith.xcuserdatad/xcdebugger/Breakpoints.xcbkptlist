@@ -4,198 +4,16 @@
    version = "1.0">
    <FileBreakpoints>
       <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/SaveImageViewController.m"
-         timestampString = "368712903.915646"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "45"
-         endingLineNumber = "45"
-         landmarkName = "-saveImage:withFileName:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Wiggers/InAppPurchaseManager.m"
-         timestampString = "369593443.620685"
+         filePath = "Wiggers/ImageManipulationVC.m"
+         timestampString = "370812041.834586"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "77"
-         endingLineNumber = "77"
-         landmarkName = "-loadStore"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/InAppPurchaseManager.m"
-         timestampString = "369593484.977053"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "61"
-         endingLineNumber = "61"
-         landmarkName = "-requestProUpgradeProductData"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/InAppPurchaseManager.m"
-         timestampString = "369608929.119049"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "131"
-         endingLineNumber = "131"
-         landmarkName = "-recordTransaction:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/InAppPurchaseManager.m"
-         timestampString = "369608929.119049"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "144"
-         endingLineNumber = "144"
-         landmarkName = "-provideContent:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/InAppPurchaseManager.m"
-         timestampString = "369608929.119049"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "159"
-         endingLineNumber = "159"
-         landmarkName = "-finishTransaction:wasSuccessful:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/InAppPurchaseManager.m"
-         timestampString = "369608929.119049"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "181"
-         endingLineNumber = "181"
-         landmarkName = "-completeTransaction:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/InAppPurchaseManager.m"
-         timestampString = "369608929.119049"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "191"
-         endingLineNumber = "191"
-         landmarkName = "-restoreTransaction:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/InAppPurchaseManager.m"
-         timestampString = "369608929.119049"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "201"
-         endingLineNumber = "201"
-         landmarkName = "-failedTransaction:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/InAppPurchaseManager.m"
-         timestampString = "369608929.119049"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "221"
-         endingLineNumber = "221"
-         landmarkName = "-paymentQueue:updatedTransactions:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/InAppPurchaseManager.m"
-         timestampString = "369608929.119049"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "250"
-         endingLineNumber = "250"
-         landmarkName = "-productsRequest:didReceiveResponse:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/InAppPurchaseManager.m"
-         timestampString = "369609093.642629"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "100"
-         endingLineNumber = "100"
-         landmarkName = "-canMakePurchases"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/InAppPurchaseManager.m"
-         timestampString = "369609097.80811"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "108"
-         endingLineNumber = "108"
-         landmarkName = "-purchaseProUpgrade"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/CameraVC.m"
-         timestampString = "369773140.251315"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "17"
-         endingLineNumber = "17"
-         landmarkName = "@synthesize delegate,imagePickerController,cameraImageView;"
-         landmarkType = "19">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/FaceImageProcessing.m"
-         timestampString = "370724660.993867"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "246"
-         endingLineNumber = "246"
-         landmarkName = "-drawFeature:ofType:withImage:atPoint:"
+         startingLineNumber = "589"
+         endingLineNumber = "589"
+         landmarkName = "-hairButtonSelected:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -203,12 +21,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Wiggers/ImageManipulationVC.m"
-         timestampString = "370730131.771983"
+         timestampString = "370812041.834586"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "638"
-         endingLineNumber = "638"
-         landmarkName = "-RSBButtonSelected:"
+         startingLineNumber = "583"
+         endingLineNumber = "583"
+         landmarkName = "-hairButtonSelected:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -216,12 +34,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Wiggers/ImageManipulationVC.m"
-         timestampString = "370730131.771983"
+         timestampString = "370812041.834586"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "686"
-         endingLineNumber = "686"
-         landmarkName = "-createNewHairParts:"
+         startingLineNumber = "624"
+         endingLineNumber = "624"
+         landmarkName = "-LSBButtonSelected:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -229,103 +47,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Wiggers/ImageManipulationVC.m"
-         timestampString = "370730131.771983"
+         timestampString = "370812041.834586"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "646"
-         endingLineNumber = "646"
-         landmarkName = "-RSBButtonSelected:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/ImageManipulationVC.m"
-         timestampString = "370730131.771983"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "668"
-         endingLineNumber = "668"
-         landmarkName = "-createNewHairParts:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/ImageManipulationVC.m"
-         timestampString = "370730131.771983"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "677"
-         endingLineNumber = "677"
-         landmarkName = "-createNewHairParts:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/ImageManipulationVC.m"
-         timestampString = "370730131.771983"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "659"
-         endingLineNumber = "659"
-         landmarkName = "-createNewHairParts:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/ImageManipulationVC.m"
-         timestampString = "370730131.771983"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "689"
-         endingLineNumber = "689"
-         landmarkName = "-createNewHairParts:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/ImageManipulationVC.m"
-         timestampString = "370730131.771983"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "655"
-         endingLineNumber = "655"
-         landmarkName = "-createNewHairParts:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/ImageManipulationVC.m"
-         timestampString = "370730442.559542"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "804"
-         endingLineNumber = "804"
-         landmarkName = "-updateFaceFeature:withCIFaceFeature:withFaceFeatureType:withSender:fromArray:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wiggers/ImageManipulationVC.m"
-         timestampString = "370730442.559542"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "812"
-         endingLineNumber = "812"
-         landmarkName = "-updateFaceFeature:withCIFaceFeature:withFaceFeatureType:withSender:fromArray:"
+         startingLineNumber = "618"
+         endingLineNumber = "618"
+         landmarkName = "-LSBButtonSelected:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
