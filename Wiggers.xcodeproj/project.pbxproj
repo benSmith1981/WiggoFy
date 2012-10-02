@@ -11,6 +11,9 @@
 		900FC20E15F6B0CF00B091AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 900FC20D15F6B0CF00B091AD /* QuartzCore.framework */; };
 		9013F98E15FCC1D700BC8948 /* aescrawl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9013F98D15FCC0B600BC8948 /* aescrawl.ttf */; };
 		9013F9A515FDEF0400BC8948 /* Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9013F9A415FDEF0300BC8948 /* Animation.m */; };
+		901C8FB9161B029700453313 /* iconIpad72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 901C8FB8161B029700453313 /* iconIpad72x72.png */; };
+		901C8FBB161B029B00453313 /* iconIpad144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 901C8FBA161B029B00453313 /* iconIpad144x144.png */; };
+		901C8FBD161B031B00453313 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901C8FBC161B031B00453313 /* Default@2x.png */; };
 		9027265F160B8A1A004DB4B2 /* libShareKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90272656160B892E004DB4B2 /* libShareKit.a */; };
 		90272661160B8A33004DB4B2 /* ShareKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 90272658160B892E004DB4B2 /* ShareKit.bundle */; };
 		902B582416145AF800061CED /* cameraIconLarge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 902B582216145AF800061CED /* cameraIconLarge@2x.png */; };
@@ -139,6 +142,9 @@
 		9013F98D15FCC0B600BC8948 /* aescrawl.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = aescrawl.ttf; sourceTree = "<group>"; };
 		9013F9A315FDEF0200BC8948 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		9013F9A415FDEF0300BC8948 /* Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animation.m; sourceTree = "<group>"; };
+		901C8FB8161B029700453313 /* iconIpad72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconIpad72x72.png; sourceTree = "<group>"; };
+		901C8FBA161B029B00453313 /* iconIpad144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconIpad144x144.png; sourceTree = "<group>"; };
+		901C8FBC161B031B00453313 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		90272648160B892E004DB4B2 /* ShareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShareKit.xcodeproj; path = Submodules/ShareKit/ShareKit.xcodeproj; sourceTree = "<group>"; };
 		902B582216145AF800061CED /* cameraIconLarge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cameraIconLarge@2x.png"; path = "Graphics/Retina/Buttons/cameraIconLarge@2x.png"; sourceTree = SOURCE_ROOT; };
 		902B582316145AF800061CED /* photoAlbumButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "photoAlbumButton@2x.png"; path = "Graphics/Retina/Buttons/photoAlbumButton@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -350,6 +356,9 @@
 		BE24840B15F0DB9900219F13 = {
 			isa = PBXGroup;
 			children = (
+				901C8FBC161B031B00453313 /* Default@2x.png */,
+				901C8FBA161B029B00453313 /* iconIpad144x144.png */,
+				901C8FB8161B029700453313 /* iconIpad72x72.png */,
 				90272648160B892E004DB4B2 /* ShareKit.xcodeproj */,
 				90B28A561609C06D00337E56 /* Default-568h@2x.png */,
 				90E46B8E16074630008514B5 /* StoreKit.framework */,
@@ -595,6 +604,9 @@
 				90741F431617A0E90006688D /* sideburnLeft1.png in Resources */,
 				90741F441617A0E90006688D /* sideburnRight1.png in Resources */,
 				90741F521617D4F30006688D /* Green_tick.png in Resources */,
+				901C8FB9161B029700453313 /* iconIpad72x72.png in Resources */,
+				901C8FBB161B029B00453313 /* iconIpad144x144.png in Resources */,
+				901C8FBD161B031B00453313 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,7 +685,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -704,8 +716,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -727,13 +739,13 @@
 		BE24843815F0DB9A00219F13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wiggers/Wiggers-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Wiggers/Wiggers-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -758,13 +770,13 @@
 		BE24843915F0DB9A00219F13 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wiggers/Wiggers-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Wiggers/Wiggers-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",

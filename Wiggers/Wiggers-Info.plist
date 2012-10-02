@@ -12,6 +12,8 @@
 	<array>
 		<string>iconBrad.png</string>
 		<string>iconBrad@2x.png</string>
+		<string>iconIpad72x72.png</string>
+		<string>iconIpad144x144.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -21,6 +23,8 @@
 			<array>
 				<string>iconBrad.png</string>
 				<string>iconBrad@2x.png</string>
+				<string>iconIpad72x72.png</string>
+				<string>iconIpad144x144.png</string>
 			</array>
 		</dict>
 	</dict>
