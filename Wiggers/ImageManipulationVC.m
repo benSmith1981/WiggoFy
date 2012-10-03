@@ -291,8 +291,8 @@
     else if (button.tag == 3){
         self.activeImageView = nil;
         [self.navigationController popViewControllerAnimated:YES];
-        [TestFlight openFeedbackView];
-        //imageControls.hidden = TRUE;
+        //Test flight build purposes only
+        //[TestFlight openFeedbackView];
     }
     //OK
     else if (button.tag == 4){
