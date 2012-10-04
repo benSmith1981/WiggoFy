@@ -86,6 +86,8 @@
     NSMutableArray *jerseyImageViews;
     
 }
+@property (weak, nonatomic) IBOutlet UILabel *wiggofy;
+@property (weak, nonatomic) IBOutlet UILabel *supportBrad;
 @property (nonatomic, strong) IBOutlet UIView *hairScrollViewContainer;
 @property (nonatomic, strong) IBOutlet UIScrollView *hairScrollView;
 @property (weak) id <failedToDetectFeature> delegate;

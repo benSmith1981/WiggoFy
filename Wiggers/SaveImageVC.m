@@ -66,13 +66,13 @@
     else {
         toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f,IMG_HEIGHT, 320, 44)];
     }
-    
-    toolBar.barStyle = UIBarStyleDefault;
-    if ([toolBar respondsToSelector:@selector(setBackgroundImage:forToolbarPosition:barMetrics:)]) {
-        [toolBar setBackgroundImage:[UIImage imageNamed:@"menuBar"] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
-    } else {
-        [toolBar insertSubview:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"menuBar"]] atIndex:0];
-    }
+    toolBar.barStyle = UIBarStyleBlackTranslucent;
+//    toolBar.barStyle = UIBarStyleDefault;
+//    if ([toolBar respondsToSelector:@selector(setBackgroundImage:forToolbarPosition:barMetrics:)]) {
+//        [toolBar setBackgroundImage:[UIImage imageNamed:@"menuBar"] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
+//    } else {
+//        [toolBar insertSubview:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"menuBar"]] atIndex:0];
+//    }
 
     back = [self customAddButtonItem:@"BACK" WithTarget:self action:@selector(buttonPressed:) andTag:1 andTextSize:25];
     deleteImage = [self customAddButtonItem:@"DELETE" WithTarget:self action:@selector(buttonPressed:) andTag:2 andTextSize:22];

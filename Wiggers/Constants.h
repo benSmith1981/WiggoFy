@@ -43,17 +43,17 @@
 #define TAG_GRAYVIEW 5671263 // for overlay on selected buttons
 
 #define IMG(name) [UIImage imageNamed:name]
-#define FACE_IMAGE_NAMES [NSArray arrayWithObjects:@"hair1.png",  @"hair2.png",@"hair3.png", @"hair4.png", @"sideburnLeft1.png",@"sideburnRight1.png",@"sideburnLeft2.png",@"sideburnRight2.png",nil]
+#define FACE_IMAGE_NAMES [NSArray arrayWithObjects:@"hair1.png",  @"hair2.png",@"hair3.png", @"hair4.png",@"hair5.png",@"hair6.png",@"hair8.png", @"sideburnLeft1.png",@"sideburnRight1.png",@"sideburnLeft2.png",@"sideburnRight2.png",nil]
 //@"yellowJumper1.png",@"yellowJumper2.png",@"medal.png", nil]
 
-#define FACE_PARTS [NSArray arrayWithObjects:IMG(@"hair1.png"),  IMG(@"hair2.png"),IMG(@"hair3.png"), IMG(@"hair4.png"), IMG(@"sideburnLeft1.png"),IMG(@"sideburnRight1.png"),IMG(@"sideburnLeft2.png"),IMG(@"sideburnRight2.png"),nil]
+#define FACE_PARTS [NSArray arrayWithObjects:IMG(@"hair1.png"),  IMG(@"hair2.png"),IMG(@"hair3.png"), IMG(@"hair4.png"),IMG(@"hair5.png"),  IMG(@"hair6.png"), IMG(@"hair8.png"), IMG(@"sideburnLeft1.png"),IMG(@"sideburnRight1.png"),IMG(@"sideburnLeft2.png"),IMG(@"sideburnRight2.png"),nil]
 //,IMG(@"yellowJumper1.png"),IMG(@"yellowJumper2.png"),IMG(@"medal.png"), nil]
 
 
 //[NSArray arrayWithObjects:IMG(@"betterHairScaled.png"),  IMG(@"rightlargesideburnScaled.png"),IMG(@"leftlargesideburnScaled.png"), IMG(@"yellowJumper.png"), IMG(@"hair.png"), nil]
 //
 #define SELECTED_IMAGE IMG(@"Green_tick.png")
-#define HAIR_PARTS [NSArray arrayWithObjects:@"hair1.png",  @"hair2.png",@"hair3.png", @"hair4.png", nil]
+#define HAIR_PARTS [NSArray arrayWithObjects:@"hair1.png",  @"hair2.png",@"hair3.png", @"hair4.png",@"hair5.png",@"hair6.png",@"hair8.png", nil]
 #define LSB_PARTS [NSArray arrayWithObjects:@"sideburnLeft1.png",@"sideburnLeft2.png", nil]
 #define RSB_PARTS [NSArray arrayWithObjects:@"sideburnRight1.png", @"sideburnRight2.png", nil]
 //

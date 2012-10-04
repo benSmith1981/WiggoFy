@@ -397,13 +397,13 @@
 						<reference key="object" ref="304971427"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="850043650"/>
-							<reference ref="83202955"/>
 							<reference ref="734823773"/>
 							<reference ref="259599877"/>
 							<reference ref="122429363"/>
 							<reference ref="432398430"/>
 							<reference ref="268280763"/>
 							<reference ref="232227015"/>
+							<reference ref="83202955"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -464,7 +464,7 @@
 				<string key="81.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="83.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="85.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<real value="1" key="85.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="0.0" key="85.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="88.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="92.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="93.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

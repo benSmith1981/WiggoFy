@@ -79,6 +79,9 @@
 		90F567A9160B8FB9003B1768 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F567A5160B8FB9003B1768 /* libTestFlight.a */; };
 		90F567AA160B8FB9003B1768 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 90F567A6160B8FB9003B1768 /* README.md */; };
 		90F567AB160B8FB9003B1768 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 90F567A7160B8FB9003B1768 /* release_notes.md */; };
+		90F7BC88161C85F200D1AD88 /* hair5.png in Resources */ = {isa = PBXBuildFile; fileRef = 90F7BC84161C85F200D1AD88 /* hair5.png */; };
+		90F7BC89161C85F200D1AD88 /* hair6.png in Resources */ = {isa = PBXBuildFile; fileRef = 90F7BC85161C85F200D1AD88 /* hair6.png */; };
+		90F7BC8B161C85F200D1AD88 /* hair8.png in Resources */ = {isa = PBXBuildFile; fileRef = 90F7BC87161C85F200D1AD88 /* hair8.png */; };
 		BE24841B15F0DB9A00219F13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE24841A15F0DB9A00219F13 /* UIKit.framework */; };
 		BE24841D15F0DB9A00219F13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE24841C15F0DB9A00219F13 /* Foundation.framework */; };
 		BE24841F15F0DB9A00219F13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE24841E15F0DB9A00219F13 /* CoreGraphics.framework */; };
@@ -232,6 +235,9 @@
 		90F567A6160B8FB9003B1768 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		90F567A7160B8FB9003B1768 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
 		90F567A8160B8FB9003B1768 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		90F7BC84161C85F200D1AD88 /* hair5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hair5.png; path = "Graphics/Non Retina/Face Parts/hair5.png"; sourceTree = SOURCE_ROOT; };
+		90F7BC85161C85F200D1AD88 /* hair6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hair6.png; path = "Graphics/Non Retina/Face Parts/hair6.png"; sourceTree = SOURCE_ROOT; };
+		90F7BC87161C85F200D1AD88 /* hair8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hair8.png; path = "Graphics/Non Retina/Face Parts/hair8.png"; sourceTree = SOURCE_ROOT; };
 		BE24841615F0DB9A00219F13 /* Wigtastic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wigtastic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE24841A15F0DB9A00219F13 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BE24841C15F0DB9A00219F13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -280,6 +286,9 @@
 		9003840315F7A212005F1505 /* faceParts */ = {
 			isa = PBXGroup;
 			children = (
+				90F7BC84161C85F200D1AD88 /* hair5.png */,
+				90F7BC85161C85F200D1AD88 /* hair6.png */,
+				90F7BC87161C85F200D1AD88 /* hair8.png */,
 				90741F3B1616568E0006688D /* medal.png */,
 				90741F2116164F030006688D /* hair1.png */,
 				90741F2216164F030006688D /* hair2.png */,
@@ -607,6 +616,9 @@
 				901C8FB9161B029700453313 /* iconIpad72x72.png in Resources */,
 				901C8FBB161B029B00453313 /* iconIpad144x144.png in Resources */,
 				901C8FBD161B031B00453313 /* Default@2x.png in Resources */,
+				90F7BC88161C85F200D1AD88 /* hair5.png in Resources */,
+				90F7BC89161C85F200D1AD88 /* hair6.png in Resources */,
+				90F7BC8B161C85F200D1AD88 /* hair8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,8 +697,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -716,8 +728,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ben Smith (6SGW8LESM7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -727,7 +739,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-all_load";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "FED950EE-7361-47A6-85FA-21D898043DEF";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -739,8 +751,8 @@
 		BE24843815F0DB9A00219F13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wiggers/Wiggers-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -770,8 +782,8 @@
 		BE24843915F0DB9A00219F13 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ben Smith (6SGW8LESM7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wiggers/Wiggers-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -789,7 +801,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Wigtastic;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "FED950EE-7361-47A6-85FA-21D898043DEF";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "Submodules/**";

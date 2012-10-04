@@ -25,7 +25,7 @@
 @synthesize featuresLocalInstance,cameraVC;
 @synthesize delegate;
 @synthesize hairScrollView,hairScrollViewContainer;
-//@synthesize share, saveImage, takeNewImage,ok;
+@synthesize wiggofy,supportBrad;
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -39,13 +39,13 @@
             toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(TOOLBAR_X_POSITION, TOOLBAR_Y_POSITION, TOOLBAR_WIDTH, TOOLBAR_HEIGHT)];
         }
         
-        toolBar.barStyle = UIBarStyleDefault;
+        toolBar.barStyle = UIBarStyleBlackTranslucent;
         
-        if ([toolBar respondsToSelector:@selector(setBackgroundImage:forToolbarPosition:barMetrics:)]) {
-            [toolBar setBackgroundImage:[UIImage imageNamed:@"menuBar"] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
-        } else {
-            [toolBar insertSubview:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"menuBar"]] atIndex:0];
-        }
+//        if ([toolBar respondsToSelector:@selector(setBackgroundImage:forToolbarPosition:barMetrics:)]) {
+//            [toolBar setBackgroundImage:[UIImage imageNamed:@"menuBar"] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
+//        } else {
+//            [toolBar insertSubview:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"menuBar"]] atIndex:0];
+//        }
         
         //initialise toolbar buttons
         share =  [self customAddButtonItem:@"SHARE" WithTarget:self action:@selector(buttonPressed:) andTag:1 andTextSize:25];
@@ -292,7 +292,7 @@
         self.activeImageView = nil;
         [self.navigationController popViewControllerAnimated:YES];
         //Test flight build purposes only
-        //[TestFlight openFeedbackView];
+        [TestFlight openFeedbackView];
     }
     //OK
     else if (button.tag == 4){
@@ -667,41 +667,92 @@
     
     for (faceFeature *feature in editedFaceFeatures) {
         // draw hair.png on view
-        if ([sender tag] == 0) {
-            if ([feature isOfType]==hairType) {
-                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType withSender:sender fromArray:HAIR_PARTS]];
-            }
-            else{
-                [newEditedImageViews addObject:feature];
-            }
+        if ([feature isOfType]==hairType) {
+            [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType withSender:sender fromArray:HAIR_PARTS]];
         }
-        // draw hair.png
-        else if([sender tag] == 1){
-            if ([feature isOfType]==hairType) {
-                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType withSender:sender fromArray:HAIR_PARTS]];
-            }
-            else{
-                [newEditedImageViews addObject:feature];
-            }
+        else{
+            [newEditedImageViews addObject:feature];
         }
-        // draw hair.png
-        else if([sender tag] == 2){
-            if ([feature isOfType]==hairType) {
-                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType withSender:sender fromArray:HAIR_PARTS]];
-            }
-            else{
-                [newEditedImageViews addObject:feature];
-            }
-        }
-        // draw hair.png
-        else if([sender tag] == 3){
-            if ([feature isOfType]==hairType) {
-                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType withSender:sender fromArray:HAIR_PARTS]];
-            }
-            else{
-                [newEditedImageViews addObject:feature];
-            }
-        }
+//        if ([sender tag] == 0) {
+//            if ([feature isOfType]==hairType) {
+//                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType withSender:sender fromArray:HAIR_PARTS]];
+//            }
+//            else{
+//                [newEditedImageViews addObject:feature];
+//            }
+//        }
+//        // draw hair.png
+//        else if([sender tag] == 1){
+//            if ([feature isOfType]==hairType) {
+//                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType withSender:sender fromArray:HAIR_PARTS]];
+//            }
+//            else{
+//                [newEditedImageViews addObject:feature];
+//            }
+//        }
+//        // draw hair.png
+//        else if([sender tag] == 2){
+//            if ([feature isOfType]==hairType) {
+//                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType withSender:sender fromArray:HAIR_PARTS]];
+//            }
+//            else{
+//                [newEditedImageViews addObject:feature];
+//            }
+//        }
+//        // draw hair.png
+//        else if([sender tag] == 3){
+//            if ([feature isOfType]==hairType) {
+//                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType withSender:sender fromArray:HAIR_PARTS]];
+//            }
+//            else{
+//                [newEditedImageViews addObject:feature];
+//            }
+//        }
+//        // draw hair.png
+//        else if([sender tag] == 4){
+//            if ([feature isOfType]==hairType) {
+//                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType withSender:sender fromArray:HAIR_PARTS]];
+//            }
+//            else{
+//                [newEditedImageViews addObject:feature];
+//            }
+//        }
+//        // draw hair.png
+//        else if([sender tag] == 5){
+//            if ([feature isOfType]==hairType) {
+//                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType withSender:sender fromArray:HAIR_PARTS]];
+//            }
+//            else{
+//                [newEditedImageViews addObject:feature];
+//            }
+//        }
+//        // draw hair.png
+//        else if([sender tag] == 6){
+//            if ([feature isOfType]==hairType) {
+//                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType withSender:sender fromArray:HAIR_PARTS]];
+//            }
+//            else{
+//                [newEditedImageViews addObject:feature];
+//            }
+//        }
+//        // draw hair.png
+//        else if([sender tag] == 7){
+//            if ([feature isOfType]==hairType) {
+//                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType withSender:sender fromArray:HAIR_PARTS]];
+//            }
+//            else{
+//                [newEditedImageViews addObject:feature];
+//            }
+//        }
+//        // draw hair.png
+//        else if([sender tag] == 8){
+//            if ([feature isOfType]==hairType) {
+//                [newEditedImageViews addObject:[self updateFaceFeature:feature withCIFaceFeature:feature.featureBelongsToo withFaceFeatureType:hairType withSender:sender fromArray:HAIR_PARTS]];
+//            }
+//            else{
+//                [newEditedImageViews addObject:feature];
+//            }
+//        }
     }
     editedFaceFeatures = [[NSMutableArray alloc]initWithArray:newEditedImageViews];
 
@@ -902,6 +953,8 @@
     [self setLoadingText:nil];
     [self setLoadingView:nil];
     //[self setInfo:nil];
+    [self setSupportBrad:nil];
+    [self setWiggofy:nil];
     [super viewDidUnload];
 }
 @end

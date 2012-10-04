@@ -51,8 +51,12 @@
 //- (void)drawFeature:(int)feature InContext:(CGContextRef)contextLocal atPoint:(CGPoint)featurePoint;
 - (faceFeature*)drawFeature:(CIFaceFeature*)f ofType:(faceFeatureType)featureType withImage:(UIImageView*)imageView atPoint:(CGPoint)featurePoint;
 //this is called when the save image button is pressed
--(void)setImageWithImageViews:(NSMutableArray*)faceFeatures;//View:(UIImageView*)activeImageView withFeatures:(NSArray*)features OnCanvas:(UIView*)canvas;
-//- (UIImageView*)drawImage:(UIImageView*)image AnnotatedWithFeatures:(NSArray*)features;
+-(void)setImageWithImageViews:(NSMutableArray*)faceFeatures;
+- (UILabel*) drawText:(NSString*) text
+            InUILabel:(UILabel*)label
+            withFrame:(CGRect)frame
+               colour:(UIColor*)colour
+           ofFontType:(UIFont*)fontParam;
 
 -(void)showOverlayWithFrame:(CGRect)frame withMarque:(CAShapeLayer*)_marque;
 -(void)scale:(id)sender withView:(UIView*)view;

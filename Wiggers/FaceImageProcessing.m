@@ -113,12 +113,12 @@
         tempFaceFeature.isShown = YES;
         [faceFeatures addObject:tempFaceFeature];
         
-        UIImageView *leftSB = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[FACE_IMAGE_NAMES objectAtIndex:4]]];
+        UIImageView *leftSB = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[LSB_PARTS objectAtIndex:0]]];
         tempFaceFeature = [self drawFeature:f ofType:leftSBType withImage:leftSB atPoint:f.bounds.origin];
         tempFaceFeature.isShown = YES;
         [faceFeatures addObject:tempFaceFeature];
         
-        UIImageView *rightSB = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[FACE_IMAGE_NAMES objectAtIndex:5]]];
+        UIImageView *rightSB = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[RSB_PARTS objectAtIndex:0]]];
         tempFaceFeature = [self drawFeature:f ofType:rightSBType withImage:rightSB atPoint:f.bounds.origin];
         tempFaceFeature.isShown = YES;
         [faceFeatures addObject:tempFaceFeature];
@@ -147,18 +147,27 @@
 -(void)setImageWithImageViews:(NSMutableArray*)faceFeatures{ //View:(UIImageView*)activeImageView withFeatures:(NSArray*)features OnCanvas:(UIView*)canvas{
     UIImage *faceImage = activeImageView.image;
     
-    NSString *wiggoText = @"@Wiggofy";
-    CGSize theSize = [wiggoText sizeWithFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:25] constrainedToSize:activeImageView.frame.size lineBreakMode:UILineBreakModeMiddleTruncation];
-    faceImage = [self drawText:wiggoText inImage:faceImage atPoint:CGPointMake(0,0) ofSize:25 colour:[UIColor redColor] ofFontType:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:25]];
+//    NSString *wiggoText = @"@Wiggofy";
+//    CGSize theSize = [wiggoText sizeWithFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:25] constrainedToSize:activeImageView.frame.size lineBreakMode:UILineBreakModeMiddleTruncation];
+//    faceImage = [self drawText:wiggoText inImage:faceImage atPoint:CGPointMake(0,0) ofSize:25 colour:[UIColor redColor] ofFontType:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:25]];
     
-    NSString *wiggoSupport = @"VOTE Bradley Wiggins";
-    theSize = [wiggoSupport sizeWithFont:[UIFont fontWithName:@"Arial-BoldMT" size:20] constrainedToSize:activeImageView.frame.size lineBreakMode:UILineBreakModeMiddleTruncation];
-    faceImage = [self drawText:wiggoSupport inImage:faceImage atPoint:CGPointMake((activeImageView.frame.size.width-theSize.width)/2,activeImageView.image.size.height-theSize.height*2) ofSize:20  colour:[UIColor yellowColor] ofFontType:[UIFont fontWithName:@"Arial-BoldMT" size:20]];
+    UILabel *wiggofy = [[UILabel alloc]initWithFrame:CGRectMake(10,5,100,37)];
+    wiggofy = [self drawText:@"@Wiggofy" InUILabel:wiggofy withFrame:wiggofy.frame colour:[UIColor whiteColor] ofFontType:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:25]];
+    
+//    NSString *wiggoSupport = @"VOTE Bradley Wiggins";
+//    theSize = [wiggoSupport sizeWithFont:[UIFont fontWithName:@"Arial-BoldMT" size:20] constrainedToSize:activeImageView.frame.size lineBreakMode:UILineBreakModeMiddleTruncation];
+//    faceImage = [self drawText:wiggoSupport inImage:faceImage atPoint:CGPointMake((activeImageView.frame.size.width-theSize.width)/2,activeImageView.image.size.height-theSize.height*2) ofSize:20  colour:[UIColor yellowColor] ofFontType:[UIFont fontWithName:@"Arial-BoldMT" size:20]];
     
     
-    NSString *wiggoSupport2 = @"for SPOTY 2012";
-    theSize = [wiggoSupport2 sizeWithFont:[UIFont fontWithName:@"Arial-BoldMT" size:20] constrainedToSize:activeImageView.frame.size lineBreakMode:UILineBreakModeMiddleTruncation];
-    faceImage = [self drawText:wiggoSupport2 inImage:faceImage atPoint:CGPointMake((activeImageView.frame.size.width-theSize.width)/2,activeImageView.image.size.height-theSize.height) ofSize:20  colour:[UIColor yellowColor] ofFontType:[UIFont fontWithName:@"Arial-BoldMT" size:20]];
+    //NSString *wiggoSupport2 = @"for SPOTY 2012";
+    UILabel *brad = [[UILabel alloc]initWithFrame:CGRectMake((activeImageView.frame.size.width-300)/2,activeImageView.image.size.height-32,300,30)];
+
+    brad = [self drawText:@"VOTE Bradley Wiggins for SPOTY 2012" InUILabel:brad withFrame:brad.frame colour:[UIColor whiteColor] ofFontType:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:17]];
+   
+    brad.numberOfLines=1;
+
+//    theSize = [wiggoSupport2 sizeWithFont:[UIFont fontWithName:@"Arial-BoldMT" size:20] constrainedToSize:activeImageView.frame.size lineBreakMode:UILineBreakModeMiddleTruncation];
+//    faceImage = [self drawText:wiggoSupport2 inImage:faceImage atPoint:CGPointMake((activeImageView.frame.size.width-theSize.width)/2,activeImageView.image.size.height-theSize.height) ofSize:20  colour:[UIColor yellowColor] ofFontType:[UIFont fontWithName:@"Arial-BoldMT" size:20]];
     
     UIGraphicsBeginImageContextWithOptions(faceImage.size, YES, 0);
     [faceImage drawInRect:activeImageView.bounds];
@@ -182,6 +191,8 @@
     for (faceFeature *faceparts in faceFeatures) {
         [activeImageView addSubview:faceparts.featureImageView];
     }
+    [activeImageView addSubview:brad];
+    [activeImageView addSubview:wiggofy];
 //    [activeImageView addSubview:[imageViews objectAtIndex:0]];
 //    [activeImageView addSubview:[imageViews objectAtIndex:1]];
 //    [activeImageView addSubview:[imageViews objectAtIndex:2]];
@@ -325,7 +336,26 @@
 	return result;	
 }
 
-- (UIImage*) drawText:(NSString*) text 
+- (UILabel*) drawText:(NSString*) text
+            InUILabel:(UILabel*)label
+              withFrame:(CGRect)frame
+               colour:(UIColor*)colour
+           ofFontType:(UIFont*)fontParam
+{
+    label.layer.cornerRadius = 8;
+    label.textAlignment = UITextAlignmentCenter;
+    //label.lineBreakMode = UILineBreakModeCharacterWrap;
+    label.text = text;
+    label.textColor = colour;
+    label.backgroundColor = [UIColor grayColor];
+    label.alpha = 0.7;
+    label.frame = frame;
+    [label setFont:fontParam];
+    
+    return label;
+}
+
+- (UIImage*) drawText:(NSString*) text
               inImage:(UIImage*)  image 
               atPoint:(CGPoint)   point
                 ofSize:(int)textSize
