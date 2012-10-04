@@ -33,6 +33,7 @@
     UIActionSheet *sheet;
     NSArray *imageFeatures;
     ImageManipulationVC *imageManip;
+    UIWebView *webView;
 }
 @property (nonatomic,strong) ImageManipulationVC *imageManip;
 @property (weak, nonatomic) IBOutlet UIButton *adFree;

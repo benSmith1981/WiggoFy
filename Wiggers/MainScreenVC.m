@@ -78,7 +78,6 @@
     self.cameraVC.delegate = self;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveImagefeatures:) name:@"featuresNotification" object:nil];
-    
 }
 
 - (void)viewDidUnload

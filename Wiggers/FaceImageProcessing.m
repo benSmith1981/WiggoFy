@@ -112,6 +112,7 @@
         faceFeature *tempFaceFeature = [self drawFeature:f ofType:hairType withImage:hair atPoint:f.bounds.origin];
         tempFaceFeature.isShown = YES;
         [faceFeatures addObject:tempFaceFeature];
+        //activeFacePart = tempFaceFeature.featureImageView;
         
         UIImageView *leftSB = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[LSB_PARTS objectAtIndex:0]]];
         tempFaceFeature = [self drawFeature:f ofType:leftSBType withImage:leftSB atPoint:f.bounds.origin];
@@ -144,7 +145,7 @@
 
 
 //this is called when the save image button is pressed
--(void)setImageWithImageViews:(NSMutableArray*)faceFeatures{ //View:(UIImageView*)activeImageView withFeatures:(NSArray*)features OnCanvas:(UIView*)canvas{
+-(void)setImageWithImageViews:(NSMutableArray*)faceFeatures{
     UIImage *faceImage = activeImageView.image;
     
 //    NSString *wiggoText = @"@Wiggofy";
@@ -230,12 +231,15 @@
         case 4://hair
             imageView.image = [imageView.image imageByScalingProportionallyToSize: CGSizeMake(f.bounds.size.width + f.bounds.size.width/4, f.bounds.size.height + f.bounds.size.height/6)];
             imageView.frame = CGRectMake(f.bounds.origin.x-f.bounds.size.width/8.5, IMG_HEIGHT - (f.bounds.origin.y + f.bounds.size.height + f.bounds.size.height/2 ), imageView.image.size.width,imageView.image.size.height);
+            
+//            imageView.image = [imageView.image imageByScalingProportionallyToSize: CGSizeMake(activeFacePart.frame.size.width + activeFacePart.frame.size.width/4, activeFacePart.frame.size.height + activeFacePart.frame.size.height/6)];
+//            imageView.frame = CGRectMake(activeFacePart.frame.origin.x-f.bounds.size.width/8.5, IMG_HEIGHT - (activeFacePart.frame.origin.y + f.bounds.size.height + f.bounds.size.height/2 ), imageView.image.size.width,imageView.image.size.height);
+            
             [newFaceFeature setType:featureType];
             newFaceFeature.featureImageView = imageView;
             newFaceFeature.featureBelongsToo = f;
-            //[imageView setType:featureType];
             break;
-        case 5:// right sideburn
+        case 5:// left sideburn
             imageView.image = [imageView.image imageByScalingProportionallyToSize:CGSizeMake(leftSBScaleWidth,leftSBScaleHeight)];
 //            imageView.frame = CGRectMake(f.bounds.origin.x, IMG_HEIGHT - (f.bounds.origin.y + imageView.frame.size.height), imageView.image.size.width, imageView.image.size.height);
             imageView.frame = CGRectMake(f.bounds.origin.x, IMG_HEIGHT - (f.bounds.origin.y + imageView.image.size.height + f.bounds.size.height/4), imageView.image.size.width, imageView.image.size.height);
@@ -245,7 +249,7 @@
 
             
             break;
-        case 6:// left sideburn
+        case 6:// right sideburn
             imageView.image = [imageView.image imageByScalingProportionallyToSize:CGSizeMake(rightSBScaleWidth, rightSBScaleHeight)];
 //            imageView.frame = CGRectMake(f.bounds.origin.x + f.bounds.size.width - imageView.frame.size.width, IMG_HEIGHT - (f.bounds.origin.y + imageView.frame.size.height),  imageView.image.size.width, imageView.image.size.height );
             imageView.frame = CGRectMake(f.bounds.origin.x + f.bounds.size.width - imageView.image.size.width, IMG_HEIGHT - (f.bounds.origin.y + imageView.image.size.height + f.bounds.size.height/4),  imageView.image.size.width, imageView.image.size.height );

@@ -457,12 +457,12 @@ a {
     clear: both; }
   #header #logo {
     width: 266px;
-    height: 72px;
+    height: 86px;
     display: block;
     z-index: 9;
     position: relative;
     margin: 0 0 0 50px;
-    background: url(../img/chance-logo.png) no-repeat 0 0; }
+    background: url(../img/wiggofyLogo.png) no-repeat 0 0; }
     #header #logo span {
       height: 0;
       display: block;

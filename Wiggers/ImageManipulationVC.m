@@ -302,6 +302,7 @@
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:hairScrollViewContainer cache:YES];
         hairScrollViewContainer.frame = CGRectMake(0.0f,toolBar.frame.origin.y, hairScrollViewContainer.frame.size.width, hairScrollViewContainer.frame.size.height);
+        hairScrollViewContainer.alpha = 0;
         //[self.view bringSubviewToFront:hairScrollViewContainer];
         //hairScrollViewContainer.hidden = YES;
         [UIView commitAnimations];
@@ -323,6 +324,7 @@
             [self.view bringSubviewToFront:hairScrollViewContainer];
             [self.view bringSubviewToFront:toolBar];
             hairScrollViewContainer.hidden = NO;
+            hairScrollViewContainer.alpha = 1;
             [UIView beginAnimations:@"showView" context:nil];
             [UIView setAnimationDuration:0.7];
             [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:hairScrollViewContainer cache:YES];
@@ -333,15 +335,16 @@
         else
         {
             showHairContainer = FALSE;
-            
+
             [UIView beginAnimations:@"showView" context:nil];
             [UIView setAnimationDuration:0.7];
             [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
             [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:hairScrollViewContainer cache:YES];
             hairScrollViewContainer.frame = CGRectMake(0.0f,toolBar.frame.origin.y, hairScrollViewContainer.frame.size.width, hairScrollViewContainer.frame.size.height);
             //[self.view bringSubviewToFront:hairScrollViewContainer];
-            //hairScrollViewContainer.hidden = YES;
+            hairScrollViewContainer.alpha = 0;
             [UIView commitAnimations];
+
             
         }
     }

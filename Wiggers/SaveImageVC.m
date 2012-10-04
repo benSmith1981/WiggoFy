@@ -147,7 +147,7 @@
     }
     //SHARE
     if (button.tag == 3){
-        SHKItem *item = [SHKItem image:savedImageView.image title:@"Wiggins"];
+        SHKItem *item = [SHKItem image:savedImageView.image title:@"I've been Wiggofied! Vote Bradley Wiggins for BBC Sports Personality 2012"];
         SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
         [SHK setRootViewController:self];
         [actionSheet showFromToolbar:toolBar];
