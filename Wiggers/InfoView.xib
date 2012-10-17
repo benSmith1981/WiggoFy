@@ -48,7 +48,7 @@
 								<string key="NSFrame">{{0, 147}, {102, 136}}</string>
 								<reference key="NSSuperview" ref="348670817"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="72492714"/>
+								<reference key="NSNextKeyView" ref="474276898"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -63,6 +63,7 @@
 								<string key="NSFrame">{{221, 147}, {98, 136}}</string>
 								<reference key="NSSuperview" ref="348670817"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="700215889"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -77,7 +78,7 @@
 								<string key="NSFrame">{{107, 158}, {106, 114}}</string>
 								<reference key="NSSuperview" ref="348670817"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="21066973"/>
+								<reference key="NSNextKeyView" ref="182340624"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -92,6 +93,7 @@
 								<string key="NSFrame">{{124, 376}, {72, 37}}</string>
 								<reference key="NSSuperview" ref="348670817"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="72149971"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -134,6 +136,7 @@
 								<string key="NSFrame">{{127, 383}, {66, 21}}</string>
 								<reference key="NSSuperview" ref="348670817"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -166,13 +169,14 @@
 								<string key="NSFrame">{{7, 7}, {307, 153}}</string>
 								<reference key="NSSuperview" ref="348670817"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="72492714"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Wig-Mania swept the country during the London 2012 games, everyone from TV presenters, Sir Steve Redgrave even Cheryl cole sported sideburns in honour of the great Bradley Wiggins, one of the most decorated medallists Britain has ever seen...</string>
+								<string key="IBUIText">During the London 2012 games, everyone from TV presenters, Sir Steve Redgrave even Cheryl cole sported sideburns in honour of the great Bradley Wiggins, get that fever back and MOD yourself like him...</string>
 								<reference key="IBUITextColor" ref="28905120"/>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">0</int>
@@ -189,13 +193,14 @@
 								<string key="NSFrame">{{0, 278}, {320, 97}}</string>
 								<reference key="NSSuperview" ref="348670817"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="21066973"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">NOW'S YOUR CHANCE! Take a snap of you or your mate and post it to Facebook or Twitter and share with the world your Wiggo'fyed look!</string>
+								<string key="IBUIText">NOW'S YOUR CHANCE! Take a snap of you or your mate and post it to Facebook or Twitter and share with the world your Modded look!</string>
 								<reference key="IBUITextColor" ref="28905120"/>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">0</int>
@@ -210,6 +215,7 @@
 						<string key="NSFrameSize">{320, 460}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="328580105"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>

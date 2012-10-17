@@ -195,7 +195,7 @@
 #pragma mark - Loading Text Animations
 
 - (void)showLoadingText{
-    NSString* allStrings[] = {@"Wiggo'fying", @"Adding Sideburns", @"MODding hair", @"Gingering Up!", @"Getting your groove on!",@"Analyzing face!",@"Reticulating Splines!",@"Detecting hair",nil};
+    NSString* allStrings[] = {@"MOD'ifying", @"Adding Sideburns", @"MODding hair", @"Gingering Up!", @"Getting your groove on!",@"Analyzing face!",@"Reticulating Splines!",@"Detecting hair",nil};
     
     
     int randomNumber = arc4random()%8;
@@ -282,7 +282,7 @@
     }
     //SHARE
     else if (button.tag == 1){
-        SHKItem *item = [SHKItem image:self.activeImageView.image title:@"WiggoFy!"];
+        SHKItem *item = [SHKItem image:self.activeImageView.image title:@"Get MODdofy on the Appstore now! Vote Bradley Wiggins for SPOTY 2012!"];
         SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
         [SHK setRootViewController:self];
         [actionSheet showFromToolbar:toolBar];
@@ -355,7 +355,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{ 
     //NSLog(@"Entered: %@",[alertTextField text]);
     
-    if ([alertView.title isEqualToString:@"Wiggofy!"]) {
+    if ([alertView.title isEqualToString:@"MODdofy!"]) {
 
         if([[alertTextField text] isEqualToString:@""] && buttonIndex == 1) //invalid name and OK
         {
@@ -391,7 +391,7 @@
 
 -(void)alertSaveBox{
 
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wiggofy!" message:@"Please enter name to save:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Save",nil];
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"MODdofy!" message:@"Please enter name to save:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Save",nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     alertTextField = [alert textFieldAtIndex:0];
     alertTextField.keyboardType = UIKeyboardTypeDefault;

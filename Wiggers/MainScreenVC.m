@@ -53,7 +53,7 @@
 //    [recentImagesTitle2 setFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:33]]; 
 //    [takePicTitle1 setFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:20]];
     [takePicTitle1 setFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:17]];
-    takePicTitle1.text = @"Get Wigg'd";
+    takePicTitle1.text = @"Get MOD'd";
     //takePicture.titleLabel.font = [UIFont fontWithName:@"AEnigmaScrawl4BRK" size:15];
     
     
@@ -64,7 +64,7 @@
     CGSize constraintSize;
     constraintSize.width = self.view.frame.size.width;
     constraintSize.height = TITLE_HEIGHT;
-    mainTitle.text = @"Wiggo'fy Yourself!";
+    mainTitle.text = @"MOD Yourself!";
     CGSize theSize = [mainTitle.text sizeWithFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:TITLE_FONT_SIZE] constrainedToSize:constraintSize lineBreakMode:UILineBreakModeMiddleTruncation];
     mainTitle.frame = CGRectMake((self.view.frame.size.width-theSize.width)/2,(TITLE_HEIGHT-theSize.height)/2, theSize.width,theSize.height);
     [mainTitle setFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:TITLE_FONT_SIZE]]; 

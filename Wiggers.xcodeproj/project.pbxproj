@@ -11,9 +11,6 @@
 		900FC20E15F6B0CF00B091AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 900FC20D15F6B0CF00B091AD /* QuartzCore.framework */; };
 		9013F98E15FCC1D700BC8948 /* aescrawl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9013F98D15FCC0B600BC8948 /* aescrawl.ttf */; };
 		9013F9A515FDEF0400BC8948 /* Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9013F9A415FDEF0300BC8948 /* Animation.m */; };
-		901C8FB9161B029700453313 /* iconIpad72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 901C8FB8161B029700453313 /* iconIpad72x72.png */; };
-		901C8FBB161B029B00453313 /* iconIpad144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 901C8FBA161B029B00453313 /* iconIpad144x144.png */; };
-		901C8FBD161B031B00453313 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901C8FBC161B031B00453313 /* Default@2x.png */; };
 		9027265F160B8A1A004DB4B2 /* libShareKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90272656160B892E004DB4B2 /* libShareKit.a */; };
 		90272661160B8A33004DB4B2 /* ShareKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 90272658160B892E004DB4B2 /* ShareKit.bundle */; };
 		902B582416145AF800061CED /* cameraIconLarge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 902B582216145AF800061CED /* cameraIconLarge@2x.png */; };
@@ -40,7 +37,6 @@
 		90741F431617A0E90006688D /* sideburnLeft1.png in Resources */ = {isa = PBXBuildFile; fileRef = 90741F411617A0E90006688D /* sideburnLeft1.png */; };
 		90741F441617A0E90006688D /* sideburnRight1.png in Resources */ = {isa = PBXBuildFile; fileRef = 90741F421617A0E90006688D /* sideburnRight1.png */; };
 		90741F521617D4F30006688D /* Green_tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 90741F511617D4F30006688D /* Green_tick.png */; };
-		907F4A6C15FFE52600C4872F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 907F4A6815FFE52500C4872F /* Default.png */; };
 		907F4A7315FFE53800C4872F /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 907F4A6E15FFE53300C4872F /* button.png */; };
 		907F4A7415FFE53800C4872F /* buttonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 907F4A6F15FFE53300C4872F /* buttonPressed.png */; };
 		907F4A7615FFE53800C4872F /* menuBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 907F4A7115FFE53500C4872F /* menuBar.png */; };
@@ -56,17 +52,20 @@
 		909F355415FA0504005FB900 /* SaveImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 909F355215FA0504005FB900 /* SaveImage.m */; };
 		909F35A715FBD422005FB900 /* SaveImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 909F35A515FBD421005FB900 /* SaveImageVC.m */; };
 		909F35A815FBD422005FB900 /* SaveImageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 909F35A615FBD422005FB900 /* SaveImageVC.xib */; };
-		90B28A571609C06D00337E56 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B28A561609C06D00337E56 /* Default-568h@2x.png */; };
 		90C9E6E4160A35BF00B0BB13 /* CameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 90C9E6E3160A35BF00B0BB13 /* CameraVC.m */; };
 		90C9E6E7160A487E00B0BB13 /* FaceImageProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 90C9E6E6160A487E00B0BB13 /* FaceImageProcessing.m */; };
 		90C9E6EA160A90DD00B0BB13 /* UIImage+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 90C9E6E9160A90DC00B0BB13 /* UIImage+Extensions.m */; };
+		90D137FE162F3B54002FA40D /* backgroundMain.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D137FD162F3B54002FA40D /* backgroundMain.png */; };
+		90D13812162F5610002FA40D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D13811162F5610002FA40D /* Default@2x.png */; };
+		90D13816162F5626002FA40D /* iconIpad114x114NonBrad.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D13815162F5626002FA40D /* iconIpad114x114NonBrad.png */; };
+		90D13818162F562D002FA40D /* Icon57x57NonBrad.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D13817162F562D002FA40D /* Icon57x57NonBrad.png */; };
+		90D1381A162F5763002FA40D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D13819162F5761002FA40D /* Default.png */; };
+		90D1381C162F57F1002FA40D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D1381B162F57F1002FA40D /* Default-568h@2x.png */; };
 		90E46B1D1605F1F5008514B5 /* backgroundWiggins3.png in Resources */ = {isa = PBXBuildFile; fileRef = 90E46B1C1605F1F5008514B5 /* backgroundWiggins3.png */; };
 		90E46B2516060269008514B5 /* cameraButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 90E46B2416060269008514B5 /* cameraButton.png */; };
 		90E46B27160610D1008514B5 /* photoAlbumButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 90E46B26160610D1008514B5 /* photoAlbumButton.png */; };
 		90E46B2C1606161E008514B5 /* cameraButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 90E46B2A1606161E008514B5 /* cameraButtonPressed.png */; };
 		90E46B2D1606161E008514B5 /* photoAlbumButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 90E46B2B1606161E008514B5 /* photoAlbumButtonPressed.png */; };
-		90E46B2F16061CBA008514B5 /* iconBrad.png in Resources */ = {isa = PBXBuildFile; fileRef = 90E46B2E16061CBA008514B5 /* iconBrad.png */; };
-		90E46B3116061CBF008514B5 /* iconBrad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90E46B3016061CBF008514B5 /* iconBrad@2x.png */; };
 		90E46B3316069252008514B5 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E46B3216069252008514B5 /* InfoView.xib */; };
 		90E46B3516069329008514B5 /* Screen Shot 2012-09-16 at 3.57.44 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 90E46B3416069328008514B5 /* Screen Shot 2012-09-16 at 3.57.44 PM.png */; };
 		90E46B38160693B0008514B5 /* CherylSideburns.png in Resources */ = {isa = PBXBuildFile; fileRef = 90E46B36160693AD008514B5 /* CherylSideburns.png */; };
@@ -145,9 +144,6 @@
 		9013F98D15FCC0B600BC8948 /* aescrawl.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = aescrawl.ttf; sourceTree = "<group>"; };
 		9013F9A315FDEF0200BC8948 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		9013F9A415FDEF0300BC8948 /* Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animation.m; sourceTree = "<group>"; };
-		901C8FB8161B029700453313 /* iconIpad72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconIpad72x72.png; sourceTree = "<group>"; };
-		901C8FBA161B029B00453313 /* iconIpad144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconIpad144x144.png; sourceTree = "<group>"; };
-		901C8FBC161B031B00453313 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		90272648160B892E004DB4B2 /* ShareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShareKit.xcodeproj; path = Submodules/ShareKit/ShareKit.xcodeproj; sourceTree = "<group>"; };
 		902B582216145AF800061CED /* cameraIconLarge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cameraIconLarge@2x.png"; path = "Graphics/Retina/Buttons/cameraIconLarge@2x.png"; sourceTree = SOURCE_ROOT; };
 		902B582316145AF800061CED /* photoAlbumButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "photoAlbumButton@2x.png"; path = "Graphics/Retina/Buttons/photoAlbumButton@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -184,7 +180,6 @@
 		90741F411617A0E90006688D /* sideburnLeft1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sideburnLeft1.png; path = "Graphics/Non Retina/Face Parts/sideburnLeft1.png"; sourceTree = SOURCE_ROOT; };
 		90741F421617A0E90006688D /* sideburnRight1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sideburnRight1.png; path = "Graphics/Non Retina/Face Parts/sideburnRight1.png"; sourceTree = SOURCE_ROOT; };
 		90741F511617D4F30006688D /* Green_tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Green_tick.png; path = "Graphics/Non Retina/Background/Green_tick.png"; sourceTree = SOURCE_ROOT; };
-		907F4A6815FFE52500C4872F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = "Graphics/Non Retina/Background/Default.png"; sourceTree = SOURCE_ROOT; };
 		907F4A6E15FFE53300C4872F /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button.png; path = "Graphics/Non Retina/Buttons/button.png"; sourceTree = SOURCE_ROOT; };
 		907F4A6F15FFE53300C4872F /* buttonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonPressed.png; path = "Graphics/Non Retina/Buttons/buttonPressed.png"; sourceTree = SOURCE_ROOT; };
 		907F4A7115FFE53500C4872F /* menuBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menuBar.png; path = "Graphics/Non Retina/Buttons/menuBar.png"; sourceTree = SOURCE_ROOT; };
@@ -204,20 +199,23 @@
 		909F35A415FBD420005FB900 /* SaveImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveImageVC.h; sourceTree = "<group>"; };
 		909F35A515FBD421005FB900 /* SaveImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveImageVC.m; sourceTree = "<group>"; };
 		909F35A615FBD422005FB900 /* SaveImageVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SaveImageVC.xib; sourceTree = "<group>"; };
-		90B28A561609C06D00337E56 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		90C9E6E2160A35BF00B0BB13 /* CameraVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraVC.h; sourceTree = "<group>"; };
 		90C9E6E3160A35BF00B0BB13 /* CameraVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraVC.m; sourceTree = "<group>"; };
 		90C9E6E5160A487E00B0BB13 /* FaceImageProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceImageProcessing.h; sourceTree = "<group>"; };
 		90C9E6E6160A487E00B0BB13 /* FaceImageProcessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceImageProcessing.m; sourceTree = "<group>"; };
 		90C9E6E8160A90DC00B0BB13 /* UIImage+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extensions.h"; sourceTree = "<group>"; };
 		90C9E6E9160A90DC00B0BB13 /* UIImage+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extensions.m"; sourceTree = "<group>"; };
+		90D137FD162F3B54002FA40D /* backgroundMain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundMain.png; path = "Graphics/Non Retina/Background/backgroundMain.png"; sourceTree = SOURCE_ROOT; };
+		90D13811162F5610002FA40D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		90D13815162F5626002FA40D /* iconIpad114x114NonBrad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconIpad114x114NonBrad.png; sourceTree = "<group>"; };
+		90D13817162F562D002FA40D /* Icon57x57NonBrad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon57x57NonBrad.png; sourceTree = "<group>"; };
+		90D13819162F5761002FA40D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		90D1381B162F57F1002FA40D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		90E46B1C1605F1F5008514B5 /* backgroundWiggins3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundWiggins3.png; path = "Graphics/Non Retina/Background/backgroundWiggins3.png"; sourceTree = SOURCE_ROOT; };
 		90E46B2416060269008514B5 /* cameraButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cameraButton.png; path = "Graphics/Non Retina/Buttons/cameraButton.png"; sourceTree = SOURCE_ROOT; };
 		90E46B26160610D1008514B5 /* photoAlbumButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photoAlbumButton.png; path = "Graphics/Non Retina/Buttons/photoAlbumButton.png"; sourceTree = SOURCE_ROOT; };
 		90E46B2A1606161E008514B5 /* cameraButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cameraButtonPressed.png; path = "Graphics/Non Retina/Buttons/cameraButtonPressed.png"; sourceTree = SOURCE_ROOT; };
 		90E46B2B1606161E008514B5 /* photoAlbumButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photoAlbumButtonPressed.png; path = "Graphics/Non Retina/Buttons/photoAlbumButtonPressed.png"; sourceTree = SOURCE_ROOT; };
-		90E46B2E16061CBA008514B5 /* iconBrad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconBrad.png; sourceTree = "<group>"; };
-		90E46B3016061CBF008514B5 /* iconBrad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconBrad@2x.png"; sourceTree = "<group>"; };
 		90E46B3216069252008514B5 /* InfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
 		90E46B3416069328008514B5 /* Screen Shot 2012-09-16 at 3.57.44 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2012-09-16 at 3.57.44 PM.png"; path = "Graphics/Non Retina/Appstore Screen Shots/Screen Shot 2012-09-16 at 3.57.44 PM.png"; sourceTree = SOURCE_ROOT; };
 		90E46B36160693AD008514B5 /* CherylSideburns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CherylSideburns.png; path = "Graphics/Non Retina/Appstore Screen Shots/CherylSideburns.png"; sourceTree = SOURCE_ROOT; };
@@ -365,14 +363,13 @@
 		BE24840B15F0DB9900219F13 = {
 			isa = PBXGroup;
 			children = (
-				901C8FBC161B031B00453313 /* Default@2x.png */,
-				901C8FBA161B029B00453313 /* iconIpad144x144.png */,
-				901C8FB8161B029700453313 /* iconIpad72x72.png */,
+				90D1381B162F57F1002FA40D /* Default-568h@2x.png */,
+				90D13819162F5761002FA40D /* Default.png */,
+				90D13817162F562D002FA40D /* Icon57x57NonBrad.png */,
+				90D13815162F5626002FA40D /* iconIpad114x114NonBrad.png */,
+				90D13811162F5610002FA40D /* Default@2x.png */,
 				90272648160B892E004DB4B2 /* ShareKit.xcodeproj */,
-				90B28A561609C06D00337E56 /* Default-568h@2x.png */,
 				90E46B8E16074630008514B5 /* StoreKit.framework */,
-				90E46B3016061CBF008514B5 /* iconBrad@2x.png */,
-				90E46B2E16061CBA008514B5 /* iconBrad.png */,
 				905EAC85160230AD000C8264 /* libz.dylib */,
 				90302AFD160B99D300F8992C /* Admobs */,
 				90F567A4160B8FB9003B1768 /* TestFlightSDK1.1 */,
@@ -451,6 +448,7 @@
 		BE24842115F0DB9A00219F13 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				90D137FD162F3B54002FA40D /* backgroundMain.png */,
 				90E46B36160693AD008514B5 /* CherylSideburns.png */,
 				90E46B37160693AF008514B5 /* tvPresSideburns.png */,
 				90E46B3416069328008514B5 /* Screen Shot 2012-09-16 at 3.57.44 PM.png */,
@@ -459,7 +457,6 @@
 				905EAC711601FA7A000C8264 /* JerseyNoHeadOverlay.png */,
 				905EAC6F1601F99A000C8264 /* jeresyHeadOverlay.png */,
 				907F4A8215FFF14C00C4872F /* faceScaled.png */,
-				907F4A6815FFE52500C4872F /* Default.png */,
 				9013F98D15FCC0B600BC8948 /* aescrawl.ttf */,
 				9013F97C15FC862D00BC8948 /* Buttons */,
 				909F35A615FBD422005FB900 /* SaveImageVC.xib */,
@@ -573,7 +570,6 @@
 				90E6B84315F6822300A7ED78 /* ImageManipulationView.xib in Resources */,
 				909F35A815FBD422005FB900 /* SaveImageVC.xib in Resources */,
 				9013F98E15FCC1D700BC8948 /* aescrawl.ttf in Resources */,
-				907F4A6C15FFE52600C4872F /* Default.png in Resources */,
 				907F4A7315FFE53800C4872F /* button.png in Resources */,
 				907F4A7415FFE53800C4872F /* buttonPressed.png in Resources */,
 				907F4A7615FFE53800C4872F /* menuBar.png in Resources */,
@@ -586,13 +582,10 @@
 				90E46B27160610D1008514B5 /* photoAlbumButton.png in Resources */,
 				90E46B2C1606161E008514B5 /* cameraButtonPressed.png in Resources */,
 				90E46B2D1606161E008514B5 /* photoAlbumButtonPressed.png in Resources */,
-				90E46B2F16061CBA008514B5 /* iconBrad.png in Resources */,
-				90E46B3116061CBF008514B5 /* iconBrad@2x.png in Resources */,
 				90E46B3316069252008514B5 /* InfoView.xib in Resources */,
 				90E46B3516069329008514B5 /* Screen Shot 2012-09-16 at 3.57.44 PM.png in Resources */,
 				90E46B38160693B0008514B5 /* CherylSideburns.png in Resources */,
 				90E46B39160693B0008514B5 /* tvPresSideburns.png in Resources */,
-				90B28A571609C06D00337E56 /* Default-568h@2x.png in Resources */,
 				90272661160B8A33004DB4B2 /* ShareKit.bundle in Resources */,
 				90F567AA160B8FB9003B1768 /* README.md in Resources */,
 				90F567AB160B8FB9003B1768 /* release_notes.md in Resources */,
@@ -613,12 +606,15 @@
 				90741F431617A0E90006688D /* sideburnLeft1.png in Resources */,
 				90741F441617A0E90006688D /* sideburnRight1.png in Resources */,
 				90741F521617D4F30006688D /* Green_tick.png in Resources */,
-				901C8FB9161B029700453313 /* iconIpad72x72.png in Resources */,
-				901C8FBB161B029B00453313 /* iconIpad144x144.png in Resources */,
-				901C8FBD161B031B00453313 /* Default@2x.png in Resources */,
 				90F7BC88161C85F200D1AD88 /* hair5.png in Resources */,
 				90F7BC89161C85F200D1AD88 /* hair6.png in Resources */,
 				90F7BC8B161C85F200D1AD88 /* hair8.png in Resources */,
+				90D137FE162F3B54002FA40D /* backgroundMain.png in Resources */,
+				90D13812162F5610002FA40D /* Default@2x.png in Resources */,
+				90D13816162F5626002FA40D /* iconIpad114x114NonBrad.png in Resources */,
+				90D13818162F562D002FA40D /* Icon57x57NonBrad.png in Resources */,
+				90D1381A162F5763002FA40D /* Default.png in Resources */,
+				90D1381C162F57F1002FA40D /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

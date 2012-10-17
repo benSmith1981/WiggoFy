@@ -5,15 +5,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>WiggoFy</string>
+	<string>MODdofy</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>iconBrad.png</string>
-		<string>iconBrad@2x.png</string>
-		<string>iconIpad72x72.png</string>
-		<string>iconIpad144x144.png</string>
+		<string>Icon57x57NonBrad.png</string>
+		<string>iconIpad114x114NonBrad.png</string>
+		<string>iconIpad114x114NonBrad.png</string>
+		<string>Icon57x57NonBrad.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -21,10 +21,10 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>iconBrad.png</string>
-				<string>iconBrad@2x.png</string>
-				<string>iconIpad72x72.png</string>
-				<string>iconIpad144x144.png</string>
+				<string>Icon57x57NonBrad.png</string>
+				<string>iconIpad114x114NonBrad.png</string>
+				<string>iconIpad114x114NonBrad.png</string>
+				<string>Icon57x57NonBrad.png</string>
 			</array>
 		</dict>
 	</dict>

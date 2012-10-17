@@ -35,7 +35,7 @@
  These values are used by any service that shows 'shared from XYZ'
  */
 - (NSString*)appName {
-	return @"Wiggofy";
+	return @"Get MODdofy on the appstore now! Vote Bradley Wiggins for SPOTY 2012!";
 }
 
 - (NSString*)appURL {
@@ -139,7 +139,7 @@
 }
 // Enter your app's twitter account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
 - (NSString*)twitterUsername {
-	return @"Wiggofy";
+	return @"MODdofy";
 }
 // Evernote - http://www.evernote.com/about/developer/api/
 /*	You need to set to sandbox until you get approved by evernote. If you use sandbox, you can use it with special sandbox user account only. You can create it here: https://sandbox.evernote.com/Registration.action

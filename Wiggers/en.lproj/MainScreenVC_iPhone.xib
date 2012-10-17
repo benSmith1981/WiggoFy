@@ -52,7 +52,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">backgroundWiggins3.png</string>
+							<string key="NSResourceName">backgroundMain.png</string>
 						</object>
 					</object>
 					<object class="IBUIButton" id="122429363">
@@ -105,6 +105,7 @@
 						<string key="NSFrame">{{240, 322}, {60, 61}}</string>
 						<reference key="NSSuperview" ref="304971427"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="232227015"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<int key="IBUITag">1</int>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -165,10 +166,10 @@
 					<object class="IBUIButton" id="83202955">
 						<reference key="NSNextResponder" ref="304971427"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{151, 381}, {18, 19}}</string>
+						<string key="NSFrame">{{151, 356}, {18, 19}}</string>
 						<reference key="NSSuperview" ref="304971427"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="232227015"/>
+						<reference key="NSNextKeyView" ref="268280763"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<int key="IBUITag">3</int>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -202,7 +203,7 @@
 						<string key="NSFrame">{{7, 89}, {80, 37}}</string>
 						<reference key="NSSuperview" ref="304971427"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="268280763"/>
+						<reference key="NSNextKeyView" ref="122429363"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -221,10 +222,10 @@
 					<object class="IBUILabel" id="232227015">
 						<reference key="NSNextResponder" ref="304971427"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{230, 382}, {80, 25}}</string>
+						<string key="NSFrame">{{230, 387}, {80, 25}}</string>
 						<reference key="NSSuperview" ref="304971427"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="259599877"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -245,7 +246,7 @@
 						<string key="NSFrame">{{0, 382}, {110, 35}}</string>
 						<reference key="NSSuperview" ref="304971427"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="122429363"/>
+						<reference key="NSNextKeyView" ref="259599877"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -409,8 +410,8 @@
 							<reference ref="734823773"/>
 							<reference ref="259599877"/>
 							<reference ref="122429363"/>
-							<reference ref="432398430"/>
 							<reference ref="268280763"/>
+							<reference ref="432398430"/>
 							<reference ref="232227015"/>
 							<reference ref="83202955"/>
 						</array>
@@ -574,7 +575,7 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="backgroundWiggins3.png">{320, 480}</string>
+			<string key="backgroundMain.png">{320, 480}</string>
 			<string key="cameraButton.png">{60, 60}</string>
 			<string key="cameraButtonPressed.png">{60, 60}</string>
 			<string key="photoAlbumButton.png">{60, 60}</string>

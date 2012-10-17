@@ -152,8 +152,8 @@
 //    CGSize theSize = [wiggoText sizeWithFont:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:25] constrainedToSize:activeImageView.frame.size lineBreakMode:UILineBreakModeMiddleTruncation];
 //    faceImage = [self drawText:wiggoText inImage:faceImage atPoint:CGPointMake(0,0) ofSize:25 colour:[UIColor redColor] ofFontType:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:25]];
     
-    UILabel *wiggofy = [[UILabel alloc]initWithFrame:CGRectMake(10,5,100,37)];
-    wiggofy = [self drawText:@"@Wiggofy" InUILabel:wiggofy withFrame:wiggofy.frame colour:[UIColor whiteColor] ofFontType:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:25]];
+    UILabel *wiggofy = [[UILabel alloc]initWithFrame:CGRectMake(10,5,120,37)];
+    wiggofy = [self drawText:@"@MODdofy" InUILabel:wiggofy withFrame:wiggofy.frame colour:[UIColor whiteColor] ofFontType:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:25]];
     
 //    NSString *wiggoSupport = @"VOTE Bradley Wiggins";
 //    theSize = [wiggoSupport sizeWithFont:[UIFont fontWithName:@"Arial-BoldMT" size:20] constrainedToSize:activeImageView.frame.size lineBreakMode:UILineBreakModeMiddleTruncation];
@@ -161,11 +161,11 @@
     
     
     //NSString *wiggoSupport2 = @"for SPOTY 2012";
-    UILabel *brad = [[UILabel alloc]initWithFrame:CGRectMake((activeImageView.frame.size.width-300)/2,activeImageView.image.size.height-32,300,30)];
-
-    brad = [self drawText:@"VOTE Bradley Wiggins for SPOTY 2012" InUILabel:brad withFrame:brad.frame colour:[UIColor whiteColor] ofFontType:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:17]];
-   
-    brad.numberOfLines=1;
+//    UILabel *brad = [[UILabel alloc]initWithFrame:CGRectMake((activeImageView.frame.size.width-300)/2,activeImageView.image.size.height-32,300,30)];
+//
+//    brad = [self drawText:@"VOTE Bradley Wiggins for SPOTY 2012" InUILabel:brad withFrame:brad.frame colour:[UIColor whiteColor] ofFontType:[UIFont fontWithName:@"AEnigmaScrawl4BRK" size:17]];
+//   
+//    brad.numberOfLines=1;
 
 //    theSize = [wiggoSupport2 sizeWithFont:[UIFont fontWithName:@"Arial-BoldMT" size:20] constrainedToSize:activeImageView.frame.size lineBreakMode:UILineBreakModeMiddleTruncation];
 //    faceImage = [self drawText:wiggoSupport2 inImage:faceImage atPoint:CGPointMake((activeImageView.frame.size.width-theSize.width)/2,activeImageView.image.size.height-theSize.height) ofSize:20  colour:[UIColor yellowColor] ofFontType:[UIFont fontWithName:@"Arial-BoldMT" size:20]];
@@ -192,7 +192,7 @@
     for (faceFeature *faceparts in faceFeatures) {
         [activeImageView addSubview:faceparts.featureImageView];
     }
-    [activeImageView addSubview:brad];
+    //[activeImageView addSubview:brad];
     [activeImageView addSubview:wiggofy];
 //    [activeImageView addSubview:[imageViews objectAtIndex:0]];
 //    [activeImageView addSubview:[imageViews objectAtIndex:1]];
