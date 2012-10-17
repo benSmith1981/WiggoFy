@@ -292,7 +292,7 @@
         self.activeImageView = nil;
         [self.navigationController popViewControllerAnimated:YES];
         //Test flight build purposes only
-        [TestFlight openFeedbackView];
+        //[TestFlight openFeedbackView];
     }
     //OK
     else if (button.tag == 4){

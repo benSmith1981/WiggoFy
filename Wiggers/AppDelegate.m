@@ -36,12 +36,13 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    //if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[MainScreenVC alloc] initWithNibName:@"MainScreenVC_iPhone" bundle:nil];
         self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
-    } else {
-        self.viewController = [[MainScreenVC alloc] initWithNibName:@"MainScreenVC_iPad" bundle:nil];
-    }
+    //}
+//    else {
+//        self.viewController = [[MainScreenVC alloc] initWithNibName:@"MainScreenVC_iPad" bundle:nil];
+//    }
     //[self logInstalledFonts];
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
